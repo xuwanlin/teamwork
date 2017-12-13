@@ -3,3 +3,7 @@
 - 使用rem, 以640为基准,
 - 使用less, 组件外层使用className = '组件名-xxx'形式,避免污染全局样式
 
+clone 项目
+```
+npm install
+```
