@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teamwork</title>
+    <script>
+        ~function () {
+            function loadSize(){
+                let deviceW = document.documentElement.clientWidth;
+                deviceW = deviceW > 640 ? 640 : deviceW;
+                document.documentElement.style.fontSize = deviceW / 640 * 100 + 'px';
+            }
+            loadSize();
+            // 改变窗口就刷新当前页面页面
+            window.addEventListener("resize", loadSize, false);
+        }();
+    </script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
