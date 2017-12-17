@@ -1,90 +1,90 @@
 let productList = [{
-        topic: "Clarins",
-        link: "//weixin.vip.com/deeplink/showBrandProducts?brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand",
-        topicCover: '//a.vimage1.com/upcb/2017/12/11/102/ias_151295616865434_604x290_80.jpg',
-        topicTitle: "娇韵诗CLARINS化妆品专场",
-        activeTime: "剩3时",
-        discount: "购物满指定金额即送相应礼品，数量有限，送完即止",
-        list: [{
-                id: 1,
-                title: "娇韵诗Clarins『纤柔美体』套包",
-                image: "//a2.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-5_218x274_70.jpg",
-                discount: "6.5折",
+    topic: "Clarins",
+    link: "//weixin.vip.com/deeplink/showBrandProducts?brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand",
+    topicCover: '//a.vimage1.com/upcb/2017/12/11/102/ias_151295616865434_604x290_80.jpg',
+    topicTitle: "娇韵诗CLARINS化妆品专场",
+    activeTime: "剩3时",
+    discount: "购物满指定金额即送相应礼品，数量有限，送完即止",
+    list: [{
+        id: 1,
+        title: "娇韵诗Clarins『纤柔美体』套包",
+        image: "//a2.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-5_218x274_70.jpg",
+        discount: "6.5折",
 
-                link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352943841&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
-                price: 550,
-                makePrice: 846,
-                slider: ["//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-110_384x484_70.jpg"],
-                size: "均码",
-                describe: ["//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-654.jpg"]
-            },
-            {
-                id: 2,
-                title: "娇韵诗Clarins恒润奇肌保湿凝露",
-                image: "//a2.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-5_218x274_70.jpg",
-                discount: "一口价",
-
-                link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352943871&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
-                price: 470,
-                makePrice: 470,
-                slider: ["//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-110_384x484_70.jpg"],
-                size: "50ml",
-                describe: ["//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-654.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-655.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/11/3380811134147-110_3.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-110_4.jpg"]
-            },
-            {
-                id: 3,
-                title: "娇韵诗Clarins全新基础清洁套装（中性及干性肌肤）",
-                image: "//a3.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-5_218x274_70.jpg",
-                discount: "8.5折",
-
-                link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352943911&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
-                price: 410,
-                makePrice: 480,
-                slider: ["//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-110_384x484_70.jpg"],
-                size: "均码",
-                describe: ["//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-110_4.jpg"]
-            },
-            {
-                id: 4,
-                title: "娇韵诗ClarinsVIP防晒美白修护套包",
-                image: "//a2.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-5_218x274_70.jpg/3380810146202-5_218x274_70.jpg",
-                discount: "7.3折",
-
-                link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352944000&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
-                price: 1060,
-                makePrice: 1460,
-                slider: ["//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-110_384x484_70.jpg"],
-                size: "均码",
-                describe: ["//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-654.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-655.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-656.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-657.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-110_4.jpg"]
-            },
-            {
-                id: 5,
-                title: "娇韵诗ClarinsVIP 青春赋活晚霜滋润套包",
-                image: "//a2.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-5_218x274_70.jpg",
-                discount: "7.8折",
-
-                link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352943909&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
-                price: 660,
-                makePrice: 849,
-                slider: ["//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-110_384x484_70.jpg"],
-                size: "均码",
-                describe: ["//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-654.jpg", "//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-110_4.jpg"]
-            },
-            {
-                id: 6,
-                title: "娇韵诗ClarinsVIP1707焕颜晚霜套包2",
-                image: "//a4.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-5_218x274_70.jpg",
-                discount: "7.3折",
-
-                link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352944114&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
-                price: 780,
-                makePrice: 1065,
-                slider: ["//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-110_384x484_70.jpg"],
-                size: "均码",
-                describe: ["//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-110_4.jpg"]
-            }
-        ]
+        link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352943841&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
+        price: 550,
+        makePrice: 846,
+        slider: ["//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-110_384x484_70.jpg"],
+        size: "均码",
+        describe: ["//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-654.jpg"]
     },
+        {
+            id: 2,
+            title: "娇韵诗Clarins恒润奇肌保湿凝露",
+            image: "//a2.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-5_218x274_70.jpg",
+            discount: "一口价",
+
+            link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352943871&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
+            price: 470,
+            makePrice: 470,
+            slider: ["//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-110_384x484_70.jpg"],
+            size: "50ml",
+            describe: ["//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-654.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-655.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/11/3380811134147-110_3.jpg", "//a.vimage1.com/upload/merchandise/pdc/936/897/1729945206871897936/18/3380811134147-110_4.jpg"]
+        },
+        {
+            id: 3,
+            title: "娇韵诗Clarins全新基础清洁套装（中性及干性肌肤）",
+            image: "//a3.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-5_218x274_70.jpg",
+            discount: "8.5折",
+
+            link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352943911&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
+            price: 410,
+            makePrice: 480,
+            slider: ["//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-110_384x484_70.jpg"],
+            size: "均码",
+            describe: ["//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/611/124/103940765821124611/1/3380810146202-110_4.jpg"]
+        },
+        {
+            id: 4,
+            title: "娇韵诗ClarinsVIP防晒美白修护套包",
+            image: "//a2.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-5_218x274_70.jpg/3380810146202-5_218x274_70.jpg",
+            discount: "7.3折",
+
+            link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352944000&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
+            price: 1060,
+            makePrice: 1460,
+            slider: ["//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-110_384x484_70.jpg"],
+            size: "均码",
+            describe: ["//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-654.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-655.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-656.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-657.jpg", "//a.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-110_4.jpg"]
+        },
+        {
+            id: 5,
+            title: "娇韵诗ClarinsVIP 青春赋活晚霜滋润套包",
+            image: "//a2.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-5_218x274_70.jpg",
+            discount: "7.8折",
+
+            link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352943909&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
+            price: 660,
+            makePrice: 849,
+            slider: ["//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-110_384x484_70.jpg"],
+            size: "均码",
+            describe: ["//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-654.jpg", "//a.vimage1.com/upload/merchandise/pdc/422/116/228352753597116422/1/3380810274059-110_4.jpg"]
+        },
+        {
+            id: 6,
+            title: "娇韵诗ClarinsVIP1707焕颜晚霜套包2",
+            image: "//a4.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-5_218x274_70.jpg",
+            discount: "7.3折",
+
+            link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352944114&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
+            price: 780,
+            makePrice: 1065,
+            slider: ["//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-110_384x484_70.jpg"],
+            size: "均码",
+            describe: ["//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/720/928/220752929225928720/1/3380810274257-110_4.jpg"]
+        }
+    ]
+},
     {
         topic: "CHANDO",
         link: "//weixin.vip.com/deeplink/showBrandProducts?brandId=1911825&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_3&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_3",
@@ -93,18 +93,18 @@ let productList = [{
         activeTime: "剩2时",
         discount: "满198减100，上不封顶",
         list: [{
-                id: 1,
-                title: "凝时焕颜亮采套装 彩妆套装",
-                image: "//a3.vimage1.com/upload/merchandise/pdcvis/2017/12/08/147/7505d53424494953847691737e0378e4-5_218x274_70.jpg",
-                discount: "8.7折",
+            id: 1,
+            title: "凝时焕颜亮采套装 彩妆套装",
+            image: "//a3.vimage1.com/upload/merchandise/pdcvis/2017/12/08/147/7505d53424494953847691737e0378e4-5_218x274_70.jpg",
+            discount: "8.7折",
 
-                link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=333907134&brandId=1911825&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_3&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_3",
-                price: 398,
-                makePrice: 459,
-                slider: ["//a.vimage1.com/upload/merchandise/pdcvis/2017/12/08/107/b1b1b2492ab4417b917849dc623178d5-110_384x484_70.jpg"],
-                size: "均码",
-                describe: ["//a.vimage1.com/upload/merchandise/pdcvis/2017/12/08/5/87421898c19747c89ba60588044a3919-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/12/08/132/8283343037fe4105bb65decae756400b-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/36/a0d960f3dfad442dad3992dc37a02c9d-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/144/17261be360c3454a812975d92e217f7c-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/115/5057bdca5b5e4d04aa41e95eda9408f1-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/37/ceb4329fb4fa468a94686c8457f050d3-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/187/99a16a95e1504c369df675d3383b7371-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/46/4cc1eb0cfe0a4e8ea7b1eb8f721241a0-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/11/06/48/713c82a067c64aef9f101717900e8cb8-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/28/57/0592299553ac42e7913988c14a6ad1b2-110_4.jpg"]
-            },
+            link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=333907134&brandId=1911825&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_3&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_3",
+            price: 398,
+            makePrice: 459,
+            slider: ["//a.vimage1.com/upload/merchandise/pdcvis/2017/12/08/107/b1b1b2492ab4417b917849dc623178d5-110_384x484_70.jpg"],
+            size: "均码",
+            describe: ["//a.vimage1.com/upload/merchandise/pdcvis/2017/12/08/5/87421898c19747c89ba60588044a3919-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/12/08/132/8283343037fe4105bb65decae756400b-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/36/a0d960f3dfad442dad3992dc37a02c9d-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/144/17261be360c3454a812975d92e217f7c-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/115/5057bdca5b5e4d04aa41e95eda9408f1-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/37/ceb4329fb4fa468a94686c8457f050d3-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/187/99a16a95e1504c369df675d3383b7371-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/26/46/4cc1eb0cfe0a4e8ea7b1eb8f721241a0-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/11/06/48/713c82a067c64aef9f101717900e8cb8-651.jpg", "//a.vimage1.com/upload/merchandise/pdcvis/2017/07/28/57/0592299553ac42e7913988c14a6ad1b2-110_4.jpg"]
+        },
             {
                 id: 2,
                 title: "喜马拉雅膜法音乐膜力书面膜套装（24片装） 面膜",
@@ -180,18 +180,18 @@ let productList = [{
         activeTime: "剩2时",
         discount: "满498减100，上不封顶",
         list: [{
-                id: 1,
-                title: "黄瓜植物精华爽肤水250ml 水油平衡调理肤质",
-                image: "//a2.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-5_218x274_70.jpg",
-                discount: "9折",
+            id: 1,
+            title: "黄瓜植物精华爽肤水250ml 水油平衡调理肤质",
+            image: "//a2.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-5_218x274_70.jpg",
+            discount: "9折",
 
-                link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=339683000&brandId=1910985&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_3_30&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_3_30",
-                price: 180,
-                makePrice: 200,
-                slider: ["//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-110_384x484_70.jpg"],
-                size: "250ml",
-                describe: ["//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-654.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/22/3700194711696-110_3.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-110_4.jpg"]
-            },
+            link: "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=339683000&brandId=1910985&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_3_30&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_3_30",
+            price: 180,
+            makePrice: 200,
+            slider: ["//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-110_384x484_70.jpg"],
+            size: "250ml",
+            describe: ["//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-110_1.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-651.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-652.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-653.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-654.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/22/3700194711696-110_3.jpg", "//a.vimage1.com/upload/merchandise/pdc/888/995/8318429986734995888/23/3700194711696-110_4.jpg"]
+        },
             {
                 id: 2,
                 title: "金盏花舒缓保湿面膜100ml 草本调理 舒缓保湿",
@@ -266,22 +266,22 @@ let productList = [{
         active_time: '剩余18时',
         discount: '满99减50，上不封顶',
         list: [{
-                id: 1,
-                title: '施华蔻Schwarzkopf 精华深透套装 洗护套装',
-                image: "http://a3.vimage1.com/upload/merchandise/pdcvis/2017/10/24/194/8a4f81c499e8425db0d20b42deb729c3-5_218x274_70.jpg",
-                date: '2017/06/12',
+            id: 1,
+            title: '施华蔻Schwarzkopf 精华深透套装 洗护套装',
+            image: "http://a3.vimage1.com/upload/merchandise/pdcvis/2017/10/24/194/8a4f81c499e8425db0d20b42deb729c3-5_218x274_70.jpg",
+            date: '2017/06/12',
 
-                price: 198,
-                makePrice: 270,
-                discount: "7.3折",
-                size: "均码",
-                describe: [
-                    "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/122/1951659222a44445b545ef22e528487b-110_1.jpg",
-                    "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/18/39ada2273d1c4405af2dc460521b6a7a-651.jpg",
-                    "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/53/ed69fbaf5f934358be73cdb2fd94deac-651.jpg",
-                    "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/113/32cd980c651b4a8997da0b88b9fa3471-651.jpg"
-                ]
-            },
+            price: 198,
+            makePrice: 270,
+            discount: "7.3折",
+            size: "均码",
+            describe: [
+                "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/122/1951659222a44445b545ef22e528487b-110_1.jpg",
+                "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/18/39ada2273d1c4405af2dc460521b6a7a-651.jpg",
+                "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/53/ed69fbaf5f934358be73cdb2fd94deac-651.jpg",
+                "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/113/32cd980c651b4a8997da0b88b9fa3471-651.jpg"
+            ]
+        },
             {
                 id: 2,
                 title: '斐丝丽紫玉兰修护洗发露450ML',
@@ -369,7 +369,6 @@ let productList = [{
             }
 
 
-
         ]
     },
     {
@@ -379,20 +378,20 @@ let productList = [{
         active_time: '剩余2时',
         discount: '满198减100，上不封顶',
         list: [{
-                id: 1,
-                title: '补水保湿鲜果美莓套组35片 面膜 补水 提亮 保湿 明星同款',
-                image: "http://bak.appsimg.com/upload/merchandise/pdcvis/2017/11/08/19/38e1cda3902f4ba8862795224dd854c2-5_218x274_70.jpg",
-                price: 199,
-                makePrice: 418,
-                discount: "4.8折",
-                size: "均码",
-                describe: [
-                    "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/27/125/636644d0c2b14e0fb2fd6bb97cd866ab-110_1.jpg",
-                    "http://a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/89/8a1136f48ad348d2953fc7c10424103a-651.jpg",
-                    "http://a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/87/48f013de42dc4bcc849ea44310cc997f-651.jpg",
-                    "http://a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/164/cb36b101616349d2a20488ac3f40eed2-651.jpg"
-                ]
-            },
+            id: 1,
+            title: '补水保湿鲜果美莓套组35片 面膜 补水 提亮 保湿 明星同款',
+            image: "http://bak.appsimg.com/upload/merchandise/pdcvis/2017/11/08/19/38e1cda3902f4ba8862795224dd854c2-5_218x274_70.jpg",
+            price: 199,
+            makePrice: 418,
+            discount: "4.8折",
+            size: "均码",
+            describe: [
+                "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/27/125/636644d0c2b14e0fb2fd6bb97cd866ab-110_1.jpg",
+                "http://a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/89/8a1136f48ad348d2953fc7c10424103a-651.jpg",
+                "http://a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/87/48f013de42dc4bcc849ea44310cc997f-651.jpg",
+                "http://a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/164/cb36b101616349d2a20488ac3f40eed2-651.jpg"
+            ]
+        },
             {
                 id: 2,
                 title: '茶萃精华补水保湿黑膜',
@@ -480,22 +479,22 @@ let productList = [{
         active_time: '剩余2时',
         discount: '满198减100，上不封顶',
         list: [{
-                id: 1,
-                title: '薇诺娜Winona  净痘清颜洁面乳 15g  深层清洁 控油清洁 祛痘',
-                image: "http://a2.vimage1.com/upload/merchandise/pdcvis/2016/11/18/191/7526181e-9953-4b63-9d38-aff24ea01187_218x274_70.jpg",
-                date: '2017/06/12',
+            id: 1,
+            title: '薇诺娜Winona  净痘清颜洁面乳 15g  深层清洁 控油清洁 祛痘',
+            image: "http://a2.vimage1.com/upload/merchandise/pdcvis/2016/11/18/191/7526181e-9953-4b63-9d38-aff24ea01187_218x274_70.jpg",
+            date: '2017/06/12',
 
-                price: "35",
-                makePrice: "40",
-                discount: "7.3折",
-                size: "15g",
-                describe: [
-                    "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/75/dcf336a0-927d-43cc-b7cc-17141110256b.jpg",
-                    "http://a.vimage1.com/upload/merchandise/pdcvis/2017/06/21/142/388755e2b1664a36b78ae5e47efdd2a0-651.jpg",
-                    "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/164/d907e6c0-5ff7-41a3-befe-bca4962825cd.jpg",
-                    "http://a.vimage1.com/upload/merchandise/ugcaudit/2017/12/13/132/da31534c-72aa-4798-9f81-9dd2804e1be6.jpg"
-                ]
-            },
+            price: "35",
+            makePrice: "40",
+            discount: "7.3折",
+            size: "15g",
+            describe: [
+                "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/75/dcf336a0-927d-43cc-b7cc-17141110256b.jpg",
+                "http://a.vimage1.com/upload/merchandise/pdcvis/2017/06/21/142/388755e2b1664a36b78ae5e47efdd2a0-651.jpg",
+                "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/164/d907e6c0-5ff7-41a3-befe-bca4962825cd.jpg",
+                "http://a.vimage1.com/upload/merchandise/ugcaudit/2017/12/13/132/da31534c-72aa-4798-9f81-9dd2804e1be6.jpg"
+            ]
+        },
             {
                 id: 2,
                 title: '薇诺娜Winona  好气色彩妆全套护理组合',
