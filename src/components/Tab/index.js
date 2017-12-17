@@ -7,7 +7,7 @@ export default class Tab extends Component {
         return (
             <nav className="tab-nav">
                 <NavLink exact to="/">
-                    <span>首页</span>
+                    <span>美妆</span>
                 </NavLink>
                 <NavLink to="/find">
                     <span>发现</span>
