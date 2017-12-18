@@ -12,25 +12,54 @@
             overflow: hidden;
             padding: 10px 0;
             border-bottom: 1px dashed #ddd;
-            div {
+            .input {
                 float: left;
-                &.input {
-                    width: 5%;
+                width: 6%;
+                padding-top: 15px;
+            }
+            .img-box {
+                width: 30%;
+                float: left;
+                margin: 0 10px;
+                img {
+                    border: 1px solid #ddd
                 }
-                &.img {
-                    width: 35%;
+            }
+            .text-area {
+                overflow: hidden;
+                h4 {
+                    font-size: 16px;
+                    display: -webkit-box;
+                    margin-bottom: 8px;
                 }
-                &.title {
-                    width: 30%;
-                }
-                &.num {
-                    width: 25%;
+                .num{
+                    width: 100%;
+                    overflow: hidden;
+                    text-align: right;
+                    .price{
+                        float: left;
+                        font-weight: bold;
+                        font-size: 22px;
+                        color: red;
+                    }
+                    button{
+                        display: inline-block;
+                        width: 25px;
+                        height: 25px;
+                    }
                     input{
-                        width: 80%;
+                        width: 50px;
+                        height: 23px;
+                        border:1px solid #ddd;
                     }
                 }
-                &.set {
-                    width: 5%;
+                .set{
+                    text-align: right;
+                    button{
+                        display: inline-block;
+                        width: 25px;
+                        height: 25px;
+                    }
                 }
             }
         }

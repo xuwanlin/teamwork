@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './index.less';
-import {get, post} from "../../../api";
+import {get, post, myDelete} from "../../../api";
 
 export default class ShopCar extends Component {
     constructor() {
@@ -14,18 +14,22 @@ export default class ShopCar extends Component {
         });
     }
 
-    handleChange = (event, ele) => {
-        let count = event.target.value;
+    handleChange = (event, ele, step) => {
+        let num = step || 0;
+        let count = parseInt(ele.count) + num;
+        if (count < 1) count = 1;
         let list = this.state.list.map(item => {
             if (item == ele) {
                 item.count = count;
             }
             return item;
         });
-        console.log(ele.id,count);
+        console.log(ele.id, count);
         this.setState({list}, () => {
             post('/api/car', {id: ele.id, count}).then(res => console.log(res));
         });
+    };
+    removeGood = () => {
     };
 
     render() {
@@ -36,18 +40,22 @@ export default class ShopCar extends Component {
                     {
                         this.state.list.map(item => (
                             <li key={item.id}>
-                                <div className='input'><input type="checkbox"/></div>
-                                <div className='img'><img src={item.image} alt=""/></div>
-                                <div className='title'>{item.title}</div>
-                                <div className='num'>
-                                    <button>+</button>
-                                    <input type="text" onChange={(event) => this.handleChange(event, item)}
-                                           value={item.count}/>
-                                    <button>-</button>
+                                <div className='input'><input type="checkbox"/>{item.id}</div>
+                                <div className='img-box'><img src={item.image} alt=""/></div>
+                                <div className='text-area'>
+                                    <h4 className='title'>{item.title}</h4>
+                                    <div className='num'>
+                                        <div className='price'>{item.price}</div>
+                                        <button onClick={(event) => this.handleChange(event, item, -1)}>-</button>
+                                        <input type="text" onChange={(event) => this.handleChange(event, item)}
+                                               value={item.count < 1 ? 1 : item.count}/>
+                                        <button onClick={(event) => this.handleChange(event, item, 1)}>+</button>
+                                    </div>
+                                    <div className='set'>
+                                        <button onClick={() => this.removeGood(item.id)}>X</button>
+                                    </div>
                                 </div>
-                                <div className='set'>
-                                    <button>X</button>
-                                </div>
+
                             </li>
                         ))
                     }

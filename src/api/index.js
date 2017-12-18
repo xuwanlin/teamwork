@@ -20,7 +20,7 @@ export const post = (url, data) => {
     }).then(res => res.json());
 };
 
-export const removeCarList = (url, data) => {
+export const myDelete = (url, data) => {
     return fetch(url, {
         method: 'DELETE',//请求方法
         credentials: "include",
