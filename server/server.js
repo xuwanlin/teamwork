@@ -1,4 +1,3 @@
-
 const express = require('express');
 let path = require('path');
 let fs = require('fs');
@@ -86,7 +85,6 @@ app.post('/api/reg', (req, res) => {
 
 //登录
 app.post('/api/login', (req, res) => {
-    console.log(req.body);
     let user = req.body;
     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
     let oldUser = users.find(item => item.username == user.username && item.password == user.password);
@@ -101,7 +99,7 @@ app.post('/api/login', (req, res) => {
 //登录
 app.get('/api/login', (req, res) => {
 
-    req.session.user={username:"xuwanlin1",password:"1"};
+    req.session.user = {username: "xuwanlin1", password: "1"};
     res.send({code: 0, user: req.session.user.username})
 });
 //退出
@@ -117,6 +115,39 @@ app.get('/api/validate', (req, res) => {
         res.send({code: 1, error: '此用户未登录！'})
     }
 })
+//更新 个人数据
+app.post('/api/user', (req, res) => {
+    if (!req.session.user) {
+        return res.send({code: 1, error: '请登录后获取数据！'});
+        // return res.redirect('/login');
+    }
+    let user = req.body;
+    let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
+    let oldUser = users.find(item => item.username == req.session.user.username);
+
+    for (var key in user) {
+        if (key == "password") {
+            oldUser[key] = user[key];
+        } else {
+            if (key == "mobile") {
+                oldUser["orderInfo"][key] = parseInt(user[key]);
+            } else {
+                oldUser["orderInfo"][key] = user[key]
+            }
+        }
+    }
+
+    fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
+
+        if (!err) {
+            res.json({code: 0, success:"提交成功！"});
+        }
+
+
+    })
+
+})
+
 
 //遍历购物车和订单的列表的id数组，返回有内容的新数组
 function getCarOrderInfoList(usre, type, productList) {
@@ -148,7 +179,7 @@ function getCarOrderInfoList(usre, type, productList) {
 app.get('/api/car', (req, res) => {
     if (!req.session.user) {
         return res.send({code: 1, error: '请登录后获取数据！'});
-       // return res.redirect('/login');
+        // return res.redirect('/login');
     }
     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
     let productList = JSON.parse(fs.readFileSync('./mock/productList.json', 'utf8'));
@@ -194,11 +225,10 @@ app.post('/api/car', (req, res) => {
     //数字化
     req.body.id = parseInt(req.body.id);
     req.body.count = parseInt(req.body.count);
-    console.log(req.body);
-    let product = oldUser.cart.find(item => item.id == req.body.id) ;
-    if(!product){
+    let product = oldUser.cart.find(item => item.id == req.body.id);
+    if (!product) {
         oldUser.cart.push({id: req.body.id, count: 0})
-        product=  oldUser.cart[oldUser.cart.length-1];
+        product = oldUser.cart[oldUser.cart.length - 1];
 
     }
 
@@ -206,11 +236,11 @@ app.post('/api/car', (req, res) => {
 
 
     fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
-            if (!err) {
-                res.json({code: 0, success: '添加成功', cart: oldUser.cart});
-            }
+        if (!err) {
+            res.json({code: 0, success: '添加成功', cart: oldUser.cart});
+        }
 
-        })
+    })
 });
 //删除购物车的一个商品
 // app.del('/api/car', (req, res) => {
@@ -241,25 +271,26 @@ app.del('/api/car', (req, res) => {
     }
     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
     let oldUser = users.find(item => item.username == req.session.user.username);
-    let idArr=[];
+    let idArr = [];
     let id;
-    if(parseInt(req.body.id)){
+    if (parseInt(req.body.id)) {
         id = parseInt(req.body.id);
         idArr.push(id);
-    }else{
-        id=JSON.parse(req.body.id);
-        idArr=id;
+    } else {
+        id = JSON.parse(req.body.id);
+        idArr = id;
     }
 
     idArr.forEach(bodyID => {
-            oldUser.cart = oldUser.cart.filter(item =>{
-                return item.id != bodyID})
+        oldUser.cart = oldUser.cart.filter(item => {
+            return item.id != bodyID
         })
+    })
 
 
     fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
         if (!err) {
-            res.json({code: 0, success: '删除成功',cart:oldUser.cart});
+            res.json({code: 0, success: '删除成功', cart: oldUser.cart});
         }
 
     })

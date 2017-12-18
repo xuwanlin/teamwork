@@ -117,6 +117,23 @@
     "user": "xuwanlin1"
 }
 ```
+## 修改个人信息
+- /api/user
+- post
+- 参数
+  - password（修改密码）
+  - name (收货人)
+  - address（地址）
+  - mobile（手机号）
+  - email（邮箱地址）
+ 
+成功
+```
+{
+    "code": 0,
+    "success": "提交成功！"
+}
+```
 ## 购物车
 ### 获取购物车数据
 - /api/car
