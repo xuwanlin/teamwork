@@ -253,7 +253,6 @@ app.del('/api/car', (req, res) => {
 
     idArr.forEach(bodyID => {
             oldUser.cart = oldUser.cart.filter(item =>{
-                console.log(bodyID, item.id);
                 return item.id != bodyID})
         })
 
