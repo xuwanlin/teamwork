@@ -1,1 +1,37 @@
-[{"username":"xuwanlin1","password":"1","orderInfo":{"name":"徐万林","address":"昌平区霍营乡华龙苑中里3号楼4单元501","mobile":15311428807,"email":"39282214@qq.com"},"cart":[{"id":101,"count":5},{"id":102,"count":2},{"id":103,"count":3},{"id":105,"count":4},{"id":106,"count":5}],"order":[{"id":201,"count":1},{"id":202,"count":1}]}]
+[
+  {
+    "username": "xuwanlin1",
+    "password": "1",
+    "orderInfo": {
+      "name": "徐万林",
+      "address": "昌平区霍营乡华龙苑中里3号楼4单元501",
+      "mobile": 15311428807,
+      "email": "39282214@qq.com"
+    },
+    "cart": [
+      {
+        "id": 101,
+        "count": 5
+      },
+      {
+        "id": 102,
+        "count": 2
+      },
+      {
+        "id": 103,
+        "count": 3
+      },
+      {
+        "id": 105,
+        "count": 4
+      },
+      {
+        "id": 106,
+        "count": 5
+      }
+    ],
+    "order": [
+
+    ]
+  }
+]
