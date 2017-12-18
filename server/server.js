@@ -194,14 +194,18 @@ app.post('/api/car', (req, res) => {
     //数字化
     req.body.id = parseInt(req.body.id);
     req.body.count = parseInt(req.body.count);
+    console.log(req.body);
+    let product = oldUser.cart.find(item => item.id == req.body.id) ;
+    if(!product){
+        oldUser.cart.push({id: req.body.id, count: 0})
+        product=  oldUser.cart[oldUser.cart.length-1];
 
-    let product = oldUser.cart.find(item => item.id = req.body.id) || users[users.push({id: req.body.id, count: 0})];
+    }
 
-    product.count = req.body.count ? req.body.count : ++product.count;
+    product.count = req.body.count ? req.body.count : (++product.count);
 
-    let carUser =
 
-        fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
+    fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
             if (!err) {
                 res.json({code: 0, success: '添加成功', cart: oldUser.cart});
             }
