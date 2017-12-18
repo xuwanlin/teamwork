@@ -232,25 +232,26 @@ app.post('/api/car', (req, res) => {
 
 //购物车批量删除
 app.del('/api/car', (req, res) => {
-    console.log(req.body);
     if (!req.session.user) {
         return res.send({code: 1, error: '请登录后获取数据！'});
     }
     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
     let oldUser = users.find(item => item.username == req.session.user.username);
     let idArr=[];
-    let id = typeof JSON.parse(req.body.id) =='string'?parseInt(req.body.id):JSON.parse(req.body.id);
-    idArr=idArr.concat(id);
-    console.log("idArr",idArr);
-    // if (typeof req.body.id == 'string') {
-    //     oldUser.cart = oldUser.cart.filter(item => item.id != parseInt(req.body.id));
-    // } else {
-    //     console.log('arr');
-    //     req.body.id.forEach(bodyID => {
-    //         console.log(111);
-    //         oldUser.cart = oldUser.cart.filter(item => item.id != bodyID)
-    //     })
-    // }
+    let id;
+    if(parseInt(req.body.id)){
+        id = parseInt(req.body.id);
+        idArr.push(id);
+    }else{
+        id=JSON.parse(req.body.id);
+        idArr=id;
+    }
+
+    idArr.forEach(bodyID => {
+            oldUser.cart = oldUser.cart.filter(item =>{
+                console.log(bodyID, item.id);
+                return item.id != bodyID})
+        })
 
 
     fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
