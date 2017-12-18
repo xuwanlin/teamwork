@@ -4,7 +4,6 @@ import Mheader from "../../components/Mheader";
 import Sliders from "../../components/Sliders";
 
 export default class Home extends Component {
-    com
     render() {
         return (
             <div className='home'>
