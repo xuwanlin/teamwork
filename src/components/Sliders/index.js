@@ -33,7 +33,7 @@ export default class Sliders extends Component {
             <ReactSwipe swipeOptions={swipeOptions}>
                 {
                     this.state.swipers.map((item, index) => (
-                        <Link to={`/detail/${item.link}`} key={index}><img src={item.src}/></Link>
+                        <Link to={`/brand/${item.link}`} key={index}><img src={item.src}/></Link>
                     ))
                 }
             </ReactSwipe>

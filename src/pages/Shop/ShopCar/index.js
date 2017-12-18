@@ -24,12 +24,17 @@ export default class ShopCar extends Component {
             }
             return item;
         });
-        console.log(ele.id, count);
         this.setState({list}, () => {
             post('/api/car', {id: ele.id, count}).then(res => console.log(res));
         });
     };
-    removeGood = () => {
+    removeGood = (id) => {
+        myDelete('/api/car', {id}).then(res => {
+            if (res.code == 0) {
+                let list = this.state.list.filter(item => item.id != id);
+                this.setState({list});
+            }
+        });
     };
 
     render() {

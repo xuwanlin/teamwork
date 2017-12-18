@@ -18,6 +18,7 @@ export default class HomeList extends Component {
         });
     }
 
+
     render() {
         return (
             <div className="home-lists">
@@ -26,10 +27,10 @@ export default class HomeList extends Component {
                     this.state.imgs.map(item => (
                         <div className="home-list" key={item.category}>
                             <div className="home-images">
-                                <a href="">
+                                <Link to={`/brand/${item.category}`}>
                                     <img className="home-img"
                                          src={item.topicCover}/>
-                                </a>
+                                </Link>
                             </div>
                             <div className="home-text">
                                 <p>{item.topicTitle}</p>

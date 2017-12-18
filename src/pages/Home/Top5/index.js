@@ -27,7 +27,7 @@ export default class Top5 extends Component {
                 <ul>
                     {
                         this.state.imgList.map((item, index) => (
-                            <li key={index}><Link to={`/detail/${item.link}`}><img src={item.src}/></Link></li>
+                            <li key={index}><Link to={`/brand/${item.link}`}><img src={item.src}/></Link></li>
                         ))
                     }
                 </ul>
