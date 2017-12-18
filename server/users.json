@@ -1,22 +1,13 @@
 [
   {
     "username": "xuwanlin1",
-    "password": 1,
-    "cart": [
-      {
-        "id": 1
-      },
-      {
-        "id": 2
-      }
-    ],
-    "order": [
-
-    ]
+    "password": "1",
+    "cart": [],
+    "order": []
   },
   {
     "username": "xuwanlin2",
-    "password": "1",
+    "password":"1",
     "cart": [
       {
         "id": 1

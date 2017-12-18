@@ -70,13 +70,13 @@ app.post('/api/reg', (req, res) => {
     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
     let oldUser = users.find(item => item.username == user.username);
     if (oldUser) {
-        res.json({code: 1, error: '用户名重复'});
+        res.json({code: 1, error: '用户名已存在，请重新输入！'});
     } else {
         users.push(user);
         fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
 
             if (!err) {
-                res.json({code: 0, success: '注册成功', user: {username: user.username}});
+                res.json({code: 0, success: '注册成功!', user: {username: user.username}});
             }
 
 
@@ -86,16 +86,23 @@ app.post('/api/reg', (req, res) => {
 
 //登录
 app.post('/api/login', (req, res) => {
+    console.log(req.body);
     let user = req.body;
     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
     let oldUser = users.find(item => item.username == user.username && item.password == user.password);
-    oldUser = {username: oldUser.username, password: oldUser.password}
+
     if (oldUser) {
         req.session.user = oldUser;
         res.send({code: 0, success: '登录成功！', user: {username: user.username}});
     } else {
         res.send({code: 1, error: '登录失败，用户名或密码错误！'})
     }
+});
+//登录
+app.get('/api/login', (req, res) => {
+
+    req.session.user={username:"xuwanlin1",password:"1"};
+    res.send({code: 0, user: req.session.user.username})
 });
 //退出
 app.get('/api/logout', (req, res) => {
@@ -105,7 +112,7 @@ app.get('/api/logout', (req, res) => {
 //判断是否登录
 app.get('/api/validate', (req, res) => {
     if (req.session.user) {
-        res.send({code: 0, user: req.session.user})
+        res.send({code: 0, user: req.session.user.username})
     } else {
         res.send({code: 1, error: '此用户未登录！'})
     }
@@ -138,9 +145,10 @@ function getCarOrderInfoList(usre, type, productList) {
 }
 
 //获取我的购物车
-app.get('/api/cat', (req, res) => {
+app.get('/api/car', (req, res) => {
     if (!req.session.user) {
-        return res.redirect('/login');
+        return res.send({code: 1, error: '请登录后获取数据！'});
+       // return res.redirect('/login');
     }
     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
     let productList = JSON.parse(fs.readFileSync('./mock/productList.json', 'utf8'));
@@ -149,9 +157,9 @@ app.get('/api/cat', (req, res) => {
     getCarOrderInfoList(oldUser, 'cart', productList);
 
     if (oldUser.cart && oldUser.cart.length > 0) {
-        res.send({code: 0, success: '获取成功！', cart: {list: oldUser.cart, total: oldUser.cart.length}});
+        res.send({code: 0, success: '获取成功！', cart: {list: oldUser.cart}});
     } else {
-        res.send({code: 1, error: '购物车没发现商品哦！'});
+        res.send({code: 2, error: '购物车没发现商品哦！'});
     }
 
 
@@ -169,14 +177,14 @@ app.get('/api/order', (req, res) => {
 
 
     if (oldUser.order && oldUser.order.length > 0) {
-        res.send({code: 0, success: '获取成功！', order: {list: oldUser.order, total: oldUser.order.length}});
+        res.send({code: 0, success: '获取成功！', order: {list: oldUser.order}});
     } else {
         res.send({code: 1, error: '暂无全部订单！'});
     }
 
 })
 //添加到购物车 id=134214 ,count=5表示更新到5，没有count表示+1
-app.post('/api/cat', (req, res) => {
+app.post('/api/car', (req, res) => {
     if (!req.session.user) {
         return res.send({code: 1, error: '请登录后获取数据！'});
     }
@@ -201,46 +209,53 @@ app.post('/api/cat', (req, res) => {
         })
 });
 //删除购物车的一个商品
-app.del('/api/cat', (req, res) => {
+// app.del('/api/car', (req, res) => {
+//     if (!req.session.user) {
+//         return res.send({code: 1, error: '请登录后获取数据！'});
+//     }
+//     ;
+//     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
+//     let oldUser = users.find(item => item.username == req.session.user.username);
+//
+//     //数字化
+//     req.body.id = parseInt(req.body.id);
+//
+//     oldUser.cart = oldUser.cart.filter(item => item.id != req.body.id);
+//     fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
+//         if (!err) {
+//             res.json({code: 0, success: '删除成功', cart: oldUser.cart});
+//         }
+//
+//     })
+//
+// })
+
+//购物车批量删除
+app.del('/api/car', (req, res) => {
+    console.log(req.body);
     if (!req.session.user) {
         return res.send({code: 1, error: '请登录后获取数据！'});
     }
-    ;
     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
     let oldUser = users.find(item => item.username == req.session.user.username);
-
-    //数字化
-    req.body.id = parseInt(req.body.id);
-
-    oldUser.cart = oldUser.cart.filter(item => item.id != req.body.id);
-    fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
-        if (!err) {
-            res.json({code: 0, success: '删除成功', cart: oldUser.cart});
-        }
-
-    })
-
-})
-
-//从购物车删除
-app.del('/api/cat', (req, res) => {
-    if (!req.session.user) {
-        return res.send({code: 1, error: '请登录后获取数据！'});
-    }
-    let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
-    let oldUser = users.find(item => item.username == req.session.user.username);
-    if (typeof req.body.id == 'string') {
-        oldUser.cart = oldUser.cart.filter(item => item.id != parseInt(req.body.id));
-    } else {
-        req.body.id.forEach(bodyID => {
-            oldUser.cart = oldUser.cart.filter(item => item.id != bodyID)
-        })
-    }
+    let idArr=[];
+    let id = typeof JSON.parse(req.body.id) =='string'?parseInt(req.body.id):JSON.parse(req.body.id);
+    idArr=idArr.concat(id);
+    console.log("idArr",idArr);
+    // if (typeof req.body.id == 'string') {
+    //     oldUser.cart = oldUser.cart.filter(item => item.id != parseInt(req.body.id));
+    // } else {
+    //     console.log('arr');
+    //     req.body.id.forEach(bodyID => {
+    //         console.log(111);
+    //         oldUser.cart = oldUser.cart.filter(item => item.id != bodyID)
+    //     })
+    // }
 
 
     fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
         if (!err) {
-            res.json({code: 0, success: '删除成功'});
+            res.json({code: 0, success: '删除成功',cart:oldUser.cart});
         }
 
     })
