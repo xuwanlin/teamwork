@@ -6,7 +6,7 @@ class Mheader extends Component {
     render() {
         return (
             <div className='mheader-toback'>
-                <i className='iconfont icon-fanhui' onClick={this.props.history.goBack}> &lt; </i>
+                <i className='iconfont icon-fanhui' onClick={this.props.history.goBack}></i>
                 {this.props.title}
             </div>
         );
