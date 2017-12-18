@@ -234,7 +234,7 @@ app.post('/api/car', (req, res) => {
 //
 // })
 
-//购物车批量删除
+//删除购物车商品
 app.del('/api/car', (req, res) => {
     if (!req.session.user) {
         return res.send({code: 1, error: '请登录后获取数据！'});
