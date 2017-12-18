@@ -7,3 +7,6 @@ clone 项目
 ```
 npm install
 ```
+### 服务器配置
+> 静态文件
+- server下的static 是根路径

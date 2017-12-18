@@ -1,5 +1,303 @@
 const express = require('express');
-const app = express();
+let path = require('path');
+let fs = require('fs');
+let bodyParser = require('body-parser');
+let session = require('express-session');
+let app = express();
+
+app.use(bodyParser.json()); // 解析json application/json
+app.use(bodyParser.urlencoded({extented:true})); // 解析表单 application/x-www-form-urlencoded
+
+app.use(session(
+    {resave: true,//
+        secret: 'zfpx',//秘钥
+        saveUninitialized: true//保存为初始化的session
+    }))
+
+//跨域
+app.use(function (req, res, next) {
+    //如果在webpack里配置了代理，那么这些响应头都不要了
+    //只允许8080访问
+    res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+    //服务允许客户端发的方法
+    res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,PUT');
+    //服务器允许的请求头
+    res.header('Access-Control-Allow-Headers', 'Content-Type,Accept');
+    //允许客户端把cookie发过来
+    res.header('Access-Control-Allow-Credentials', 'true');
+    //如果请求的方法是OPTIONS,那么意味着客户端只要响应头，直接结束响应即可
+    if (req.method == 'OPTIONS') {
+        res.end();
+    } else {
+        next();
+    }
+});
+//指定静态文件目录
+app.use(express.static(path.resolve('./static/')));
+//    static/a.txt => http://localhost:3000/a.txt
+
+//注册
+app.post('/api/reg', (req, res) => {
+    let user = req.body;
+    let users = JSON.parse(fs.readFileSync('./mock/users.json','utf8'));
+    let oldUser = users.find(item=>item.username==user.username);
+    if(oldUser){
+        res.json({code: 1, error: '用户名重复'});
+    }else{
+        users.push(user);
+        fs.writeFile('./mock/users.json',JSON.stringify(users),(err)=>{
+
+            if(!err){
+                res.json({code: 0, success: '注册成功',user:{username:user.username}});
+            }
+
+
+        })
+    }
+});
+
+//登录
+app.post('/api/login', (req, res) => {
+    let user = req.body;
+    let users = JSON.parse(fs.readFileSync('./mock/users.json','utf8'));
+    let oldUser = users.find(item=>item.username==user.username&&item.password==user.password);
+    oldUser = {username:oldUser.username,password:oldUser.password}
+    if(oldUser){
+        req.session.user= oldUser;
+        res.send({code: 0, success:'登录成功！',user:{username:user.username}});
+    }else{
+        res.send({code:1,error:'登录失败，用户名或密码错误！'})
+    }
+});
+//退出
+app.get('/api/logout',(req,res)=>{
+    req.session.user=null;
+    res.send({code:1,success:'退出成功！'})
+})
+//判断是否登录
+app.get('/api/validate',(req,res)=>{
+    if(req.session.user){
+        res.send({code:0,user:req.session.user})
+    }else{
+        res.send({code:1,error:'此用户未登录！'})
+    }
+})
+
+//遍历购物车和订单的列表的id数组，返回有内容的新数组
+function getCarOrderInfoList(usre,type,productList) {
+
+    let idArr = usre[type];//[ { id: 12, count: 1 }, { id: 13, count: 2 } ]
+
+    idArr.forEach(item=>{
+
+        productList.forEach(category=>{
+            category.list.forEach(product=>{
+
+                if( product.id==item.id){
+
+                    for(let key in product){
+                        if(key=="describe"||key=="id"||key=="slider") continue;
+                        item[key]=product[key];
+                    }
+                }
+            })
+
+
+        })
+
+    })
+
+}
+//获取我的购物车
+app.get('/api/cat',(req,res)=>{
+    if(!req.session.user){
+      return  res.redirect('/login');
+    }
+    let users = JSON.parse(fs.readFileSync('./mock/users.json','utf8'));
+    let productList = JSON.parse(fs.readFileSync('./mock/productList.json','utf8'));
+    let oldUser = users.find(item=>item.username==req.session.user.username);
+    // 读取详细信息追加到购物车里
+    getCarOrderInfoList(oldUser,'cart',productList);
+
+    if(oldUser.cart&&oldUser.cart.length>0){
+        res.send({code: 0, success:'获取成功！',cart:{list:oldUser.cart,total:oldUser.cart.length}});
+    }else{
+        res.send({code: 1, error:'购物车没发现商品哦！'});
+    }
+
+
+});
+//获取我的订单
+app.get('/api/order',(req,res)=>{
+    if(!req.session.user){
+        return  res.redirect('/login');
+    }
+    let users = JSON.parse(fs.readFileSync('./mock/users.json','utf8'));
+    let productList = JSON.parse(fs.readFileSync('./mock/productList.json','utf8'));
+    let oldUser = users.find(item=>item.username==req.session.user.username);
+    // 读取详细信息追加到购物车里
+    getCarOrderInfoList(oldUser,'order',productList);
+
+
+    if(oldUser.order&&oldUser.order.length>0){
+        res.send({code: 0, success:'获取成功！',order:{list:oldUser.order,total:oldUser.order.length}});
+    }else{
+        res.send({code: 1, error:'暂无全部订单！'});
+    }
+
+})
+//添加到购物车 id=134214 ,count=5表示更新到5，没有count表示+1
+app.post('/api/cat',(req,res)=>{
+    if(!req.session.user){
+        return  res.send({code: 1, error:'请登录后获取数据！'});
+    }
+    let users = JSON.parse(fs.readFileSync('./mock/users.json','utf8'));
+    let oldUser = users.find(item=>item.username==req.session.user.username);
+
+    //数字化
+    req.body.id=parseInt(req.body.id);
+    req.body.count=parseInt(req.body.count);
+
+    let product =oldUser.cart.find(item=>item.id=req.body.id)||users[users.push({id:req.body.id,count:0})];
+
+        product.count=req.body.count?req.body.count:++product.count;
+
+        let carUser =
+
+    fs.writeFile('./mock/users.json',JSON.stringify(users),(err)=>{
+        if(!err){
+            res.json({code: 0, success: '添加成功',cart:oldUser.cart});
+        }
+
+    })
+});
+//删除购物车的一个商品
+app.del('/api/cat',(req,res)=>{
+    if(!req.session.user){
+        return  res.send({code: 1, error:'请登录后获取数据！'});
+    };
+    let users = JSON.parse(fs.readFileSync('./mock/users.json','utf8'));
+    let oldUser = users.find(item=>item.username==req.session.user.username);
+
+    //数字化
+    req.body.id=parseInt(req.body.id);
+
+    oldUser.cart =oldUser.cart.filter(item=>item.id!=req.body.id);
+    fs.writeFile('./mock/users.json',JSON.stringify(users),(err)=>{
+        if(!err){
+            res.json({code: 0, success: '删除成功',cart:oldUser.cart});
+        }
+
+    })
+
+})
+
+
+
+
+//从购物车删除
+app.del('/api/cat',(req,res)=>{
+    if(!req.session.user){
+        return  res.send({code: 1, error:'请登录后获取数据！'});
+    }
+    let users = JSON.parse(fs.readFileSync('./mock/users.json','utf8'));
+    let oldUser = users.find(item=>item.username==req.session.user.username);
+    if(typeof req.body.id == 'string'){
+        oldUser.cart = oldUser.cart.filter(item=>item.id!=parseInt(req.body.id));
+    }else{
+        req.body.id.forEach(bodyID=>{
+            oldUser.cart = oldUser.cart.filter(item=>item.id!= bodyID)
+        })
+    }
+
+
+    fs.writeFile('./mock/users.json',JSON.stringify(users),(err)=>{
+        if(!err){
+            res.json({code: 0, success: '删除成功'});
+        }
+
+    })
+})
+
+
+
+// 获取专题列表
+app.get('/api/category',(req,res)=>{
+    let categorys = JSON.parse(fs.readFileSync('./mock/productList.json','utf8'));
+    if(categorys){
+        categorys = categorys.map(item=>{
+            delete item.list;
+            return item;
+        })
+    }
+    if(categorys){
+        res.send({code: 0, success:'获取数据成功！',categorys});
+    }else{
+        res.send({code:1,error:'获取数据失败'})
+    }
+})
+//获取一个分类下的全部列表
+app.get('/api/categorys/:categoryId',(req,res)=>{
+    let id = parseInt(req.params.categoryId);
+    let  categorys= JSON.parse(fs.readFileSync('./mock/productList.json','utf-8'));
+    let category = categorys.find(item=>item.category==id)
+    if(category){
+        res.send({code: 0, success:'获取数据成功！',category});
+    }else{
+        res.send({code:1,error:'获取数据失败'})
+    }
+
+
+});
+//获取所有分类下的全部列表
+app.get('/api/categorysAll',(req,res)=>{
+    let list = [];
+    let  categorys= JSON.parse(fs.readFileSync('./mock/productList.json','utf-8'));
+    categorys.forEach(category=>{
+        category.list.forEach(item=>{
+            newItem = {}
+            for(key in item){
+                if(key=="describe"||key=="size") continue;
+                newItem[key]=item[key];
+            }
+            list.push(newItem)
+        })
+
+    })
+    if(list){
+        res.send({code: 0, success:'获取数据成功！',list});
+    }else{
+        res.send({code:1,error:'获取数据失败'})
+    }
+
+
+
+})
+//获取一个商品id的内容
+app.get('/api/product/:id',(req,res)=>{
+    let id = parseInt(req.params.id);
+    let product = null;
+    let  categorys= JSON.parse(fs.readFileSync('./mock/productList.json','utf-8'));
+    categorys.forEach(category=>{
+        category.list.forEach(item=>{
+            if(item.id==id){
+                product= item;
+            }
+        })
+
+    })
+    if(product){
+        res.send({code: 0, success:'获取数据成功！',product});
+    }else{
+        res.send({code:1,error:'获取数据失败'})
+    }
+
+
+});
+
+
+
+
 app.listen(3000, () => {
     console.log(`http://localhost:3000`);
 });

@@ -1,0 +1,52 @@
+[
+  {
+    "username": "xuwanlin1",
+    "password": "1",
+    "orderInfo": {
+      "name": "徐万林",
+      "address": "昌平区霍营乡华龙苑中里3号楼4单元501",
+      "mobile": 15311428807,
+      "email": "39282214@qq.com"
+    },
+    "cart": [
+      {
+        "id": 102,
+        "count": 1
+      },
+      {
+        "id": 103,
+        "count": 2
+      }
+    ],
+    "order": [
+      {
+        "id": 201,
+        "count": 1
+      },
+      {
+        "id": 202,
+        "count": 1
+      }
+    ]
+  },
+  {
+    "username": "xuwanlin2",
+    "password": "1",
+    "cart": [
+      {
+        "id": 1,
+        "count": 2
+      },
+      {
+        "id": 2,
+        "count": 1
+      }
+    ],
+    "order": [
+      {
+        "id": 2,
+        "count": 1
+      }
+    ]
+  }
+]
