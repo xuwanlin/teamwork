@@ -12,12 +12,12 @@
       {
         "id": 101,
         "count": 4,
-        "isSelected": 0
+        "isSelected": 1
       },
       {
         "id": 102,
-        "count": 0,
-        "isSelected": 0
+        "count": 1,
+        "isSelected": 1
       }
     ],
     "order": []

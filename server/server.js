@@ -71,6 +71,11 @@ app.post('/api/reg', (req, res) => {
     if (oldUser) {
         res.json({code: 1, error: '用户名已存在，请重新输入！'});
     } else {
+        if (!user.username || !user.password) {
+            res.json({code: 1, error: '用户名或密码输入格式不正确！'});
+            return;
+        }
+
         users.push(user);
         fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
 
@@ -233,7 +238,7 @@ app.post('/api/car', (req, res) => {
         req.body.id = parseInt(req.body.id);
         let product = oldUser.cart.find(item => item.id == req.body.id);
         if (!product) {
-            oldUser.cart.push({id: req.body.id, count: 0, isSelected: 1})
+            oldUser.cart.push({id: req.body.id, count: 1, isSelected: 1})
             product = oldUser.cart[oldUser.cart.length - 1];
 
         }
@@ -341,7 +346,7 @@ app.get('/api/categorys/:categoryId', (req, res) => {
 
 
 });
-//获取所有分类下的全部列表
+//获取所有分类下的全部列表 发现页
 app.get('/api/categorysAll', (req, res) => {
     let list = [];
     let categorys = JSON.parse(fs.readFileSync('./mock/productList.json', 'utf-8'));
