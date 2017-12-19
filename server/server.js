@@ -224,15 +224,17 @@ app.post('/api/car', (req, res) => {
 
     //数字化
     req.body.id = parseInt(req.body.id);
-    req.body.count = parseInt(req.body.count);
     let product = oldUser.cart.find(item => item.id == req.body.id);
     if (!product) {
-        oldUser.cart.push({id: req.body.id, count: 0})
+        oldUser.cart.push({id: req.body.id, count: 0,isSelected:1})
         product = oldUser.cart[oldUser.cart.length - 1];
 
     }
 
-    product.count = req.body.count ? req.body.count : (++product.count);
+    product.count = req.body.count ? parseInt(req.body.count) : (++product.count);
+
+
+    product.isSelected = parseInt(req.body.isSelected) || product.isSelected;
 
 
     fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
