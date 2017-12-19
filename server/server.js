@@ -140,7 +140,7 @@ app.post('/api/user', (req, res) => {
     fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
 
         if (!err) {
-            res.json({code: 0, success:"提交成功！"});
+            res.json({code: 0, success: "提交成功！"});
         }
 
 
@@ -221,26 +221,32 @@ app.post('/api/car', (req, res) => {
     }
     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
     let oldUser = users.find(item => item.username == req.session.user.username);
-    let allSelect = req.body.allSelect;
+    let allSelect = parseInt(req.body.allSelect);
+    if(!isNaN(allSelect)){
+        if(allSelect===0||allSelect===1){
+            oldUser.cart.forEach(item=>{
+                item.isSelected = allSelect;
+            })
+        }
+    }else{
+        //数字化
+        req.body.id = parseInt(req.body.id);
+        let product = oldUser.cart.find(item => item.id == req.body.id);
+        if (!product) {
+            oldUser.cart.push({id: req.body.id, count: 0, isSelected: 1})
+            product = oldUser.cart[oldUser.cart.length - 1];
 
-            //数字化
-            req.body.id = parseInt(req.body.id);
-            let product = oldUser.cart.find(item => item.id == req.body.id);
-            if (!product) {
-                oldUser.cart.push({id: req.body.id, count: 0,isSelected:1})
-                product = oldUser.cart[oldUser.cart.length - 1];
+        }
 
-            }
-
-            product.count = req.body.count ? parseInt(req.body.count) : (product.count);
+        product.count = req.body.count ? parseInt(req.body.count) : (product.count);
 
 
-            if(!isNaN(parseInt(req.body.isSelected))){
-                product.isSelected =parseInt(req.body.isSelected);
-            }else{
-                product.isSelected =product.isSelected;
-            }
-
+        if (!isNaN(parseInt(req.body.isSelected))) {
+            product.isSelected = parseInt(req.body.isSelected);
+        } else {
+            product.isSelected = product.isSelected;
+        }
+    }
 
     fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
         if (!err) {
