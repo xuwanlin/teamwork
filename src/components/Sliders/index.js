@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReactSwipe from 'react-swipe';
+import {Link} from 'react-router-dom';
 import './index.less';
 import {get} from '../../api/index';
 
@@ -10,11 +11,11 @@ export default class Sliders extends Component {
     }
 
     componentDidMount() {
-        get('/api/swipers').then(res => {
+        get(`/api/imglink?file=test1`).then(res => {
             if (res.code === 0) {
                 this.setState({
                     ...this.state.swipers,
-                    swipers: res.swipers
+                    swipers: res.list
                 });
             }
         });
@@ -32,7 +33,7 @@ export default class Sliders extends Component {
             <ReactSwipe swipeOptions={swipeOptions}>
                 {
                     this.state.swipers.map((item, index) => (
-                        <img key={index} src={item}/>
+                        <Link to={`/brand/${item.link}`} key={index}><img src={item.src}/></Link>
                     ))
                 }
             </ReactSwipe>

@@ -78,7 +78,7 @@
         "id": 104,
         "category": 1,
         "title": "娇韵诗ClarinsVIP防晒美白修护套包",
-        "image": "//a2.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-5_218x274_70.jpg/3380810146202-5_218x274_70.jpg",
+        "image": "//a2.vimage1.com/upload/merchandise/pdc/740/292/90429989522292740/10/3380810269925-5_218x274_70.jpg",
         "discount": "7.3折",
         "link": "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352944000&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
         "price": 1060,
@@ -470,9 +470,9 @@
   {
     "category": 4,
     "topic": "专题四",
-    "topic_cover": "https://a.vimage1.com/upcb/2017/11/13/40/ias_151054086275622_604x290_80.jpg",
-    "topic_title": "施华蔻Schwarzkopf日化线洗护专场",
-    "active_time": "剩余18时",
+    "topicCover": "https://a.vimage1.com/upcb/2017/11/13/40/ias_151054086275622_604x290_80.jpg",
+    "topicTitle": "施华蔻Schwarzkopf日化线洗护专场",
+    "activeTime": "剩余18时",
     "discount": "满99减50，上不封顶",
     "list": [
       {
@@ -582,9 +582,9 @@
   {
     "category": 5,
     "topic": "专题五",
-    "topic_cover": "http://a.vimage1.com/upcb/2017/12/13/76/ias_151313018995919_604x290_80.jpg",
-    "topic_title": "1.9折起 御泥坊护肤品专场",
-    "active_time": "剩余2时",
+    "topicCover": "http://a.vimage1.com/upcb/2017/12/13/76/ias_151313018995919_604x290_80.jpg",
+    "topicTitle": "1.9折起 御泥坊护肤品专场",
+    "activeTime": "剩余2时",
     "discount": "满198减100，上不封顶",
     "list": [
       {
@@ -688,9 +688,9 @@
   {
     "category": 6,
     "topic": "专题六",
-    "topic_cover": "http://a.vimage1.com/upcb/2017/12/12/191/ias_151304495513437_604x290_80.jpg",
-    "topic_title": "1.6折起 薇诺娜winona化妆品专场",
-    "active_time": "剩余2时",
+    "topicCover": "http://a.vimage1.com/upcb/2017/12/12/191/ias_151304495513437_604x290_80.jpg",
+    "topicTitle": "1.6折起 薇诺娜winona化妆品专场",
+    "activeTime": "剩余2时",
     "discount": "满198减100，上不封顶",
     "list": [
       {

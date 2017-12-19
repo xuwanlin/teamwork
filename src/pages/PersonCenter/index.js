@@ -1,7 +1,16 @@
 import React, {Component} from 'react';
 import './index.less';
+import {Link} from 'react-router-dom';
 import Mheader from "../../components/Mheader";
+import {get} from '../../../api/index';
 export default class PersonCenter extends Component {
+    componentDidMount() {
+        get('/api/login').then(res => {
+            if (res.code == 0) {
+                p
+            }
+        });
+    }
     render() {
         return (
             <div className='person-center'>
@@ -9,9 +18,9 @@ export default class PersonCenter extends Component {
                 <div className="person-head">
                     <img src="../../../server/static/personal-center-bg.png" alt=""/>
                     <div className="person-login">
-                        <span>登&nbsp;录</span>
+                        <span><Link to="/login">登&nbsp;录</Link></span>
                         <span></span>
-                        <span>注&nbsp;册</span>
+                        <span><Link to="/reg">注&nbsp;册</Link></span>
                     </div>
                 </div>
                 <div className="person-order">
