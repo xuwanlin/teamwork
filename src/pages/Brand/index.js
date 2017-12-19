@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './index.less';
 import {get} from '../../api/index';
 import Mheader from '../../components/Mheader/index';
+import {Link} from 'react-router-dom';
 
 export default class Brand extends Component {
     constructor() {
@@ -26,13 +27,15 @@ export default class Brand extends Component {
                     {
                         this.state.list.map(item => (
                             <li key={item.id}>
-                                <div className='photo'><img src={item.image}/></div>
-                                <div className='title'>{item.title}</div>
-                                <div className='price'>
-                                    <div className='sale'>{item.discount}</div>
-                                    <span>{item.price}</span>
-                                    <del>{item.makePrice}</del>
-                                </div>
+                                <Link to={`/detail/${item.id}`}>
+                                    <div className='photo'><img src={item.image}/></div>
+                                    <div className='title'>{item.title}</div>
+                                    <div className='price'>
+                                        <div className='sale'>{item.discount}</div>
+                                        <span>{item.price}</span>
+                                        <del>{item.makePrice}</del>
+                                    </div>
+                                </Link>
                             </li>
                         ))
                     }

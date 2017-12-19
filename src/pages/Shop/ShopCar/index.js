@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './index.less';
 import {get, post, myDelete} from "../../../api";
+import {Link} from "react-router-dom";
 
 export default class ShopCar extends Component {
     constructor() {
@@ -48,7 +49,7 @@ export default class ShopCar extends Component {
             item.isSelected = flag;
             return item;
         });
-        console.log(flag,_newList);
+        console.log(flag, _newList);
         this.setState({list: _newList, totalPrice: this.computedTotalPrice(_newList)}, () => {
             post('/api/car', {allSelect: flag}).then(res => console.log(res));
         });
@@ -81,9 +82,11 @@ export default class ShopCar extends Component {
                                                               checked={item.isSelected}
                                                               onChange={(event) => this.handleChange(event, item)}
                                 /></div>
-                                <div className='img-box'><img src={item.image} alt=""/></div>
+                                <div className='img-box'>
+                                    <Link to={`/detail/${item.id}`}> <img src={item.image} alt=""/></Link>
+                                </div>
                                 <div className='text-area'>
-                                    <h4 className='title'>{item.title}</h4>
+                                    <h4 className='title'><Link to={`/detail/${item.id}`}>{item.title}</Link></h4>
                                     <div className='num'>
                                         <div className='price'>{item.price}</div>
                                         <button onClick={(event) => this.handleChange(event, item, -1)}>-</button>

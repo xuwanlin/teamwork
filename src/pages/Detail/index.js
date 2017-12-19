@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import "./index.less";
 import "../../api/index";
 
-export default class Detail extends Component {
+class Detail extends Component {
 
-    componentWillMount(){
+    componentWillMount() {
 
     }
+
     render() {
         return (
             <div className="detail">
@@ -16,9 +17,9 @@ export default class Detail extends Component {
                         <img
                             src="//a.vimage1.com/upload/merchandise/pdcvis/2017/12/08/107/b1b1b2492ab4417b917849dc623178d5-110_384x484_70.jpg"
                             alt=""/>
-                        <Link to="/find">
-                            <i className="iconfont icon-fanhui"></i>
-                        </Link>
+                        <span className='back'>
+                            <i className="iconfont icon-fanhui"  onClick={this.props.history.goBack}></i>
+                        </span>
                         <div className="price">
                             <p className="detail-price">
                                 <span>¥398</span>
@@ -163,6 +164,8 @@ export default class Detail extends Component {
                     <span className="cartContent">加入购物车</span>
                 </div>
             </div>
-        )
+        );
     }
 }
+
+export default withRouter(Detail);
