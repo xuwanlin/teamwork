@@ -12,7 +12,6 @@ export default class Home extends Component {
             <div className='home'>
                 <Mheader title='美妆'/>
                 <Sliders/>
-
                 <Top5/>
                 <HomeList/>
             </div>
