@@ -348,6 +348,8 @@ app.get('/api/categorys/:categoryId', (req, res) => {
 });
 //获取所有分类下的全部列表 发现页
 app.get('/api/categorysAll', (req, res) => {
+    console.log("query",req.query);
+
     let list = [];
     let categorys = JSON.parse(fs.readFileSync('./mock/productList.json', 'utf-8'));
     categorys.forEach(category => {
@@ -361,8 +363,27 @@ app.get('/api/categorysAll', (req, res) => {
         })
 
     })
+
+    let {type,offset=0,limit=5} = req.query;
+    offset = isNaN(offset)?0:parseInt(offset);
+    limit = isNaN(limit)?list.length:parseInt(limit);
+
+    let sortList =type?list.sort(type):list;
+
+    let data = {}//要返回的内容
+    let i = offset;//返回的列表的序号
+     data.list = sortList.slice(offset,(offset+limit));
+
+
+    data.hasMore = (offset+limit)< sortList.length;
+    data.total= data.list.length;
+    data.all= sortList.length;
+    //data.list.forEach(item=>item.number= ++i); //每一个列表元素在列表中的位置
+
+
+
     if (list) {
-        res.send({code: 0, success: '获取数据成功！', list});
+        res.send({code: 0, success: '获取数据成功！', data});
     } else {
         res.send({code: 1, error: '获取数据失败'})
     }
