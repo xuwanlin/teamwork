@@ -29,9 +29,8 @@ export default class ShopCar extends Component {
             }
             return item;
         });
-        console.log(check);
         this.setState({list, totalPrice: this.computedTotalPrice(list)}, () => {
-            post('/api/car', {id: ele.id, count, isSelected: check}).then(res => console.log(res));
+            post('/api/car', {id: ele.id, count, isSelected: Number(check)}).then(res => console.log(res));
         });
     };
     removeGood = (id) => {
@@ -44,14 +43,15 @@ export default class ShopCar extends Component {
     };
     // 切换全选 和 全不选
     switchAllSelected = (event) => {
-        let flag = event.target.checked;
+        let flag = Number(event.target.checked);
         let _newList = this.state.list.map(item => {
             item.isSelected = flag;
             return item;
         });
-        flag = flag === true ? 1 : 0;
-        console.log(flag);
-        this.setState({list: _newList, totalPrice: this.computedTotalPrice(_newList)});
+        console.log(flag,_newList);
+        this.setState({list: _newList, totalPrice: this.computedTotalPrice(_newList)}, () => {
+            post('/api/car', {allSelect: flag}).then(res => console.log(res));
+        });
     };
     computedTotalPrice = (list) => {
         let totalPrice = 0.00;
