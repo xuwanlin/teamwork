@@ -472,7 +472,7 @@
     "topic": "专题四",
     "topicCover": "https://a.vimage1.com/upcb/2017/11/13/40/ias_151054086275622_604x290_80.jpg",
     "topicTitle": "施华蔻Schwarzkopf日化线洗护专场",
-    "activeTime": "剩余18时",
+    "activeTime": "剩18时",
     "discount": "满99减50，上不封顶",
     "list": [
       {
@@ -584,14 +584,14 @@
     "topic": "专题五",
     "topicCover": "http://a.vimage1.com/upcb/2017/12/13/76/ias_151313018995919_604x290_80.jpg",
     "topicTitle": "1.9折起 御泥坊护肤品专场",
-    "activeTime": "剩余2时",
+    "activeTime": "剩2时",
     "discount": "满198减100，上不封顶",
     "list": [
       {
         "id": 501,
         "category": 5,
         "title": "补水保湿鲜果美莓套组35片 面膜 补水 提亮 保湿 明星同款",
-        "image": "http://bak.appsimg.com/upload/merchandise/pdcvis/2017/11/08/19/38e1cda3902f4ba8862795224dd854c2-5_218x274_70.jpg",
+        "image": "//a3.vimage1.com/upload/merchandise/pdcvis/2017/11/08/19/38e1cda3902f4ba8862795224dd854c2-5_360x456_90.jpg",
         "price": 199,
         "makePrice": 418,
         "discount": "4.8折",
@@ -690,7 +690,7 @@
     "topic": "专题六",
     "topicCover": "http://a.vimage1.com/upcb/2017/12/12/191/ias_151304495513437_604x290_80.jpg",
     "topicTitle": "1.6折起 薇诺娜winona化妆品专场",
-    "activeTime": "剩余2时",
+    "activeTime": "剩2时",
     "discount": "满198减100，上不封顶",
     "list": [
       {

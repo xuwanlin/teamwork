@@ -11,7 +11,7 @@ export default class HomeList extends Component {
 
     componentDidMount() {
         get('/api/category').then(res => {
-            if (res.code == 0) {
+            if (res.code === 0) {
                 let imgs = res.categorys;
                 this.setState({imgs});
             }
@@ -22,7 +22,7 @@ export default class HomeList extends Component {
     render() {
         return (
             <div className="home-lists">
-                <div>今日特卖 · 每天早10点 晚8点上新</div>
+                <div className="home-hotSale">今日特卖 · 每天早10点 晚8点上新</div>
                 {
                     this.state.imgs.map(item => (
                         <div className="home-list" key={item.category}>
@@ -36,7 +36,7 @@ export default class HomeList extends Component {
                                 <p>{item.topicTitle}</p>
                                 <p>{item.activeTime}</p>
                             </div>
-                            <div>{item.discount}</div>
+                            <div className="home-discount">{item.discount}</div>
                         </div>
                     ))
                 }
