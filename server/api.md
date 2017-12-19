@@ -325,26 +325,34 @@
 ## 获取所有分类下的全部列表
 - /api/categorysAll
 - get请求
+- 参数
+  - offset（从数组索引第几个开始，默认0，）
+  - limit（一共显示几条，默认全部）
+  - type（排序方式，一个函数）
+    - 例子：(x,y)=>x["price"]-y["price"]  //按照price从小到大的方式排序
+    
 ```
 {
     "code": 0,
     "success": "获取数据成功！",
-    "list": [
-        {
-            "id": 101,
-            "category": 1,
-            "title": "娇韵诗Clarins『纤柔美体』套包",
-            "image": "//a2.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-5_218x274_70.jpg",
-            "discount": "6.5折",
-            "link": "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=352943841&brandId=2027210&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_21&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_21",
-            "price": 550,
-            "makePrice": 846,
-            "slider": [
-                "//a.vimage1.com/upload/merchandise/pdc/143/267/6268961954267143/0/3380810177169-110_384x484_70.jpg"
-            ]
-        }
-        ......
-    ]
+    "data": {
+        "list": [
+           
+            {
+                "id": 603,
+                "category": 6,
+                "title": "薇诺娜Winona  舒缓控油凝露50g  温和控油保湿祛痘",
+                "image": "http://a4.vimage1.com/upload/merchandise/pdcvis/2017/11/06/198/c7bbdc8ac0b4468e95d9a120ef3c9426-5_218x274_70.jpg",
+                "price": "174",
+                "makePrice": "190",
+                "discount": "8.8折"
+            },
+            ......
+        ],
+        "hasMore": true,
+        "total": 3,
+        "all": 36
+    }
 }
 ```
 ## 获取一个商品id的内容
