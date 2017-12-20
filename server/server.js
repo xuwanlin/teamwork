@@ -13,7 +13,7 @@ app.use(session(
         resave: true,//
         secret: 'zfpx',//秘钥
         saveUninitialized: true//保存为初始化的session
-    }))
+    }));
 
 //跨域
 app.use(function (req, res, next) {
@@ -61,7 +61,7 @@ app.get('/api/imglink/', (req, res) => {
     })
 
 
-})
+});
 
 //注册
 app.post('/api/reg', (req, res) => {
@@ -101,7 +101,7 @@ app.post('/api/login', (req, res) => {
         res.send({code: 1, error: '登录失败，用户名或密码错误！'})
     }
 });
-//登录
+//测试登录
 app.get('/api/login', (req, res) => {
 
     req.session.user = {username: "xuwanlin1", password: "1"};
@@ -111,15 +111,18 @@ app.get('/api/login', (req, res) => {
 app.get('/api/logout', (req, res) => {
     req.session.user = null;
     res.send({code: 1, success: '退出成功！'})
-})
+});
 //判断是否登录
 app.get('/api/validate', (req, res) => {
     if (req.session.user) {
-        res.send({code: 0, user: req.session.user.username})
+        let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
+
+        let oldUser = users.find(item => item.username == req.session.user.username);
+        res.send({code: 0, user: {username:req.session.user.username,"orderInfo":oldUser.orderInfo}})
     } else {
         res.send({code: 1, error: '此用户未登录！'})
     }
-})
+});
 //更新 个人数据
 app.post('/api/user', (req, res) => {
     if (!req.session.user) {
@@ -151,7 +154,7 @@ app.post('/api/user', (req, res) => {
 
     })
 
-})
+});
 
 
 //遍历购物车和订单的列表的id数组，返回有内容的新数组
@@ -178,7 +181,7 @@ function getCarOrderInfoList(usre, type, productList) {
 
     })
 
-}
+};
 
 //获取我的购物车
 app.get('/api/car', (req, res) => {
@@ -218,7 +221,7 @@ app.get('/api/order', (req, res) => {
         res.send({code: 1, error: '暂无全部订单！'});
     }
 
-})
+});
 //添加到购物车 id=134214 ,count=5表示更新到5，没有count表示+1
 app.post('/api/car', (req, res) => {
     console.log(req.body);
@@ -261,9 +264,6 @@ app.post('/api/car', (req, res) => {
 
     })
 });
-app.put('/api/car', (req, res) => {
-    console.log(req.body);
-})
 //删除购物车的一个商品
 // app.del('/api/car', (req, res) => {
 //     if (!req.session.user) {
@@ -316,7 +316,7 @@ app.del('/api/car', (req, res) => {
         }
 
     })
-})
+});
 
 
 // 获取专题列表
@@ -333,7 +333,7 @@ app.get('/api/category', (req, res) => {
     } else {
         res.send({code: 1, error: '获取数据失败'})
     }
-})
+});
 //获取一个分类下的全部列表
 app.get('/api/categorys/:categoryId', (req, res) => {
     let id = parseInt(req.params.categoryId);
@@ -408,7 +408,7 @@ app.get('/api/categorysAll', (req, res) => {
     }
 
 
-})
+});
 //获取一个商品id的内容
 app.get('/api/product/:id', (req, res) => {
     let id = parseInt(req.params.id);
