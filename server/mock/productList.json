@@ -300,9 +300,9 @@
         "link": "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=333907202&brandId=1911825&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_3&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_3",
         "price": 282,
         "makePrice": 366,
-        "slider": [
+        "slider":
           "//a.vimage1.com/upload/merchandise/pdcvis/2017/11/09/27/1891f38eb04e4a3db9f153fcdedc0759-110_384x484_70.jpg"
-        ],
+        ,
         "size": "均码",
         "describe": [
           "//a.vimage1.com/upload/merchandise/pdcvis/2017/11/09/110/59fc511f10e04222af19413fb02975c5-110_1.jpg",
