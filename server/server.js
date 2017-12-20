@@ -118,7 +118,12 @@ app.get('/api/validate', (req, res) => {
         let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
 
         let oldUser = users.find(item => item.username == req.session.user.username);
-        res.send({code: 0, user: {username:req.session.user.username,"orderInfo":oldUser.orderInfo}})
+        let cartCount=0;
+        oldUser.cart.forEach(item=>{
+            let count = item.count||0;
+            cartCount+=count
+        })
+        res.send({code: 0, user: {username:req.session.user.username,"cartCount":cartCount,"orderInfo":oldUser.orderInfo}})
     } else {
         res.send({code: 1, error: '此用户未登录！'})
     }
@@ -224,7 +229,6 @@ app.get('/api/order', (req, res) => {
 });
 //添加到购物车 id=134214 ,count=5表示更新到5，没有count表示+1
 app.post('/api/car', (req, res) => {
-    console.log(req.body);
     if (!req.session.user) {
         return res.send({code: 1, error: '请登录后获取数据！'});
     }
