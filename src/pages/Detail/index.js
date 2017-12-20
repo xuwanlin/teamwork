@@ -34,7 +34,23 @@ class Detail extends Component {
             if (res.code === 1) {
                 this.props.history.push('/login');
             }else if(res.code === 0){
-                this.setState({cartCount:this.state.cartCount+=1})
+                var animatCart = document.querySelector("#animatCartBox .box");
+                var  orderNumbers = document.querySelector("#orderNumbers")
+
+                animatCart.classList.add('cur');
+                setTimeout(()=>{
+                    orderNumbers.classList.add('cur');
+                    this.setState({cartCount:this.state.cartCount+=1});
+                },300)
+
+                setTimeout(()=>{
+
+                    animatCart.classList.remove('cur');
+                    orderNumbers.classList.remove('cur')
+
+                },600)
+
+
             }
         })
 
@@ -122,10 +138,13 @@ class Detail extends Component {
                 </div>
                 <div className="detail-addCart">
                     <Link to="/shop">
-                        <i className="iconfont icon-icon1"></i><span>({this.state.cartCount})</span>
+                        <i className="iconfont icon-icon1" ></i><span id="orderNumbers" className='order-numbers'>{this.state.cartCount}</span>
                     </Link>
                     <span className="cartContent" onClick={()=>this.bandleCart(id)}>加入购物车</span>
+                    <div id="animatCartBox" className="animatCartBox"><img  className="box" src={typeof slider=="object"?slider[0]:slider}/></div>
                 </div>
+
+
             </div>
         );
     }
