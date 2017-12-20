@@ -221,6 +221,7 @@ app.get('/api/order', (req, res) => {
 })
 //添加到购物车 id=134214 ,count=5表示更新到5，没有count表示+1
 app.post('/api/car', (req, res) => {
+    console.log(req.body);
     if (!req.session.user) {
         return res.send({code: 1, error: '请登录后获取数据！'});
     }
@@ -238,12 +239,12 @@ app.post('/api/car', (req, res) => {
         req.body.id = parseInt(req.body.id);
         let product = oldUser.cart.find(item => item.id == req.body.id);
         if (!product) {
-            oldUser.cart.push({id: req.body.id, count: 1, isSelected: 1})
+            oldUser.cart.push({id: req.body.id, count: 0, isSelected: 1})
             product = oldUser.cart[oldUser.cart.length - 1];
 
         }
 
-        product.count = req.body.count ? parseInt(req.body.count) : (product.count);
+        product.count = req.body.count ? parseInt(req.body.count) : (++product.count);
 
 
         if (!isNaN(parseInt(req.body.isSelected))) {
@@ -382,9 +383,9 @@ app.get('/api/categorysAll', (req, res) => {
             let Xdis=parseInt(x["discount"])?parseInt(x["discount"]):10;
             let Ydis=parseInt(y["discount"])?parseInt(y["discount"]):10;
             return Ydis -Xdis;
-        },
-        (x, y) => x["category"] - y["category"],
-        (x, y) => y["category"] - x["category"],
+        },//按销量排序
+        (x, y) => x["sales"] - y["sales"],
+        (x, y) => y["sales"] - x["sales"],
     ]
 
     let sortList = type ? list.sort(typeArr[parseInt(type)]) : list;
