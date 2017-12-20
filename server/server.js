@@ -101,7 +101,7 @@ app.post('/api/login', (req, res) => {
         res.send({code: 1, error: '登录失败，用户名或密码错误！'})
     }
 });
-//登录
+//测试登录
 app.get('/api/login', (req, res) => {
 
     req.session.user = {username: "xuwanlin1", password: "1"};
