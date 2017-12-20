@@ -7,18 +7,19 @@ export default class Tab extends Component {
         return (
             <nav className="tab-nav">
                 <NavLink exact to="/">
-                    <span>美妆</span>
+                    <span className="iconfont icon-home"></span>
                 </NavLink>
                 <NavLink to="/find">
-                    <span>发现</span>
+                    <span className="iconfont icon-faxian"> </span>
                 </NavLink>
                 <NavLink to="/shop">
-                    <span>购物车</span>
+                    <span className="iconfont icon-icon1"></span>
                 </NavLink>
                 <NavLink to="/profile">
-                    <span>我的</span>
+                    <span className="iconfont icon-home1"></span>
                 </NavLink>
             </nav>
+
         );
     }
 }
