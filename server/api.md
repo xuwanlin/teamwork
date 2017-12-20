@@ -111,10 +111,19 @@
 }
 ```
 登录
+- 没有填写详细信息时，没有orderInfo属性
 ```
 {
     "code": 0,
-    "user": "xuwanlin1"
+    "user": {
+        "username": "xuwanlin1",
+        "orderInfo": {
+            "name": "徐万林",
+            "address": "昌平区.....",
+            "mobile": 555555,
+            "email": "39282214@qq.com"
+        }
+    }
 }
 ```
 ## 修改个人信息
