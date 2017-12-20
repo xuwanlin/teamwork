@@ -353,7 +353,6 @@ app.get('/api/categorys/:categoryId', (req, res) => {
 });
 //获取所有分类下的全部列表 发现页
 app.get('/api/categorysAll', (req, res) => {
-    console.log("query", req.query);
 
     let list = [];
     let categorys = JSON.parse(fs.readFileSync('./mock/productList.json', 'utf-8'));
