@@ -1,9 +1,27 @@
 .find-area {
-    width: 100%;
-    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #eee;
+    padding: 50px 0 48px;
+    box-sizing: border-box;
+    overflow-x: hidden;
     .find-title {
-        height: 40px;
-        line-height: 40px;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 15px;
+        background: #FFF;
+        position: fixed;
+        width: 100%;
+        box-sizing: border-box;
+        top: 0;
+        font-size: 16px;
+        span {
+            display: inline-block;
+            padding: 0 15px;
+        }
     }
     .productList {
         width: 100%;
@@ -15,25 +33,25 @@
         justify-content: space-between;
         li {
             width: 48%;
-            border:1px solid #ccc;
             margin-bottom: 20px;
-            .title{
+            background: #fff;
+            .title {
                 padding: 5px;
             }
-            .price{
-                padding:0 5px;
-                b{
+            .price {
+                padding: 0 5px;
+                b {
                     color: #f00;
                     font-size: 15px;
                     margin-right: 5px;
                 }
             }
-            .add-car{
+            .add-car {
                 padding: 5px;
-                button{
-                    border:none;
+                button {
+                    border: none;
                     background: #de3d96;
-                    color:#fff;
+                    color: #fff;
                     display: block;
                     height: 25px;
                     line-height: 25px;

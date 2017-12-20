@@ -11,7 +11,9 @@ export default class ShopCar extends Component {
 
     componentDidMount() {
         get('/api/car').then(res => {
-            this.setState({list: res.cart.list, totalPrice: this.computedTotalPrice(res.cart.list)});
+            if (res.code === 0) {
+                this.setState({list: res.cart.list, totalPrice: this.computedTotalPrice(res.cart.list)});
+            }
         });
     }
 
@@ -103,10 +105,12 @@ export default class ShopCar extends Component {
                         ))
                     }
                 </ul>
-                <div>
-                    总计: <b>{this.state.totalPrice}元</b>
-                    <button>去结算</button>
-                </div>
+                {
+                    this.state.list.length > 0 ? <div>
+                        总计: <b>{this.state.totalPrice}元</b>
+                        <button>去结算</button>
+                    </div> : <div>请去登录</div>
+                }
             </div>
         );
     }
