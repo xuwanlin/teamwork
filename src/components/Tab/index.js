@@ -12,7 +12,7 @@ export default class Tab extends Component {
                 <NavLink to="/find">
                     <span className="iconfont icon-faxian"> </span>
                 </NavLink>
-                <NavLink to="op">
+                <NavLink to="/shop">
                     <span className="iconfont icon-icon1"></span>
                 </NavLink>
                 <NavLink to="/profile">
