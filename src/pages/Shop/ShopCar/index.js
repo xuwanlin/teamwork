@@ -109,7 +109,7 @@ export default class ShopCar extends Component {
                     this.state.list.length > 0 ? <div>
                         总计: <b>{this.state.totalPrice}元</b>
                         <button>去结算</button>
-                    </div> : <div>请去登录</div>
+                    </div> : <div className='tips'>请先<Link to='/login'>登录</Link></div>
                 }
             </div>
         );

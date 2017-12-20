@@ -22,7 +22,6 @@ export default class Brand extends Component {
         return (
             <div className='brand-box'>
                 <Mheader title={this.state.title}/>
-                <div>标题</div>
                 <ul className="brand-list">
                     {
                         this.state.list.map(item => (

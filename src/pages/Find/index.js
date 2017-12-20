@@ -76,6 +76,9 @@ export default class Find extends Component {
                         ))
                     }
                 </ul>
+                {
+                    !this.state.hasMore ? <div className='downLoad-tips'>别扯了,到底了</div> : null
+                }
             </div>
         );
     }
