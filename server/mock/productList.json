@@ -423,7 +423,7 @@
   {
     "category": 4,
     "topic": "专题四",
-    "topicCover": "https://a.vimage1.com/upcb/2017/11/13/40/ias_151054086275622_604x290_80.jpg",
+    "topicCover": "http://localhost:3000/page/4.jpg",
     "topicTitle": "施华蔻Schwarzkopf日化线洗护专场",
     "activeTime": "剩18时",
     "discount": "满99减50，上不封顶",
@@ -432,102 +432,116 @@
         "id": 401,
         "category": 4,
         "title": "施华蔻Schwarzkopf 精华深透套装 洗护套装",
-        "image": "http://a3.vimage1.com/upload/merchandise/pdcvis/2017/10/24/194/8a4f81c499e8425db0d20b42deb729c3-5_218x274_70.jpg",
+        "image": "http://localhost:3000/page/4-1.jpg",
         "date": "2017/06/12",
         "price": 198,
         "makePrice": 270,
         "discount": "7.3折",
+        "slider":"http://localhost:3000/page/4-1-1.jpg",
+        "sales":"496",
         "size": "均码",
+
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/122/1951659222a44445b545ef22e528487b-110_1.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/18/39ada2273d1c4405af2dc460521b6a7a-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/53/ed69fbaf5f934358be73cdb2fd94deac-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/24/113/32cd980c651b4a8997da0b88b9fa3471-651.jpg"
+          "http://localhost:3000/page/4-1-2.jpg",
+          "http://localhost:3000/page/4-1-3.jpg",
+          "http://localhost:3000/page/4-1-4.jpg",
+          "http://localhost:3000/page/4-1-5.jpg",
+          "http://localhost:3000/page/4-1-6.jpg",
+          "http://localhost:3000/page/4-1-7.jpg"
         ]
       },
       {
         "id": 402,
         "category": 4,
         "title": "斐丝丽紫玉兰修护洗发露450ML",
-        "image": "http://a3.vimage1.com/upload/merchandise/pdcvis/2017/12/07/51/dbfeb4d8-5af8-4f90-91be-37b4bcc52f3b_218x274_70.jpg",
+        "image":"http://localhost:3000/page/4-2.jpg",
         "date": "2017/06/12",
         "price": 52,
         "makePrice": "",
         "discount": "一口价",
+        "slider":"http://localhost:3000/page/4-2-1.jpg",
+        "sales":"443",
         "size": "450ml",
         "describe": [
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/43/8f7d1dc1-5964-4265-bc07-798f5c4bc7a2.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/57/edb02b7d-1432-44bf-80c1-466db8b41f01.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/120/51597c45-af58-44f9-a3bd-fa5739a48018.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/94/925bc12b-09f5-40fe-b6de-f049ae7d9a2b.jpg"
+          "http://localhost:3000/page/4-2-2.jpg",
+          "http://localhost:3000/page/4-2-3.jpg",
+          "http://localhost:3000/page/4-2-4.jpg",
+          "http://localhost:3000/page/4-2-5.jpg",
+          "http://localhost:3000/page/4-2-6.jpg"
         ]
       },
       {
         "id": 403,
         "category": 4,
         "title": "施华蔻got2b幻变焕彩发蜡-潮蓝",
-        "image": "http://a3.vimage1.com/upload/merchandise/pdcvis/2017/09/05/66/b32a41d5e90648ff80128da9109f0a3f-5_218x274_70.jpg",
+        "image":"http://localhost:3000/page/4-3.jpg",
         "date": "2017/06/12",
         "price": 69,
         "makePrice": "",
         "discount": "一口价",
+        "slider":"http://localhost:3000/page/4-3-1.jpg",
+        "sales":"491",
         "size": "均码",
         "describe": [
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/09/05/168/281b61c79d9f40a79bd0d367dab2f206-110_1.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/09/05/82/8b16b840470040b88be7255ca9974f50-651.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/09/05/67/da98892587a94b1f921f99ff420313be-651.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/09/05/160/04621b56a9d6432dbdbf1948cb5fb919-651.jpg"
+          "http://localhost:3000/page/4-3-2.jpg",
+          "http://localhost:3000/page/4-3-3.jpg"
         ]
       },
       {
         "id": 404,
         "category": 4,
         "title": "施华蔻羊绒脂滋养洗发露400ml",
-        "image": "http://a3.vimage1.com/upload/merchandise/pdc/926/086/1011134340578086926/2/6920177962250-5_218x274_70.jpg",
+        "image":  "http://localhost:3000/page/4-4.jpg",
         "date": "2017/06/12",
         "price": 66,
         "makePrice": "",
         "discount": "7.3折",
+        "slider":"http://localhost:3000/page/4-4-1.jpg",
+        "sales":"442",
         "size": "400ml",
         "describe": [
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/85/0ac35411-4850-462e-a0f8-cac88c58aa4d.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/198/e5bd3f8d-ef99-4882-bfb8-7e56ba8c1a94.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/118/0038f58b-fd6a-4441-a532-1bbf7280b81f.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/70/7ffe42f4-817c-4125-ad6a-1f32c10a7c5d.jpg"
+          "http://localhost:3000/page/4-4-2.jpg",
+          "http://localhost:3000/page/4-4-3.jpg",
+          "http://localhost:3000/page/4-4-4.jpg",
+          "http://localhost:3000/page/4-4-5.jpg"
         ]
       },
       {
         "id": 405,
         "category": 4,
         "title": "施华蔻斐丝丽睡莲水养套装",
-        "image": "http://a2.vimage1.com/upload/merchandise/pdc/856/849/8947884417945849856/2/6920177935988-5_218x274_70.jpg",
+        "image": "http://localhost:3000/page/4-5.jpg",
         "date": "2017/06/12",
         "price": 55,
         "makePrice": 77,
         "discount": "7.7折",
+        "slider":"http://localhost:3000/page/4-5-1.jpg",
+        "sales":"409",
         "size": "均码",
         "describe": [
-          "http//a.vimage1.com/upload/merchandise/pdc/856/849/8947884417945849856/2/6920177935988-110_1.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdc/856/849/8947884417945849856/2/6920177935988-651.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdc/856/849/8947884417945849856/2/6920177935988-652.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdc/856/849/8947884417945849856/2/6920177935988-653.jpg"
+          "http://localhost:3000/page/4-5-2.jpg",
+          "http://localhost:3000/page/4-5-3.jpg",
+          "http://localhost:3000/page/4-5-4.jpg",
+          "http://localhost:3000/page/4-5-5.jpg"
         ]
       },
       {
         "id": 406,
         "category": 4,
         "title": "男士染发霜4.0深棕色",
-        "image": "http://a3.vimage1.com/upload/merchandise/pdc/864/292/958217091808292864/2/6920177931164-5_218x274_70.jpg",
+        "image": "http://localhost:3000/page/4-6.jpg",
         "date": "2017/06/12",
         "price": 66,
         "makePrice": "",
         "discount": "一口价",
+        "slider":"http://localhost:3000/page/4-6-1.jpg",
+        "sales":"705",
         "size": "均码",
         "describe": [
-          "http//a.vimage1.com/upload/merchandise/pdc/864/292/958217091808292864/2/6920177931164-110_1.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdc/864/292/958217091808292864/2/6920177931164-651.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdc/864/292/958217091808292864/2/6920177931164-652.jpg",
-          "http//a.vimage1.com/upload/merchandise/pdc/864/292/958217091808292864/2/6920177931164-653.jpg"
+          "http://localhost:3000/page/4-6-2.jpg",
+          "http://localhost:3000/page/4-6-3.jpg",
+          "http://localhost:3000/page/4-6-4.jpg",
+          "http://localhost:3000/page/4-6-5.jpg"
         ]
       }
     ]
@@ -535,7 +549,7 @@
   {
     "category": 5,
     "topic": "专题五",
-    "topicCover": "http://a.vimage1.com/upcb/2017/12/13/76/ias_151313018995919_604x290_80.jpg",
+    "topicCover":"http://localhost:3000/page/5.jpg",
     "topicTitle": "1.9折起 御泥坊护肤品专场",
     "activeTime": "剩2时",
     "discount": "满198减100，上不封顶",
@@ -544,96 +558,114 @@
         "id": 501,
         "category": 5,
         "title": "补水保湿鲜果美莓套组35片 面膜 补水 提亮 保湿 明星同款",
-        "image": "//a3.vimage1.com/upload/merchandise/pdcvis/2017/11/08/19/38e1cda3902f4ba8862795224dd854c2-5_360x456_90.jpg",
+        "image": "http://localhost:3000/page/5-1.jpg",
         "price": 199,
         "makePrice": 418,
         "discount": "4.8折",
+        "slider":"http://localhost:3000/page/5-1-1.jpg",
+        "sales":"686",
         "size": "均码",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/27/125/636644d0c2b14e0fb2fd6bb97cd866ab-110_1.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/89/8a1136f48ad348d2953fc7c10424103a-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/87/48f013de42dc4bcc849ea44310cc997f-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/12/07/164/cb36b101616349d2a20488ac3f40eed2-651.jpg"
+          "http://localhost:3000/page/5-1-2.jpg",
+          "http://localhost:3000/page/5-1-3.jpg",
+          "http://localhost:3000/page/5-1-4.jpg",
+          "http://localhost:3000/page/5-1-5.jpg",
+          "http://localhost:3000/page/5-1-6.jpg"
         ]
       },
       {
         "id": 502,
         "category": 5,
         "title": "茶萃精华补水保湿黑膜",
-        "image": "http://a2.vimage1.com/upload/merchandise/pdcvis/2017/12/04/19/a8cf0702a58b413f96f0e88d151c5cf0-5_218x274_70.jpg",
+        "image":"http://localhost:3000/page/5-2.jpg",
         "price": 219,
         "makePrice": 376,
         "discount": "5.8折",
+        "slider":"http://localhost:3000/page/5-2-1.jpg",
+        "sales":"769",
         "size": "均码",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/08/28/15/c52d9b3cee674adbaf552c59692e0dba-110_1.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/27/130/e659c1b2dcc94d9d873b32c3f4fee3e0-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/27/130/e659c1b2dcc94d9d873b32c3f4fee3e0-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/27/3/87b179103fe04ae2ab06a4950af7744f-651.jpg"
+          "http://localhost:3000/page/5-2-2.jpg",
+          "http://localhost:3000/page/5-2-3.jpg",
+          "http://localhost:3000/page/5-2-4.jpg",
+          "http://localhost:3000/page/5-2-5.jpg",
+          "http://localhost:3000/page/5-2-6.jpg"
         ]
       },
       {
         "id": 503,
         "category": 5,
         "title": "男士净畅黑头泥浆鼻膜 鼻膜 清洁 控油 去黑头 T区护理 男士",
-        "image": "http://a4.vimage1.com/upload/merchandise/pdcvis/2017/08/07/77/08868c4524c145b7aef5bec7bbdf58be-5_218x274_70.jpg",
+        "image": "http://localhost:3000/page/5-3.jpg",
         "price": 69,
         "makePrice": "",
         "discount": "一口价",
+        "slider":"http://localhost:3000/page/5-3-1.jpg",
+        "sales":"964",
         "size": "其他尺码",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdc/081/454/299284283905454081/1/6951439941911-110_1.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/28/40/10b6dd4e09824ea090bc4bdc637eee94-651.jpg",
-          "http://ms2-m.vipstatic.com/static/base/img/loading-goods-a25fb09a3e.png",
-          "http://ms2-m.vipstatic.com/static/base/img/loading-goods-a25fb09a3e.png"
+          "http://localhost:3000/page/5-3-2.jpg",
+          "http://localhost:3000/page/5-3-3.jpg",
+          "http://localhost:3000/page/5-3-4.jpg",
+          "http://localhost:3000/page/5-3-5.jpg",
+          "http://localhost:3000/page/5-3-6.jpg"
         ]
       },
       {
         "id": 504,
         "category": 5,
         "title": "全天候补水提亮面膜28片 面膜 补水 亮肤 天然 学生",
-        "image": "http://a2.vimage1.com/upload/merchandise/pdcvis/2017/11/06/173/67bea5e9cacc4354ad95f6b988fd5f00-5_218x274_70.jpg",
+        "image":"http://localhost:3000/page/5-4.jpg",
         "price": 199,
         "makePrice": 356,
         "discount": "5.6折",
+        "slider":"http://localhost:3000/page/5-4-1.jpg",
+        "sales":"912",
         "size": "均码",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/09/01/46/4e378335fbeb470b93479c922a278622-110_1.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/27/163/0968c549c8ae49299a11ac4cbd09ab88-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/27/169/49b4293c469e491480b8e9110011104a-651.jpg",
-          "http://ms2-m.vipstatic.com/static/base/img/loading-goods-a25fb09a3e.png"
+          "http://localhost:3000/page/5-4-2.jpg",
+          "http://localhost:3000/page/5-4-3.jpg",
+          "http://localhost:3000/page/5-4-4.jpg",
+          "http://localhost:3000/page/5-4-5.jpg",
+          "http://localhost:3000/page/5-4-6.jpg"
         ]
       },
       {
         "id": 505,
         "category": 5,
         "title": "美白补水臻选礼盒20片  面膜 美白 补水 保湿 礼盒",
-        "image": "http://a2.vimage1.com/upload/merchandise/pdcvis/2017/11/03/74/b10e52aaba384f33a6427d735981bb96-5_218x274_70.jpg",
+        "image":"http://localhost:3000/page/5-5.jpg",
         "price": 129,
         "makePrice": 420,
         "discount": "3折",
+        "slider":"http://localhost:3000/page/5-5-1.jpg",
+        "sales":"978",
         "size": "20片/盒",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/08/29/182/218972e5ad8045bb93067c21bdb2366a-110_1.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/10/27/171/e1467f2d74c040d68ddd335ef6860bab-651.jpg",
-          "http://ms2-m.vipstatic.com/static/base/img/loading-goods-a25fb09a3e.png",
-          "http://ms2-m.vipstatic.com/static/base/img/loading-goods-a25fb09a3e.png"
+          "http://localhost:3000/page/5-5-2.jpg",
+          "http://localhost:3000/page/5-5-3.jpg",
+          "http://localhost:3000/page/5-5-4.jpg",
+          "http://localhost:3000/page/5-5-5.jpg",
+          "http://localhost:3000/page/5-5-6.jpg"
         ]
       },
       {
         "id": 506,
         "category": 5,
         "title": "葡萄籽鲜活亮肤矿物睡眠面膜100g",
-        "image": "http://a3.vimage1.com/upload/merchandise/pdcvis/2017/12/04/174/e33b89763ed94e6e8eef45f2230f583f-5_218x274_70.jpg",
+        "image": "http://localhost:3000/page/5-6.jpg",
         "price": 139,
         "makePrice": 219,
         "discount": "6.3折",
+        "slider":"http://localhost:3000/page/5-6-1.jpg",
+        "sales":"993",
         "size": "100g",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/01/18/20/f7ce75cb56bf4127a37b9b605577bcfc-110_1.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/01/18/46/29d7edbea5b34f9ab45869f0139c793c-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/01/18/170/05eeb0942e8a4ed58486d65314e48e52-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/01/18/57/b7c3728d1d454614bacd9c1a44cf3d4e-651.jpg"
+          "http://localhost:3000/page/5-6-2.jpg",
+          "http://localhost:3000/page/5-6-3.jpg",
+          "http://localhost:3000/page/5-6-4.jpg",
+          "http://localhost:3000/page/5-6-5.jpg",
+          "http://localhost:3000/page/5-6-6.jpg"
         ]
       }
     ]
@@ -641,108 +673,126 @@
   {
     "category": 6,
     "topic": "专题六",
-    "topicCover": "http://a.vimage1.com/upcb/2017/12/12/191/ias_151304495513437_604x290_80.jpg",
-    "topicTitle": "1.6折起 薇诺娜winona化妆品专场",
+    "topicCover": "http://localhost:3000/page/6.jpg",
+    "topicTitle": "SK-II化妆品专场",
     "activeTime": "剩2时",
     "discount": "满198减100，上不封顶",
     "list": [
       {
         "id": 601,
         "category": 6,
-        "title": "薇诺娜Winona  净痘清颜洁面乳 15g  深层清洁 控油清洁 祛痘",
-        "image": "http://a2.vimage1.com/upload/merchandise/pdcvis/2016/11/18/191/7526181e-9953-4b63-9d38-aff24ea01187_218x274_70.jpg",
+        "title": "SK-II “前男友”人气修护礼盒 前男友面膜 护肤套装 保湿",
+        "image": "http://localhost:3000/page/6-1.jpg",
         "date": "2017/06/12",
         "price": "35",
         "makePrice": "40",
         "discount": "7.3折",
+        "slider":"http://localhost:3000/page/6-1-1.jpg",
+        "sales":"998",
         "size": "15g",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/75/dcf336a0-927d-43cc-b7cc-17141110256b.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/06/21/142/388755e2b1664a36b78ae5e47efdd2a0-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/164/d907e6c0-5ff7-41a3-befe-bca4962825cd.jpg",
-          "http://a.vimage1.com/upload/merchandise/ugcaudit/2017/12/13/132/da31534c-72aa-4798-9f81-9dd2804e1be6.jpg"
+          "http://localhost:3000/page/6-1-2.jpg",
+          "http://localhost:3000/page/6-1-3.jpg",
+          "http://localhost:3000/page/6-1-4.jpg",
+          "http://localhost:3000/page/6-1-5.jpg",
+          "http://localhost:3000/page/6-1-6.jpg"
         ]
       },
       {
         "id": 602,
         "category": 6,
-        "title": "薇诺娜Winona  好气色彩妆全套护理组合",
-        "image": "http://a4.vimage1.com/upload/merchandise/pdcvis/2017/02/14/71/4df8f622-5c17-4d37-9b4e-bb9dfbe4c2a2_218x274_70.jpg",
+        "title": "SK-II 淡斑无暇晶透嫩肤奢享礼盒 神仙水小银瓶 护肤套装 保湿",
+        "image":  "http://localhost:3000/page/6-2.jpg",
         "date": "2017/06/12",
         "price": "199",
         "makePrice": "395",
         "discount": "5折",
+        "slider": "http://localhost:3000/page/6-2-1.jpg",
+        "sales":"496",
         "size": "均码",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/02/14/110/98e5398a-8514-4131-b69d-397c1d53d182.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/06/08/74/0b2341799010414d9dfb640d2972b965-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/02/14/15/0ccb26e9-d1fe-4430-bb1a-79a47a3b8fd3.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/02/14/63/7d2f31ee-eccc-4aab-b830-adc15197e8ed.jpg"
+          "http://localhost:3000/page/6-2-2.jpg",
+          "http://localhost:3000/page/6-2-3.jpg",
+          "http://localhost:3000/page/6-2-4.jpg",
+          "http://localhost:3000/page/6-2-5.jpg",
+          "http://localhost:3000/page/6-2-6.jpg"
         ]
       },
       {
         "id": 603,
         "category": 6,
-        "title": "薇诺娜Winona  舒缓控油凝露50g  温和控油保湿祛痘",
-        "image": "http://a4.vimage1.com/upload/merchandise/pdcvis/2017/11/06/198/c7bbdc8ac0b4468e95d9a120ef3c9426-5_218x274_70.jpg",
+        "title": "SK-II 神仙水“改写命运宣言”限量版臻选礼盒系列二 神仙水 护肤套装 保湿",
+        "image": "http://localhost:3000/page/6-3.jpg",
         "price": "174",
         "makePrice": "190",
         "discount": "8.8折",
+        "slider":"http://localhost:3000/page/6-3-1.jpg",
+        "sales":"786",
         "size": "均码",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/11/06/143/9e3b94c477464c29a8d2cefac686735e-110_1.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/11/06/164/9aa28ac8676d426ba090db79928cf6a5-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/11/06/88/7415b628fa5d45f08c6c123af0c173c2-651.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2017/11/06/110/9347d81c112449e58f6ee878c6e51f1e-651.jpg"
+          "http://localhost:3000/page/6-3-2.jpg",
+          "http://localhost:3000/page/6-3-3.jpg",
+          "http://localhost:3000/page/6-3-4.jpg",
+          "http://localhost:3000/page/6-3-5.jpg",
+          "http://localhost:3000/page/6-3-6.jpg"
         ]
       },
       {
         "id": 604,
         "category": 6,
-        "title": "薇诺娜Winona  舒敏保湿修红霜50g 改善增厚角质层修护泛红高原红",
-        "image": "http://a4.vimage1.com/upload/merchandise/pdcvis/2016/11/18/92/33d84816-59de-4d10-bfc9-19e58411b4ad_218x274_70.jpg",
+        "title": "SK-II 焕亮CC霜臻享套装 CC霜 护肤套装 提亮肤色",
+        "image":"http://localhost:3000/page/6-4.jpg",
         "price": "158",
         "makePrice": "268",
         "discount": "5.9折",
+        "slider":"http://localhost:3000/page/6-4-1.jpg",
+        "sales":"698",
         "size": "50g",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/121/8d429b22-6cb5-4076-b41b-62308df5c478.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/99/873907a9-2213-4935-b9ac-858cedf5cabd.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/110/79fad6ec-1dd2-44b6-ad14-46efd597d52e.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/110/79fad6ec-1dd2-44b6-ad14-46efd597d52e.jpg"
+          "http://localhost:3000/page/6-4-2.jpg",
+          "http://localhost:3000/page/6-4-3.jpg",
+          "http://localhost:3000/page/6-4-4.jpg",
+          "http://localhost:3000/page/6-4-5.jpg",
+          "http://localhost:3000/page/6-4-6.jpg"
         ]
       },
       {
         "id": 605,
         "category": 6,
-        "title": "薇诺娜Winona  清痘修复精华液 12g 青春痘粉刺去痘男女祛痘产品",
-        "image": "http://a4.vimage1.com/upload/merchandise/pdcvis/2016/11/18/23/57532066-1824-4434-9be2-5e2bad7fd877_218x274_70.jpg",
+        "title": "SK-II SK-II全明星护肤礼盒 神仙水小红瓶 护肤套装 保湿",
+        "image":"http://localhost:3000/page/6-5.jpg",
         "price": "72",
         "makePrice": "90",
         "discount": "7.3折",
+        "slider":"http://localhost:3000/page/6-5-1.jpg",
+        "sales":"493",
         "size": "12g",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/16/55336c59-a688-42a1-82d6-d0ecc3862db4.jpg",
-          "http://a.vimage1.com/upload/merchandise/lap/2017/03/06/60/19995624.jpg",
-          "http://a.vimage1.com/upload/merchandise/lap/2017/03/06/83/19995622.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/104/c1ec77ba-0ad3-4176-8ae6-5a552e9f4eea.jpg"
+          "http://localhost:3000/page/6-5-2.jpg",
+          "http://localhost:3000/page/6-5-3.jpg",
+          "http://localhost:3000/page/6-5-4.jpg",
+          "http://localhost:3000/page/6-5-5.jpg",
+          "http://localhost:3000/page/6-5-6.jpg"
         ]
       },
       {
         "id": 606,
         "category": 6,
-        "title": "薇诺娜Winona  净痘清颜爽肤水 30ml 收缩毛孔控油清痘祛痘",
-        "image": "http://a2.vimage1.com/upload/merchandise/pdcvis/2016/11/18/18/86d8b133-e5a8-426b-b7fc-41f422d2db34_218x274_70.jpg",
+        "title": "SK-II 活肤紧颜双面膜6p 面膜 提拉紧致",
+        "image": "http://localhost:3000/page/6-6.jpg",
         "date": "2017/06/12",
         "price": "45",
         "makePrice": "58",
         "discount": "7.8折",
+        "slider":"http://localhost:3000/page/6-6-1.jpg",
+        "sales":"968",
         "size": "30ml",
         "describe": [
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/91/b37e0b37-142b-4d1e-8351-1f6efe3dd003.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/170/cf65b54b-1444-494d-8de1-c2b98f1dedba.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/167/054544a6-cf3a-4ceb-b55b-88d0bce9a547.jpg",
-          "http://a.vimage1.com/upload/merchandise/pdcvis/2016/11/18/189/88a6462f-6d68-499d-80f2-581b62e0fe68.jpg"
+          "http://localhost:3000/page/6-6-2.jpg",
+          "http://localhost:3000/page/6-6-3.jpg",
+          "http://localhost:3000/page/6-6-4.jpg",
+          "http://localhost:3000/page/6-6-5.jpg",
+          "http://localhost:3000/page/6-6-6.jpg"
         ]
       }
     ]
