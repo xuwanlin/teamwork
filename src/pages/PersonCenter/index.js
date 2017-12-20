@@ -1,27 +1,42 @@
 import React, {Component} from 'react';
 import './index.less';
-import {Link} from 'react-router-dom';
 import Mheader from "../../components/Mheader";
-import {get} from '../../../api/index';
+import {get,myDelete} from '../../api/index';
+import Unlogin from './Unlogin';
+import Login from './Login';
+import Remove from './Remove';
 export default class PersonCenter extends Component {
+    remove = () => {
+        get('/api/logout').then(res => {
+            if (res.code === 1) {
+                localStorage.removeItem('vip');
+                this.props.history.push('/');
+            }
+        });
+    }
+    constructor(){
+        super();
+        this.state = {username:''}
+    }
     componentDidMount() {
-        get('/api/login').then(res => {
-            if (res.code == 0) {
-                p
+        get('/api/validate').then(res => {
+            console.log(res);
+            if (res.code === 0) {
+                this.setState({username:res.user});
+            }else{
+               // this.props.history.push('/')
+                this.setState({username:''});
             }
         });
     }
     render() {
+        console.log(!!localStorage.getItem('vip'));
         return (
             <div className='person-center'>
                 <Mheader title='我的'/>
                 <div className="person-head">
                     <img src="../../../server/static/personal-center-bg.png" alt=""/>
-                    <div className="person-login">
-                        <span><Link to="/login">登&nbsp;录</Link></span>
-                        <span></span>
-                        <span><Link to="/reg">注&nbsp;册</Link></span>
-                    </div>
+                    { !localStorage.getItem('vip')  ?<Unlogin/>:<Login/>}
                 </div>
                 <div className="person-order">
                     <ul>
@@ -31,7 +46,7 @@ export default class PersonCenter extends Component {
                                     <i className="iconfont icon-daishouhuo"></i>
                                 </span>
                             </p>
-                            <p className="order-text">
+                            <p className="order-text"  onClick={this.remove}>
                                 <span>代付款</span>
                             </p>
                         </li>
@@ -86,10 +101,9 @@ export default class PersonCenter extends Component {
                         <li>
                         <p><span className="left">全部订单</span><span className="right">></span></p>
                     </li>
-
-
                     </ul>
                 </div>
+                    {localStorage.getItem('vip') === '' ?'':<Remove />}
             </div>
         );
     }

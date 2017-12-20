@@ -13,13 +13,11 @@ export default class Login extends Component {
            let password = this.password.value;
            post('/api/login',
                {
-                   body:
-                       {
-                         username,
-                         password
-                       }
+                 username,
+                 password
                }).then(res => {
                if (res.code === 0) {
+                   localStorage.setItem('vip',JSON.stringify(res.user));
                    window.location.href = "/#/profile";
                }
            });

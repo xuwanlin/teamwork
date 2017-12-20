@@ -12,11 +12,8 @@ export default class Login extends Component {
         let password = this.password.value;
         post('/api/reg',
         {
-            body:
-            {
                 username,
                 password
-            }
         }).then(res => {
             if (res.code === 0) {
                 window.location.href = "/#/login";
