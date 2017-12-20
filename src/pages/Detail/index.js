@@ -7,7 +7,7 @@ class Detail extends Component {
 
     componentWillMount() {
 
-    }
+    }604
 
     render() {
         return (
