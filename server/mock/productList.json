@@ -427,6 +427,20 @@
     "topicTitle": "施华蔻Schwarzkopf日化线洗护专场",
     "activeTime": "剩18时",
     "discount": "满99减50，上不封顶",
+    "picture":[
+      "http://localhost:3000/picture/4-1.webp",
+      "http://localhost:3000/picture/4-2.webp",
+      "http://localhost:3000/picture/4-3.webp",
+      "http://localhost:3000/picture/4-4.webp",
+      "http://localhost:3000/picture/4-5.webp",
+      "http://localhost:3000/picture/4-6.webp",
+      "http://localhost:3000/picture/4-7.webp",
+      "http://localhost:3000/picture/4-8.webp",
+      "http://localhost:3000/picture/4-9.webp",
+      "http://localhost:3000/picture/4-10.webp",
+      "http://localhost:3000/picture/4-11.webp",
+      "http://localhost:3000/picture/4-12.webp"
+    ],
     "list": [
       {
         "id": 401,
@@ -553,6 +567,22 @@
     "topicTitle": "1.9折起 御泥坊护肤品专场",
     "activeTime": "剩2时",
     "discount": "满198减100，上不封顶",
+    "picture":[
+      "http://localhost:3000/picture/5-1.jpg",
+      "http://localhost:3000/picture/5-2.webp",
+      "http://localhost:3000/picture/5-3.webp",
+      "http://localhost:3000/picture/5-4.webp",
+      "http://localhost:3000/picture/5-5.webp",
+      "http://localhost:3000/picture/5-6.webp",
+      "http://localhost:3000/picture/5-7.webp",
+      "http://localhost:3000/picture/5-8.webp",
+      "http://localhost:3000/picture/5-9.webp",
+      "http://localhost:3000/picture/5-10.webp",
+      "http://localhost:3000/picture/5-11.webp",
+      "http://localhost:3000/picture/5-12.webp",
+      "http://localhost:3000/picture/5-13.webp"
+
+    ],
     "list": [
       {
         "id": 501,
@@ -677,6 +707,23 @@
     "topicTitle": "SK-II化妆品专场",
     "activeTime": "剩2时",
     "discount": "满198减100，上不封顶",
+    "picture":[
+      "http://localhost:3000/picture/6-1.webp",
+      "http://localhost:3000/picture/6-2.webp",
+      "http://localhost:3000/picture/6-3.webp",
+      "http://localhost:3000/picture/6-4.webp",
+      "http://localhost:3000/picture/6-5.jpg",
+      "http://localhost:3000/picture/6-6.webp",
+      "http://localhost:3000/picture/6-7.webp",
+      "http://localhost:3000/picture/6-8.webp",
+      "http://localhost:3000/picture/6-9.webp",
+      "http://localhost:3000/picture/6-10.webp",
+      "http://localhost:3000/picture/6-11.webp",
+      "http://localhost:3000/picture/6-12.webp",
+      "http://localhost:3000/picture/6-13.gif",
+      "http://localhost:3000/picture/6-14.webp"
+
+    ],
     "list": [
       {
         "id": 601,
