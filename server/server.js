@@ -75,6 +75,8 @@ app.post('/api/reg', (req, res) => {
             res.json({code: 1, error: '用户名或密码输入格式不正确！'});
             return;
         }
+        user.cart=[];
+        user.order=[];
 
         users.push(user);
         fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {

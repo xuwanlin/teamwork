@@ -2,24 +2,7 @@
   {
     "username": "xuwanlin1",
     "password": "1",
-    "orderInfo": {
-      "name": "徐万林",
-      "address": "昌平区.....",
-      "mobile": 555555,
-      "email": "39282214@qq.com"
-    },
-    "cart": [
-      {
-        "id": 101,
-        "count": 1,
-        "isSelected": 1
-      },
-      {
-        "id": 201,
-        "count": 16,
-        "isSelected": 1
-      }
-    ],
+    "cart": [],
     "order": []
   },
   {
