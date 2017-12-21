@@ -5,7 +5,11 @@ import {Link} from 'react-router-dom'
 class Search extends Component {
     render() {
         return (
-            <Link to={`/brand/${item.category}`} className="search-panel">
+            <div>666</div>
+        )
+    }
+}
+/*<Link to={`/brand/${item.category}`} className="search-panel">
                 <Link className="search-jys">娇韵诗</Link>
                 <Link className="search-zrt">自然堂</Link>
                 <Link className="search-ksy">科颜氏</Link>
@@ -13,7 +17,4 @@ class Search extends Component {
                 <Link className="search-ynf">御泥坊</Link>
                 <Link className="search-sk">SK-II</Link>
 
-            </Link>
-        )
-    }
-}
+            </Link>*/
