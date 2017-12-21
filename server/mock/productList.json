@@ -6,6 +6,23 @@
     "topicTitle": "娇韵诗CLARINS化妆品专场",
     "activeTime": "剩3时",
     "discount": "购物满指定金额即送相应礼品，数量有限，送完即止",
+    "picture":[
+      "http://localhost:3000/piture/1-1.webp",
+      "http://localhost:3000/piture/1-2.webp",
+      "http://localhost:3000/piture/1-3.webp",
+      "http://localhost:3000/piture/1-4.webp",
+      "http://localhost:3000/piture/1-5.webp",
+      "http://localhost:3000/piture/1-6.webp",
+      "http://localhost:3000/piture/1-7.webp",
+      "http://localhost:3000/piture/1-8.webp",
+      "http://localhost:3000/piture/1-9.webp",
+      "http://localhost:3000/piture/1-10.webp",
+      "http://localhost:3000/piture/1-11.webp",
+      "http://localhost:3000/piture/1-12.webp",
+      "http://localhost:3000/piture/1-13.webp",
+      "http://localhost:3000/piture/1-14.webp",
+      "http://localhost:3000/piture/1-15.webp"
+    ],
     "list" :[
       {
         "id": 101,
@@ -16,7 +33,6 @@
         "price": 550,
         "makePrice": 846,
         "slider": "http://localhost:3000/page/1-1-1.jpg",
-        "picture":[],
         "sales":213,
         "size": "均码",
         "describe": [
@@ -36,7 +52,6 @@
         "price": 470,
         "makePrice": 470,
         "slider": "http://localhost:3000/page/1-2-1.jpg",
-        "picture":[],
         "sales":211,
         "size": "50ml",
         "describe": [
@@ -60,7 +75,6 @@
         "price": 410,
         "makePrice": 480,
         "slider": "http://localhost:3000/page/1-3-1.jpg",
-        "picture":[],
         "sales":142,
         "size": "均码",
         "describe": [
@@ -80,7 +94,6 @@
         "price": 1060,
         "makePrice": 1460,
         "slider": "http://localhost:3000/page/1-4-1.jpg",
-        "picture":[],
         "sales":178,
         "size": "均码",
         "describe": [
@@ -106,7 +119,6 @@
         "price": 660,
         "makePrice": 849,
         "slider": "http://localhost:3000/page/1-5-1.jpg",
-        "picture":[],
         "sales":341,
         "size": "均码",
         "describe": [
@@ -127,7 +139,6 @@
         "price": 780,
         "makePrice": 1065,
         "slider": "http://localhost:3000/page/1-6-1.jpg",
-        "picture":[],
         "size": "均码",
         "sales":324,
         "describe": [
@@ -147,6 +158,23 @@
     "topicTitle": "自然堂CHANDO化妆品专场",
     "activeTime": "剩2时",
     "discount": "满198减100，上不封顶",
+    "picture":[
+      "http://localhost:3000/piture/2-1.webp",
+      "http://localhost:3000/piture/2-2.webp",
+      "http://localhost:3000/piture/2-3.webp",
+      "http://localhost:3000/piture/2-4.webp",
+      "http://localhost:3000/piture/2-5.webp",
+      "http://localhost:3000/piture/2-6.webp",
+      "http://localhost:3000/piture/2-7.webp",
+      "http://localhost:3000/piture/2-8.webp",
+      "http://localhost:3000/piture/2-9.webp",
+      "http://localhost:3000/piture/2-10.webp",
+      "http://localhost:3000/piture/2-11.webp",
+      "http://localhost:3000/piture/2-12.webp",
+      "http://localhost:3000/piture/2-13.webp",
+      "http://localhost:3000/piture/2-14.webp",
+      "http://localhost:3000/piture/2-15.webp"
+    ],
     "list": [
       {
         "id": 201,
@@ -157,7 +185,6 @@
         "price": 398,
         "makePrice": 459,
         "slider": "http://localhost:3000/page/2-1-1.jpg",
-        "picture":[],
         "sales":289,
         "size": "均码",
         "describe": [
@@ -182,7 +209,6 @@
         "price": 259,
         "makePrice": 376,
         "slider": "http://localhost:3000/page/2-2-1.jpg",
-        "picture":[],
         "sales":788,
         "size": "均码",
         "describe": [
@@ -210,7 +236,6 @@
         "price": 186,
         "makePrice": 190,
         "slider": "http://localhost:3000/page/2-3-1.jpg",
-        "picture":[],
         "sales":343,
         "size": "其他尺码",
         "describe": [
@@ -235,7 +260,6 @@
         "price": 165,
         "makePrice": 168,
         "slider": "http://localhost:3000/page/2-4-1.jpg",
-        "picture":[],
         "sales":231,
         "size": "均码",
         "describe": [
@@ -258,7 +282,6 @@
         "price": 388,
         "makePrice": 762,
         "slider": "http://localhost:3000/page/2-5-1.jpg",
-        "picture":[],
         "sales":564,
         "size": "均码",
         "describe": [
@@ -280,7 +303,6 @@
         "price": 282,
         "makePrice": 366,
         "slider": "http://localhost:3000/page/2-6-1.jpg",
-        "picture":[],
         "sales":232,
         "size": "均码",
         "describe": [
@@ -303,6 +325,18 @@
     "topicTitle": "科颜氏Kiehl's化妆品专场",
     "activeTime": "剩2时",
     "discount": "满498减100，上不封顶",
+    "picture":[
+      "http://localhost:3000/piture/3-1.webp",
+      "http://localhost:3000/piture/3-2.webp",
+      "http://localhost:3000/piture/3-3.webp",
+      "http://localhost:3000/piture/3-4.webp",
+      "http://localhost:3000/piture/3-5.webp",
+      "http://localhost:3000/piture/3-6.webp",
+      "http://localhost:3000/piture/3-7.webp",
+      "http://localhost:3000/piture/3-8.webp",
+      "http://localhost:3000/piture/3-9.webp",
+      "http://localhost:3000/piture/3-10.webp"
+    ],
     "list": [
       {
         "id": 301,
@@ -313,7 +347,6 @@
         "price": 180,
         "makePrice": 200,
         "slider": "http://localhost:3000/page/3-1-1.jpg",
-        "picture":[],
         "sales":234,
         "size": "250ml",
         "describe": [
@@ -335,7 +368,6 @@
         "price": 388,
         "makePrice": 420,
         "slider": "http://localhost:3000/page/3-2-1.jpg",
-        "picture":[],
         "sales":467,
         "size": "均码",
         "describe": [
@@ -357,7 +389,6 @@
         "price": 488,
         "makePrice": 520,
         "slider": "http://localhost:3000/page/3-3-1.jpg",
-        "picture":[],
         "sales":256,
         "size": "30ml",
         "describe": [
@@ -381,7 +412,6 @@
         "price": 318,
         "makePrice": 360,
         "slider": "http://localhost:3000/page/3-4-1.jpg",
-        "picture":[],
         "sales":190,
         "size": "500ml",
         "describe": [
@@ -401,7 +431,6 @@
         "price": 505,
         "makePrice": 600,
         "slider":"http://localhost:3000/page/3-5-1.jpg",
-        "picture":[],
         "sales":387,
         "size": "475ml",
         "describe": [
@@ -419,7 +448,6 @@
         "price": 280,
         "makePrice": 300,
         "slider": "http://localhost:3000/page/3-6-1.jpg",
-        "picture":[],
         "sales":345,
         "size": "50ml",
         "describe": [
@@ -435,7 +463,6 @@
       }
     ]
   },
-
 
 
   {

@@ -13,7 +13,7 @@ export default class Brand extends Component {
     componentDidMount() {
         get(`/api/categorys/${this.props.match.params.id}`).then(res => {
             if (res.code == 0) {
-                this.setState({list: res.category.list, title: res.category.topicTitle,piture:res.category.list.piture});
+                this.setState({list: res.category.list, title: res.category.topicTitle,piture:res.category.piture});
             }
         });
     }
