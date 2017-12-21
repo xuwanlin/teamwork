@@ -27,7 +27,7 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div className='home'>
+            <div className='home' id='scrollBox'>
                 <div className='header-logo'>
                     <div className='logo'><img src={require('../../common/images/vip.png')}/></div>
                     <div className='adress'

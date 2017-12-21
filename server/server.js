@@ -377,12 +377,13 @@ app.get('/api/categorysAll', (req, res) => {
         list = list.filter(item=>{
             let str = '';
             for(let val in item){
-                if(val=='title' || val=='id' || val == 'date'|| val=='price'||val=='makePrice'||val=='discount'||val=='sales' ||val=='size'){
+                if(val=='title' || val == 'date'|| val=='price'||val=='makePrice'||val=='discount'||val=='sales' ||val=='size'){
                     str+=item[val];
                 }
             }
-            return str.indexOf(keyword)!=-1;
+            return str.search(keyword)!=-1;
         })
+        list.log
     }
     offset = isNaN(offset) ? 0 : parseInt(offset);
     limit = isNaN(limit) ? list.length : parseInt(limit);

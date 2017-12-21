@@ -14,7 +14,9 @@ export default class HomeList extends Component {
         get('/api/category').then(res => {
             if (res.code === 0) {
                 let imgs = res.categorys;
-                this.setState({imgs},LazyImg(this.image,res.categorys));
+                this.setState({imgs},()=>{
+                    LazyImg(this.image)
+                });
             }
         });
     }
