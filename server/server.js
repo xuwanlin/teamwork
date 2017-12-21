@@ -77,6 +77,8 @@ app.post('/api/reg', (req, res) => {
         }
         user.cart=[];
         user.order=[];
+        user.orderInfo=[];
+
 
         users.push(user);
         fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
