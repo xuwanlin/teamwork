@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './index.less';
 import {get} from '../../../api/index';
+import {LazyImg} from "../../../utils";
 
 export default class Top5 extends Component {
     constructor() {
@@ -18,13 +19,15 @@ export default class Top5 extends Component {
                 });
             }
         });
+
+        LazyImg(this.image);
     }
 
     render() {
         return (
             <div className='home-top5'>
                 <div className='title'><img src={this.state.title}/></div>
-                <ul>
+                <ul ref={image=>this.image=image}>
                     {
                         this.state.imgList.map((item, index) => (
                             <li key={index}><Link to={`/brand/${item.link}`}><img src={item.src}/></Link></li>
