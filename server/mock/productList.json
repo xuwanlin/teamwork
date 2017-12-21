@@ -549,7 +549,7 @@
   {
     "category": 5,
     "topic": "专题五",
-    "topicCover": "http://a.vimage1.com/upcb/2017/12/13/76/ias_151313018995919_604x290_80.jpg",
+    "topicCover":"http://localhost:3000/page/5.jpg",
     "topicTitle": "1.9折起 御泥坊护肤品专场",
     "activeTime": "剩2时",
     "discount": "满198减100，上不封顶",
@@ -558,7 +558,7 @@
         "id": 501,
         "category": 5,
         "title": "补水保湿鲜果美莓套组35片 面膜 补水 提亮 保湿 明星同款",
-        "image": "http://localhost:3000/page/5.jpg",
+        "image": "http://localhost:3000/page/5-1.jpg",
         "price": 199,
         "makePrice": 418,
         "discount": "4.8折",
