@@ -66,38 +66,56 @@ export const downRefresh = (dom, callback) => {
 
 //图片延迟加载
 
-export  const LazyImg=(dom,imgList)=>{
-
-    console.log(dom);
+export  function LazyImg(dom){
 
 
+
+<<<<<<< HEAD
+    function handleAllImg(dom,numTop) {
+        let imgs=[...dom.querySelectorAll("img")];
+=======
     let imgs=[...dom.querySelectorAll("img")];
     console.log(imgs);
 
-     // window.onload=window.onscroll=handleAllImg;
 
-    /*   imgList.forEach(address=>{
-           //console.log(address);
-           imgs.forEach(item=>{
-               item.setAttribute("src",address.src);
-           });
-       });
-   */
+
    handleAllImg();
     function handleAllImg() {
+>>>>>>> bc0e1cd1d15bde20eeb1be3d84f9bb776a697415
         for (let i = 0; i < imgs.length; i++) {
             let curImg = imgs[i];
-            lazyImg(curImg);
+            lazyImg(curImg,numTop);
 
         }
     };
+    handleAllImg(dom);
+
+let scrollBox = document.getElementById('scrollBox');
+let scrollBoxsHeightcrollTop = 0
+
+    scrollBoxsHeightcrollTop=scrollBox.clientHeight + scrollBox.scrollTop;
+
+
+    scrollBox.addEventListener('scroll',()=>{
+        scrollBoxsHeightcrollTop=scrollBox.clientHeight + scrollBox.scrollTop;
+        handleAllImg(dom);
+    })
+
 
     function lazyImg(oImg) {
         if (oImg.isLoad) return;
-        let A = document.body.clientHeight + document.body.scrollTop,
-            B = oImg.offsetTop;
-        if (B<=A) {
+        oImg.style.display='block';
+        oImg.style.minHeiht='20px';
+
+        let B = oImg.offsetTop;
+        let p = oImg.offsetParent;
+        while (p){
+            B+=p.offsetTop;
+            p = p.offsetParent;
+        }
+        if (B+15<=scrollBoxsHeightcrollTop) {
             oImg.isLoad = true;
+
             let tempImg = new Image;
             tempImg.src = oImg.getAttribute('data-src');
             tempImg.onload = function () {
