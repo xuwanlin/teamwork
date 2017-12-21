@@ -12,10 +12,12 @@ export default class Brand extends Component {
 
     componentDidMount() {
         get(`/api/categorys/${this.props.match.params.id}`).then(res => {
+            console.log(res.category.picture);
             if (res.code == 0) {
                 this.setState({list: res.category.list, title: res.category.topicTitle,piture:res.category.piture});
             }
         });
+        console.log(this.state.picture);
     }
 
     render() {
