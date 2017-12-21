@@ -2,7 +2,12 @@
   {
     "username": "xuwanlin1",
     "password": "1",
-    "orderInfo": {},
+    "orderInfo": {
+      "name": "xwl",
+      "address": "北京。。。",
+      "mobile": 15232552,
+      "email": "39282@qq.com"
+    },
     "cart": [
       {
         "id": 401,
@@ -16,6 +21,30 @@
       }
     ],
     "order": [
+      {
+        "id": 1513868096134,
+        "date": "2017-12-21T14:54:56.134Z",
+        "orderInfo": {
+          "name": "xwl",
+          "address": "北京。。。",
+          "mobile": 15232552,
+          "email": "39282@qq.com"
+        },
+        "product": [
+          {
+            "id": 101,
+            "count": 2
+          },
+          {
+            "id": 102,
+            "count": 2
+          },
+          {
+            "id": 103,
+            "count": 2
+          }
+        ]
+      },
       {
         "id": 111,
         "date": "2017-12-21 19:21",
@@ -56,7 +85,6 @@
           }
         ]
       }
-
     ]
   }
 ]

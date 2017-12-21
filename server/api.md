@@ -234,6 +234,27 @@
     ]
 }
 ```
+### 提交购物车
+- /api/order
+- post请求
+提交数据格式json
+```
+[{"id":101,"count":2},{"id":102,"count":2},{"id":103,"count":2}]
+```
+请求头：
+```
+键：Content-Type  值：application/json
+```
+返回结果：返回订单id
+```
+{
+    "code": 0,
+    "success": "提交成功！",
+    "order": {
+        "id": 1513868096134
+    }
+}
+```
 ## 获取我的订单
 - /api/order
 - get请求
