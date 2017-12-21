@@ -73,6 +73,7 @@ export default class Find extends Component {
                                 <div className='price'>
                                     <b>{item.price}</b>
                                     <del>{item.makePrice}</del>
+                                    <span>{item.sales}</span>
                                 </div>
                                 <div className='add-car'>
                                     <button onClick={() => this.handlePost(item.id)}>加入购物车</button>
