@@ -126,7 +126,6 @@ class Detail extends Component {
                             src="//a3.vimage1.com/upload/brandcool/0/2015/07/27/106/9fe1e93b-0556-480d-ac6a-e437bdde1ffe.jpg"
                             alt=""/>
                     </div>
-
                     <div className="detail-picture">
                         <h3>商品信息</h3>
                         {

@@ -66,43 +66,43 @@ export const downRefresh = (dom, callback) => {
 
 //图片延迟加载
 
-export  const LazyImg=(dom)=>{
-    let imgList=[
-        {"src": "http://localhost:3000/imgLink/test1/1.jpg", "link": "1"},
-        {"src": "http://localhost:3000/imgLink/test1/2.jpg", "link": "2"},
-        {"src": "http://localhost:3000/imgLink/test1/3.jpg", "link": "3"},
-        {"src": "http://localhost:3000/imgLink/test1/4.jpg", "link": "4"},
-        {"src": "http://localhost:3000/imgLink/test1/5.jpg", "link": "5"}
-    ];
+export  const LazyImg=(dom,imgList)=>{
 
-    window.onload=window.onscroll=handleAllImg;
-
-    let imgs=dom.getElementsByTagName("img");
-    imgList.forEach(address=>{
-        imgs=imgs.forEach(item=>{
-            item.setAttribute("data-src",address);
-        });
-    });
+    console.log(dom);
 
 
+    let imgs=[...dom.querySelectorAll("img")];
+    console.log(imgs);
+
+     // window.onload=window.onscroll=handleAllImg;
+
+    /*   imgList.forEach(address=>{
+           //console.log(address);
+           imgs.forEach(item=>{
+               item.setAttribute("src",address.src);
+           });
+       });
+   */
+   handleAllImg();
     function handleAllImg() {
         for (let i = 0; i < imgs.length; i++) {
             let curImg = imgs[i];
             lazyImg(curImg);
+
         }
     };
 
     function lazyImg(oImg) {
         if (oImg.isLoad) return;
         let A = document.body.clientHeight + document.body.scrollTop,
-            B = oImg.offsetHeight + oImg.offsetTop;
-        if (B <= A) {
+            B = oImg.offsetTop;
+        if (B<=A) {
             oImg.isLoad = true;
             let tempImg = new Image;
             tempImg.src = oImg.getAttribute('data-src');
             tempImg.onload = function () {
                 oImg.src = this.src;
-                oImg.style.display="block";
+                //oImg.style.display="block";
                 moveImg(oImg);
             }
         }
@@ -111,7 +111,6 @@ export  const LazyImg=(dom)=>{
 
     //动画部分
     function moveImg(oImg) {
-
         let start = 0,
             step = 0.05;
         oImg.style.opacity=start;
@@ -122,7 +121,7 @@ export  const LazyImg=(dom)=>{
             }
             start += step;
             oImg.style.opacity=start;
-        }, 17);
+        }, 23);
     }
 
 

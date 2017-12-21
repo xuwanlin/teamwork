@@ -16,11 +16,13 @@ export default class Top5 extends Component {
                 this.setState({
                     title: res.list.title,
                     imgList: res.list.imgList
+                },()=>{
+                    LazyImg(this.image,res.list.imgList)
                 });
             }
         });
 
-        LazyImg(this.image);
+
     }
 
     render() {
@@ -30,7 +32,7 @@ export default class Top5 extends Component {
                 <ul ref={image=>this.image=image}>
                     {
                         this.state.imgList.map((item, index) => (
-                            <li key={index}><Link to={`/brand/${item.link}`}><img src={item.src}/></Link></li>
+                            <li key={index}><Link to={`/brand/${item.link}`}><img data-src={item.src}/></Link></li>
                         ))
                     }
                 </ul>
