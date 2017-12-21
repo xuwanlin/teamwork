@@ -61,7 +61,7 @@ export default class Find extends Component {
     render() {
         return (
             <div className='find-area' ref={content => this.content = content}>
-                <div className='find-title'>筛选<span>价格</span><span>折扣</span><span>销量</span></div>
+                <div className='find-title'><span>筛选</span><span>价格</span><span>折扣</span><span>销量</span></div>
                 <ul className='productList'>
                     {
                         this.state.list.map(item => (
