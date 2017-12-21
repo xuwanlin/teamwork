@@ -1,16 +1,1 @@
-[
-  {
-    "username": "xuwanlin1",
-    "password": "1",
-    "cart": [],
-    "order": []
-  },
-  {
-    "username": "111",
-    "password": "3"
-  },
-  {
-    "username": "1111",
-    "password": "3"
-  }
-]
+[{"username":"xuwanlin1","password":"1","cart":[{"id":401,"count":3,"isSelected":1}],"order":[],"orderInfo":[]},{"username":"111","password":"3"},{"username":"1111","password":"3"},{"username":"xuwanlin111","password":"1","cart":[],"order":[],"orderInfo":[]}]
