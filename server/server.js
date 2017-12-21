@@ -77,7 +77,7 @@ app.post('/api/reg', (req, res) => {
         }
         user.cart=[];
         user.order=[];
-        user.orderInfo=[];
+        user.orderInfo={};
 
 
         users.push(user);
