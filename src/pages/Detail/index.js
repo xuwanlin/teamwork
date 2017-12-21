@@ -4,6 +4,8 @@ import "./index.less";
 import "../../api/index";
 import {get,post} from "../../api";
 
+
+
 class Detail extends Component {
     constructor() {
         super();
