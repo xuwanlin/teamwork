@@ -70,18 +70,8 @@ export  function LazyImg(dom){
 
 
 
-<<<<<<< HEAD
     function handleAllImg(dom,numTop) {
         let imgs=[...dom.querySelectorAll("img")];
-=======
-    let imgs=[...dom.querySelectorAll("img")];
-    console.log(imgs);
-
-
-
-   handleAllImg();
-    function handleAllImg() {
->>>>>>> bc0e1cd1d15bde20eeb1be3d84f9bb776a697415
         for (let i = 0; i < imgs.length; i++) {
             let curImg = imgs[i];
             lazyImg(curImg,numTop);
