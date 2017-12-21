@@ -107,7 +107,7 @@
 ```
 {
     "code": 1,
-    "error": "此用户未登录！"
+    "error": "此用户未登录！",
 }
 ```
 登录
@@ -115,6 +115,7 @@
 ```
 {
     "code": 0,
+    "cartCount": 3,//购物车商品种类数量
     "user": {
         "username": "xuwanlin1",
         "orderInfo": {
@@ -335,6 +336,7 @@
 - /api/categorysAll
 - get请求
 - 参数
+  - keyValue (关键字 配合搜索用，可以没有)
   - offset（从数组索引第几个开始，默认0，）
   - limit（一共显示几条，默认全部）
   - type（排序方式）
