@@ -14,13 +14,18 @@ export default class Brand extends Component {
         get(`/api/categorys/${this.props.match.params.id}`).then(res => {
             console.log(res.category.picture);
             if (res.code == 0) {
-                this.setState({list: res.category.list, title: res.category.topicTitle,piture:res.category.piture});
+                this.setState({
+                    list: res.category.list,
+                    title: res.category.topicTitle,
+                    picture:res.category.picture
+                });
             }
         });
         console.log(this.state.picture);
     }
 
     render() {
+        console.log(this.state.picture);
         return (
             <div className='brand-box'>
                 <Mheader title={this.state.title}/>
