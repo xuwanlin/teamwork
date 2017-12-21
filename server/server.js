@@ -75,6 +75,8 @@ app.post('/api/reg', (req, res) => {
             res.json({code: 1, error: '用户名或密码输入格式不正确！'});
             return;
         }
+        user.cart=[];
+        user.order=[];
 
         users.push(user);
         fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
@@ -118,7 +120,12 @@ app.get('/api/validate', (req, res) => {
         let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
 
         let oldUser = users.find(item => item.username == req.session.user.username);
-        res.send({code: 0, user: {username:req.session.user.username,"orderInfo":oldUser.orderInfo}})
+        let cartCount=0;
+        oldUser.cart.forEach(item=>{
+            let count = item.count||0;
+            cartCount+=count
+        })
+        res.send({code: 0, user: {username:req.session.user.username,"cartCount":cartCount,"orderInfo":oldUser.orderInfo}})
     } else {
         res.send({code: 1, error: '此用户未登录！'})
     }
@@ -224,7 +231,6 @@ app.get('/api/order', (req, res) => {
 });
 //添加到购物车 id=134214 ,count=5表示更新到5，没有count表示+1
 app.post('/api/car', (req, res) => {
-    console.log(req.body);
     if (!req.session.user) {
         return res.send({code: 1, error: '请登录后获取数据！'});
     }
@@ -349,7 +355,6 @@ app.get('/api/categorys/:categoryId', (req, res) => {
 });
 //获取所有分类下的全部列表 发现页
 app.get('/api/categorysAll', (req, res) => {
-    console.log("query", req.query);
 
     let list = [];
     let categorys = JSON.parse(fs.readFileSync('./mock/productList.json', 'utf-8'));

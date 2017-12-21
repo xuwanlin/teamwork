@@ -3,11 +3,13 @@ import './index.less';
 import Sliders from "../../components/Sliders";
 import Top5 from "./Top5";
 import HomeList from "./HomeList";
+import {Link} from 'react-router-dom'
+import {get} from '../../api/index'
 
 export default class Home extends Component {
     constructor() {
         super();
-        this.state = {isShow: false, adress: '北京'};
+        this.state = {isShow: false, adress: '北京',imgs:[]};
     }
 
     handleClick = (e) => {
@@ -17,7 +19,14 @@ export default class Home extends Component {
             });
         }
     };
-
+    componentDidMount(){
+        get('/api/category').then(res=>{
+            if(res.code===0){
+                let imgs=res.categorys;
+                this.setState({imgs});
+            }
+        })
+    }
     render() {
         return (
             <div className='home'>
@@ -30,7 +39,9 @@ export default class Home extends Component {
                         {this.state.adress}
                         <i className='iconfont icon-down-trangle'></i>
                     </div>
-                    <div className='search'><input type="text" placeholder='12.24圣诞狂欢'/></div>
+                    <Link to={`/Search`}>
+                        <div className='search'><input type="text" placeholder='12.24圣诞狂欢'/></div>
+                    </Link>
                     <div className='my-profile' onClick={() => this.props.history.push('/profile')}><i
                         className='iconfont icon-home1'></i></div>
                 </div>
@@ -42,8 +53,6 @@ export default class Home extends Component {
                         <i className='iconfont icon-cuowu'
                            onClick={() => this.setState({isShow: false}, () => this.search.style.top = "100%")}/>
                         <span>选择收货地址</span>
-
-
                     </div>
                     <div className="layer-address">
                         你当前的收货地址
