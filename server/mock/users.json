@@ -10,20 +10,15 @@
     },
     "cart": [
       {
-        "id": 401,
-        "count": 3,
-        "isSelected": 1
-      },
-      {
-        "id": 402,
-        "count": 10,
-        "isSelected": 1
+        "id": 204,
+        "count": 1,
+        "isSelected": 0
       }
     ],
     "order": [
       {
-        "id": 1513870515436,
-        "date": "2017-12-21 23:35:15",
+        "id": 1513873152766,
+        "date": "2017-12-22 00:19:12",
         "orderInfo": {
           "name": "xwl",
           "address": "北京。。。",
@@ -32,16 +27,12 @@
         },
         "product": [
           {
-            "id": 103,
+            "id": 601,
             "count": 3
           },
           {
-            "id": 104,
+            "id": 602,
             "count": 2
-          },
-          {
-            "id": 105,
-            "count": 1
           }
         ]
       },

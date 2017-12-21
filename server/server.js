@@ -232,6 +232,52 @@ app.post('/api/order',(req,res)=>{
     tempOrder.product = producArr;
     oldUser.order.unshift(tempOrder);
 
+    //删除提交后的购物车商品
+    producArr.forEach(order=>{
+
+        oldUser.cart = oldUser.cart.filter(item => {
+            return item.id != order.id
+        })
+
+    })
+
+
+    fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
+
+        if (!err) {
+            res.send({code: 0, success: '提交成功！', order: {id: tempOrder.id}});
+
+        }
+
+
+    })
+
+});
+
+//提交购物车get版
+app.get('/api/submitCar',(req,res)=>{
+
+    if (!req.session.user) {
+        return res.send({code: 1, error: '请登录后获取数据！'});
+        // return res.redirect('/login');
+    }
+
+    let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
+    let oldUser = users.find(item => item.username == req.session.user.username);
+    let producArr = oldUser.cart.filter(item=>item.isSelected==1);
+
+    oldUser.cart = oldUser.cart.filter(item=>item.isSelected!=1);
+    producArr.forEach(item=>{
+        delete item.isSelected;
+    })
+    let tempOrder = {};
+    tempOrder.id=Date.now();
+    tempOrder.date = moment().format('YYYY-MM-DD HH:mm:ss');
+    tempOrder.orderInfo = oldUser.orderInfo;
+    tempOrder.product = producArr;
+    oldUser.order.unshift(tempOrder);
+
+
     fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
 
         if (!err) {
