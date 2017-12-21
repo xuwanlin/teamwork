@@ -25,7 +25,10 @@ export default class Find extends Component {
     }
 
     getData = (offset, limit, type) => {
-        get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}`).then(res => {
+        let keyword =this.props.match.params.keyword||'';
+
+
+        get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}&keyword=${keyword}`).then(res => {
             console.log(res);
             if (res.code === 0) {
                 let list = [...this.state.list, ...res.data.list];
@@ -35,7 +38,9 @@ export default class Find extends Component {
     };
 
     freshData = (offset, limit, type) => {
-        get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}`).then(res => {
+        let keyword =this.props.match.params.keyword||'';
+
+        get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}&keyword=${keyword}`).then(res => {
             console.log(res);
             if (res.code === 0) {
                 let list = [...res.data.list, ...this.state.list];
