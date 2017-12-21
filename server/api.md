@@ -237,7 +237,9 @@
 ## 获取我的订单
 - /api/order
 - get请求
-成功
+- 参数：id（获取一个商品需要传id）
+
+订单列表成功
 ```
 {
     "code": 0,
@@ -245,17 +247,62 @@
     "order": {
         "list": [
             {
-                "id": 201,
-                "count": 1,
-                "category": 2,
-                "title": "凝时焕颜亮采套装 彩妆套装",
-                "image": "//a3.vimage1.com/upload/merchandise/pdcvis/2017/12/08/147/7505d53424494953847691737e0378e4-5_218x274_70.jpg",
-                "discount": "8.7折",
-                "link": "//weixin.vip.com/deeplink/showGoodsDetail?goodsId=333907134&brandId=1911825&tra_from=m%3Ai%3A1509684434365_ff79c50e6af39f0cc18d09df0789fa1a%3Ac%3A%3Adeeplink%3Abrand_2_3&from=m&device=i&cid=1509684434365_ff79c50e6af39f0cc18d09df0789fa1a&f=&other=deeplink&mref=brand_2_3",
-                "price": 398,
-                "makePrice": 459,
-                "size": "均码"
+                "id": 111,
+                "date": "2017-12-21 19:21",
+                "orderInfo": {
+                    "name": "xwl",
+                    "address": "北京。。。",
+                    "mobile": 15232552,
+                    "email": "39282@qq.com"
+                },
+                "product": [
+                    {
+                        "id": 101,
+                        "count": 1,
+                        "category": 1,
+                        "title": "娇韵诗Clarins『纤柔美体』套包",
+                        "image": "http://localhost:3000/page/1-1.jpg",
+                        "discount": "6.5折",
+                        "price": 550,
+                        "makePrice": 846,
+                        "sales": 213,
+                        "size": "均码"
+                    },
+                    ......
+                ]
             }
+        ]
+    }
+}
+```
+一个订单
+```
+{
+    "code": 0,
+    "success": "获取成功！",
+    "order": {
+        "id": 111,
+        "date": "2017-12-21 19:21",
+        "orderInfo": {
+            "name": "xwl",
+            "address": "北京。。。",
+            "mobile": 15232552,
+            "email": "39282@qq.com"
+        },
+        "product": [
+            {
+                "id": 101,
+                "count": 1,
+                "category": 1,
+                "title": "娇韵诗Clarins『纤柔美体』套包",
+                "image": "http://localhost:3000/page/1-1.jpg",
+                "discount": "6.5折",
+                "price": 550,
+                "makePrice": 846,
+                "sales": 213,
+                "size": "均码"
+            },
+            ......
         ]
     }
 }
@@ -267,10 +314,17 @@
     "error": "暂无全部订单！"
 }
 ```
+## 提交订单
+- /api/order
+- post请求 成功
 
 ## 获取专题列表
 - /api/category
 - get请求
+- 参数
+  - id=134214（商品id号）
+  - count=5（更新到几个）
+  
 
 成功： 
 ```
