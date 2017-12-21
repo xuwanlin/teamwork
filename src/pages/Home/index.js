@@ -5,13 +5,14 @@ import Top5 from "./Top5";
 import HomeList from "./HomeList";
 import {Link} from 'react-router-dom'
 import {get} from '../../api/index'
+import {post} from "../../api";
+
 
 export default class Home extends Component {
     constructor() {
         super();
-        this.state = {isShow: false, adress: '北京',imgs:[]};
+        this.state = {isShow: false, adress: '北京',keyValue:''};
     }
-
     handleClick = (e) => {
         if (e.target.tagName === "SPAN") {
             this.setState({adress: e.target.innerText, isShow: !this.state.isShow}, () => {
@@ -19,14 +20,7 @@ export default class Home extends Component {
             });
         }
     };
-    componentDidMount(){
-        get('/api/category').then(res=>{
-            if(res.code===0){
-                let imgs=res.categorys;
-                this.setState({imgs});
-            }
-        })
-    }
+
     render() {
         return (
             <div className='home'>
@@ -39,9 +33,15 @@ export default class Home extends Component {
                         {this.state.adress}
                         <i className='iconfont icon-down-trangle'></i>
                     </div>
-                    <Link to='/Search'>
-                        <div className='search'><input type="text" placeholder='12.24圣诞狂欢'/></div>
-                    </Link>
+
+                        <div className='search'><input
+                            ref={input=>this.input=input}
+                            type="text" placeholder='12.24圣诞狂欢'/>
+                            <Link to={`/find/`+this.value}>
+                                <div className="iconfont icon-fanhui jiantou"> </div>
+                            </Link>
+                        </div>
+
                     <div className='my-profile' onClick={() => this.props.history.push('/profile')}><i
                         className='iconfont icon-home1'></i></div>
                 </div>
