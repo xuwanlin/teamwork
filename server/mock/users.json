@@ -2,62 +2,61 @@
   {
     "username": "xuwanlin1",
     "password": "1",
+    "orderInfo": {},
     "cart": [
       {
         "id": 401,
         "count": 3,
         "isSelected": 1
+      },
+      {
+        "id": 402,
+        "count": 10,
+        "isSelected": 1
       }
     ],
-    "order": [],
-    "orderInfo": {}
-  },
-  {
-    "username": "xuwanlina",
-    "password": "1",
-    "orderInfo": {
-      "name": "xwl",
-      "address":"北京。。。",
-      "mobile":15232552,
-      "email":"39282@qq.com"
-    },
-    "cart": [],
     "order": [
       {
         "id": 111,
-        "data": "2017-12-21 19:21",
+        "date": "2017-12-21 19:21",
         "orderInfo": {
           "name": "xwl",
-          "address":"北京。。。",
-          "mobile":15232552,
-          "email":"39282@qq.com"
+          "address": "北京。。。",
+          "mobile": 15232552,
+          "email": "39282@qq.com"
         },
         "product": [
           {
-            "id": 401,
-            "count": 3
+            "id": 101,
+            "count": 1
           },
           {
-            "id": 401,
-            "count": 3
+            "id": 102,
+            "count": 2
           }
         ]
       },
       {
         "id": 222,
-        "data": "2017-12-21 19:21",
+        "date": "2017-12-21 19:21",
+        "orderInfo": {
+          "name": "xwl",
+          "address": "北京。。。",
+          "mobile": 15232552,
+          "email": "39282@qq.com"
+        },
         "product": [
           {
-            "id": 401,
+            "id": 201,
             "count": 3
           },
           {
-            "id": 401,
-            "count": 3
+            "id": 202,
+            "count": 4
           }
         ]
       }
-    ],
-    "orderInfo": {}
+
+    ]
   }
 ]

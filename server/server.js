@@ -75,9 +75,9 @@ app.post('/api/reg', (req, res) => {
             res.json({code: 1, error: '用户名或密码输入格式不正确！'});
             return;
         }
-        user.cart=[];
-        user.order=[];
-        user.orderInfo={};
+        user.cart = [];
+        user.order = [];
+        user.orderInfo = {};
 
 
         users.push(user);
@@ -122,12 +122,15 @@ app.get('/api/validate', (req, res) => {
         let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
 
         let oldUser = users.find(item => item.username == req.session.user.username);
-        let cartCount=0;
-        oldUser.cart.forEach(item=>{
-            let count = item.count||0;
-            cartCount+=count
+        let cartCount = 0;
+        oldUser.cart.forEach(item => {
+            let count = item.count || 0;
+            cartCount += count
         })
-        res.send({code: 0, user: {username:req.session.user.username,"cartCount":cartCount,"orderInfo":oldUser.orderInfo}})
+        res.send({
+            code: 0,
+            user: {username: req.session.user.username, "cartCount": cartCount, "orderInfo": oldUser.orderInfo}
+        })
     } else {
         res.send({code: 1, error: '此用户未登录！'})
     }
@@ -212,23 +215,39 @@ app.get('/api/car', (req, res) => {
 
 
 });
-//获取我的订单
+//获取我的全部订单
 app.get('/api/order', (req, res) => {
     if (!req.session.user) {
         return res.redirect('/login');
     }
+    let id = parseInt(req.query.id);
+
     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
     let productList = JSON.parse(fs.readFileSync('./mock/productList.json', 'utf8'));
     let oldUser = users.find(item => item.username == req.session.user.username);
     // 读取详细信息追加到购物车里
-    getCarOrderInfoList(oldUser, 'order', productList);
 
+    oldUser.order.forEach(item => {
+        getCarOrderInfoList(item, 'product', productList);
+    })
 
-    if (oldUser.order && oldUser.order.length > 0) {
-        res.send({code: 0, success: '获取成功！', order: {list: oldUser.order}});
+    if (id) {//一个订单
+        let oneOrder = oldUser.order.find(item => item.id == id);
+        if (oldUser.order && oldUser.order.length > 0) {
+            res.send({code: 0, success: '获取成功！', order: oneOrder});
+        } else {
+            res.send({code: 1, error: '暂无全部订单！'});
+        }
+
     } else {
-        res.send({code: 1, error: '暂无全部订单！'});
+        //全部订单
+        if (oldUser.order && oldUser.order.length > 0) {
+            res.send({code: 0, success: '获取成功！', order: {list: oldUser.order}});
+        } else {
+            res.send({code: 1, error: '暂无全部订单！'});
+        }
     }
+
 
 });
 //添加到购物车 id=134214 ,count=5表示更新到5，没有count表示+1
@@ -272,27 +291,7 @@ app.post('/api/car', (req, res) => {
 
     })
 });
-//删除购物车的一个商品
-// app.del('/api/car', (req, res) => {
-//     if (!req.session.user) {
-//         return res.send({code: 1, error: '请登录后获取数据！'});
-//     }
-//     ;
-//     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
-//     let oldUser = users.find(item => item.username == req.session.user.username);
-//
-//     //数字化
-//     req.body.id = parseInt(req.body.id);
-//
-//     oldUser.cart = oldUser.cart.filter(item => item.id != req.body.id);
-//     fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
-//         if (!err) {
-//             res.json({code: 0, success: '删除成功', cart: oldUser.cart});
-//         }
-//
-//     })
-//
-// })
+
 
 //删除购物车商品
 app.del('/api/car', (req, res) => {
@@ -372,16 +371,16 @@ app.get('/api/categorysAll', (req, res) => {
 
     });
 
-    let {type, offset = 0, limit = 5,keyword} = req.query;
-    if(keyword){
-        list = list.filter(item=>{
+    let {type, offset = 0, limit = 5, keyword} = req.query;
+    if (keyword) {
+        list = list.filter(item => {
             let str = '';
-            for(let val in item){
-                if(val=='title' || val == 'date'|| val=='price'||val=='makePrice'||val=='discount'||val=='sales' ||val=='size'){
-                    str+=item[val];
+            for (let val in item) {
+                if (val == 'title' || val == 'date' || val == 'price' || val == 'makePrice' || val == 'discount' || val == 'sales' || val == 'size') {
+                    str += item[val];
                 }
             }
-            return str.search(keyword)!=-1;
+            return str.search(keyword) != -1;
         })
         list.log
     }
@@ -392,16 +391,16 @@ app.get('/api/categorysAll', (req, res) => {
         (x, y) => x["price"] - y["price"],
         (x, y) => y["price"] - x["price"],
         (x, y) => {
-        //折扣从小到达
-            let Xdis=parseInt(x["discount"])?parseInt(x["discount"]):10;
-            let Ydis=parseInt(y["discount"])?parseInt(y["discount"]):10;
-            return Xdis-Ydis;
+            //折扣从小到达
+            let Xdis = parseInt(x["discount"]) ? parseInt(x["discount"]) : 10;
+            let Ydis = parseInt(y["discount"]) ? parseInt(y["discount"]) : 10;
+            return Xdis - Ydis;
         },
         (x, y) => {
             //折扣从大到小
-            let Xdis=parseInt(x["discount"])?parseInt(x["discount"]):10;
-            let Ydis=parseInt(y["discount"])?parseInt(y["discount"]):10;
-            return Ydis -Xdis;
+            let Xdis = parseInt(x["discount"]) ? parseInt(x["discount"]) : 10;
+            let Ydis = parseInt(y["discount"]) ? parseInt(y["discount"]) : 10;
+            return Ydis - Xdis;
         },//按销量排序
         (x, y) => x["sales"] - y["sales"],
         (x, y) => y["sales"] - x["sales"],
