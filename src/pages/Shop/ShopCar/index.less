@@ -1,6 +1,7 @@
 .shopcar-list {
     width: 100%;
     overflow: hidden;
+    background: #fff;
     h3 {
         height: 40px;
         line-height: 40px;
@@ -66,8 +67,40 @@
         }
     }
     .tips{
-        margin-top: 40px;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background: #fff;
         font-size: 16px;
         text-align: center;
+        .tips-style{
+            font-size: 25px;
+            font-weight: bolder;
+            text-align: center;
+            margin: 20% 0 10% 0;
+        }
+        .tips-login,.tips-reg{
+            display: block;
+            width: 80%;
+            margin:0 0 5% 10%;
+            background: deeppink;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            color: #fff;
+           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .tips-reg{
+            background: #a6a6a6;
+        }
+        p{
+            height:45px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #d6d6d6;
+            position: fixed;
+            bottom: 0.8rem;
+            width: 100%;
+            text-align: center;
+        }
     }
 }
