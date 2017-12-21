@@ -77,7 +77,7 @@ app.post('/api/reg', (req, res) => {
         }
         user.cart=[];
         user.order=[];
-        user.orderInfo=[];
+        user.orderInfo={};
 
 
         users.push(user);
@@ -372,16 +372,16 @@ app.get('/api/categorysAll', (req, res) => {
 
     });
 
-    let {type, offset = 0, limit = 5,keyWord} = req.query;
-    if(keyWord){
+    let {type, offset = 0, limit = 5,keyword} = req.query;
+    if(keyword){
         list = list.filter(item=>{
             let str = '';
             for(let val in item){
-                if(val=='title' || val == 'date'|| val=='price'||val=='makePrice'||val=='discount'||val=='sales' ||val=='size'){
+                if(val=='title' || val=='id' || val == 'date'|| val=='price'||val=='makePrice'||val=='discount'||val=='sales' ||val=='size'){
                     str+=item[val];
                 }
             }
-            return str.search(keyWord)!=-1;
+            return str.indexOf(keyword)!=-1;
         })
     }
     offset = isNaN(offset) ? 0 : parseInt(offset);
