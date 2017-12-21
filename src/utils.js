@@ -74,15 +74,8 @@ export  const LazyImg=(dom,imgList)=>{
     let imgs=[...dom.querySelectorAll("img")];
     console.log(imgs);
 
-     // window.onload=window.onscroll=handleAllImg;
 
-    /*   imgList.forEach(address=>{
-           //console.log(address);
-           imgs.forEach(item=>{
-               item.setAttribute("src",address.src);
-           });
-       });
-   */
+
    handleAllImg();
     function handleAllImg() {
         for (let i = 0; i < imgs.length; i++) {

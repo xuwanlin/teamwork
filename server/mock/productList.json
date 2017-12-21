@@ -6,6 +6,23 @@
     "topicTitle": "娇韵诗CLARINS化妆品专场",
     "activeTime": "剩3时",
     "discount": "购物满指定金额即送相应礼品，数量有限，送完即止",
+    "picture":[
+      "http://localhost:3000/piture/1-1.webp",
+      "http://localhost:3000/piture/1-2.webp",
+      "http://localhost:3000/piture/1-3.webp",
+      "http://localhost:3000/piture/1-4.webp",
+      "http://localhost:3000/piture/1-5.webp",
+      "http://localhost:3000/piture/1-6.webp",
+      "http://localhost:3000/piture/1-7.webp",
+      "http://localhost:3000/piture/1-8.webp",
+      "http://localhost:3000/piture/1-9.webp",
+      "http://localhost:3000/piture/1-10.webp",
+      "http://localhost:3000/piture/1-11.webp",
+      "http://localhost:3000/piture/1-12.webp",
+      "http://localhost:3000/piture/1-13.webp",
+      "http://localhost:3000/piture/1-14.webp",
+      "http://localhost:3000/piture/1-15.webp"
+    ],
     "list" :[
       {
         "id": 101,
@@ -141,6 +158,23 @@
     "topicTitle": "自然堂CHANDO化妆品专场",
     "activeTime": "剩2时",
     "discount": "满198减100，上不封顶",
+    "picture":[
+      "http://localhost:3000/piture/2-1.webp",
+      "http://localhost:3000/piture/2-2.webp",
+      "http://localhost:3000/piture/2-3.webp",
+      "http://localhost:3000/piture/2-4.webp",
+      "http://localhost:3000/piture/2-5.webp",
+      "http://localhost:3000/piture/2-6.webp",
+      "http://localhost:3000/piture/2-7.webp",
+      "http://localhost:3000/piture/2-8.webp",
+      "http://localhost:3000/piture/2-9.webp",
+      "http://localhost:3000/piture/2-10.webp",
+      "http://localhost:3000/piture/2-11.webp",
+      "http://localhost:3000/piture/2-12.webp",
+      "http://localhost:3000/piture/2-13.webp",
+      "http://localhost:3000/piture/2-14.webp",
+      "http://localhost:3000/piture/2-15.webp"
+    ],
     "list": [
       {
         "id": 201,
@@ -291,6 +325,18 @@
     "topicTitle": "科颜氏Kiehl's化妆品专场",
     "activeTime": "剩2时",
     "discount": "满498减100，上不封顶",
+    "picture":[
+      "http://localhost:3000/piture/3-1.webp",
+      "http://localhost:3000/piture/3-2.webp",
+      "http://localhost:3000/piture/3-3.webp",
+      "http://localhost:3000/piture/3-4.webp",
+      "http://localhost:3000/piture/3-5.webp",
+      "http://localhost:3000/piture/3-6.webp",
+      "http://localhost:3000/piture/3-7.webp",
+      "http://localhost:3000/piture/3-8.webp",
+      "http://localhost:3000/piture/3-9.webp",
+      "http://localhost:3000/piture/3-10.webp"
+    ],
     "list": [
       {
         "id": 301,
@@ -419,7 +465,6 @@
   },
 
 
-
   {
     "category": 4,
     "topic": "专题四",
@@ -452,6 +497,7 @@
         "makePrice": 270,
         "discount": "7.3折",
         "slider":"http://localhost:3000/page/4-1-1.jpg",
+        "picture":[],
         "sales":"496",
         "size": "均码",
 
@@ -474,6 +520,7 @@
         "makePrice": "",
         "discount": "一口价",
         "slider":"http://localhost:3000/page/4-2-1.jpg",
+        "picture":[],
         "sales":"443",
         "size": "450ml",
         "describe": [
@@ -494,6 +541,7 @@
         "makePrice": "",
         "discount": "一口价",
         "slider":"http://localhost:3000/page/4-3-1.jpg",
+        "picture":[],
         "sales":"491",
         "size": "均码",
         "describe": [
@@ -511,6 +559,7 @@
         "makePrice": "",
         "discount": "7.3折",
         "slider":"http://localhost:3000/page/4-4-1.jpg",
+        "picture":[],
         "sales":"442",
         "size": "400ml",
         "describe": [
@@ -530,6 +579,7 @@
         "makePrice": 77,
         "discount": "7.7折",
         "slider":"http://localhost:3000/page/4-5-1.jpg",
+        "picture":[],
         "sales":"409",
         "size": "均码",
         "describe": [
@@ -549,6 +599,7 @@
         "makePrice": "",
         "discount": "一口价",
         "slider":"http://localhost:3000/page/4-6-1.jpg",
+        "picture":[],
         "sales":"705",
         "size": "均码",
         "describe": [
@@ -593,6 +644,7 @@
         "makePrice": 418,
         "discount": "4.8折",
         "slider":"http://localhost:3000/page/5-1-1.jpg",
+        "picture":[],
         "sales":"686",
         "size": "均码",
         "describe": [
@@ -612,6 +664,7 @@
         "makePrice": 376,
         "discount": "5.8折",
         "slider":"http://localhost:3000/page/5-2-1.jpg",
+        "picture":[],
         "sales":"769",
         "size": "均码",
         "describe": [
@@ -631,6 +684,7 @@
         "makePrice": "",
         "discount": "一口价",
         "slider":"http://localhost:3000/page/5-3-1.jpg",
+        "picture":[],
         "sales":"964",
         "size": "其他尺码",
         "describe": [
@@ -650,6 +704,7 @@
         "makePrice": 356,
         "discount": "5.6折",
         "slider":"http://localhost:3000/page/5-4-1.jpg",
+        "picture":[],
         "sales":"912",
         "size": "均码",
         "describe": [
@@ -669,6 +724,7 @@
         "makePrice": 420,
         "discount": "3折",
         "slider":"http://localhost:3000/page/5-5-1.jpg",
+        "picture":[],
         "sales":"978",
         "size": "20片/盒",
         "describe": [
@@ -688,6 +744,7 @@
         "makePrice": 219,
         "discount": "6.3折",
         "slider":"http://localhost:3000/page/5-6-1.jpg",
+        "picture":[],
         "sales":"993",
         "size": "100g",
         "describe": [
@@ -735,6 +792,7 @@
         "makePrice": "40",
         "discount": "7.3折",
         "slider":"http://localhost:3000/page/6-1-1.jpg",
+        "picture":[],
         "sales":"998",
         "size": "15g",
         "describe": [
@@ -755,6 +813,7 @@
         "makePrice": "395",
         "discount": "5折",
         "slider": "http://localhost:3000/page/6-2-1.jpg",
+        "picture":[],
         "sales":"496",
         "size": "均码",
         "describe": [
@@ -774,6 +833,7 @@
         "makePrice": "190",
         "discount": "8.8折",
         "slider":"http://localhost:3000/page/6-3-1.jpg",
+        "picture":[],
         "sales":"786",
         "size": "均码",
         "describe": [
@@ -793,6 +853,7 @@
         "makePrice": "268",
         "discount": "5.9折",
         "slider":"http://localhost:3000/page/6-4-1.jpg",
+        "picture":[],
         "sales":"698",
         "size": "50g",
         "describe": [
@@ -812,6 +873,7 @@
         "makePrice": "90",
         "discount": "7.3折",
         "slider":"http://localhost:3000/page/6-5-1.jpg",
+        "picture":[],
         "sales":"493",
         "size": "12g",
         "describe": [
@@ -832,6 +894,7 @@
         "makePrice": "58",
         "discount": "7.8折",
         "slider":"http://localhost:3000/page/6-6-1.jpg",
+        "picture":[],
         "sales":"968",
         "size": "30ml",
         "describe": [
