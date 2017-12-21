@@ -39,7 +39,7 @@ export default class Home extends Component {
                         {this.state.adress}
                         <i className='iconfont icon-down-trangle'></i>
                     </div>
-                    <Link to={`/Search`}>
+                    <Link to='/Search'>
                         <div className='search'><input type="text" placeholder='12.24圣诞狂欢'/></div>
                     </Link>
                     <div className='my-profile' onClick={() => this.props.history.push('/profile')}><i
