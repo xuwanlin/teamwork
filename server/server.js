@@ -4,6 +4,7 @@ let fs = require('fs');
 let bodyParser = require('body-parser');
 let session = require('express-session');
 let app = express();
+let moment = require('moment');
 
 app.use(bodyParser.json()); // 解析json application/json
 app.use(bodyParser.urlencoded({extented: true})); // 解析表单 application/x-www-form-urlencoded
@@ -226,7 +227,7 @@ app.post('/api/order',(req,res)=>{
     let oldUser = users.find(item => item.username == req.session.user.username);
     let tempOrder = {};
     tempOrder.id=Date.now();
-    tempOrder.date = new Date();
+    tempOrder.date = moment().format('YYYY-MM-DD HH:mm:ss');
     tempOrder.orderInfo = oldUser.orderInfo;
     tempOrder.product = producArr;
     oldUser.order.unshift(tempOrder);
