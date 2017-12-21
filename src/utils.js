@@ -78,13 +78,13 @@ export  function LazyImg(dom){
 
         }
     };
-    handleAllImg(dom);
+
 
 let scrollBox = document.getElementById('scrollBox');
 let scrollBoxsHeightcrollTop = 0
 
     scrollBoxsHeightcrollTop=scrollBox.clientHeight + scrollBox.scrollTop;
-
+    handleAllImg(dom);
 
     scrollBox.addEventListener('scroll',()=>{
         scrollBoxsHeightcrollTop=scrollBox.clientHeight + scrollBox.scrollTop;
@@ -103,7 +103,7 @@ let scrollBoxsHeightcrollTop = 0
             B+=p.offsetTop;
             p = p.offsetParent;
         }
-        if (B+15<=scrollBoxsHeightcrollTop) {
+        if (B+35<=scrollBoxsHeightcrollTop) {
             oImg.isLoad = true;
 
             let tempImg = new Image;
@@ -129,7 +129,7 @@ let scrollBoxsHeightcrollTop = 0
             }
             start += step;
             oImg.style.opacity=start;
-        }, 23);
+        }, 50);
     }
 
 
