@@ -12,7 +12,6 @@ export default class Brand extends Component {
 
     componentDidMount() {
         get(`/api/categorys/${this.props.match.params.id}`).then(res => {
-            console.log(res.category.picture);
             if (res.code == 0) {
                 this.setState({
                     list: res.category.list,
@@ -21,11 +20,10 @@ export default class Brand extends Component {
                 });
             }
         });
-        console.log(this.state.picture);
-    }
 
+    }
     render() {
-        console.log(this.state.picture);
+
         return (
             <div className='brand-box'>
                 <Mheader title={this.state.title}/>

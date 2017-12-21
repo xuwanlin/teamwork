@@ -1,53 +1,60 @@
 .brand-box {
+  overflow: hidden;
+  height: 100%;
+  position: fixed;
+  z-index: 20;
+  background: #fff;
+  overflow-y: auto;
+  padding-top: 50px;
+  .brand-picture {
     overflow: hidden;
-    height: 100%;
-    position: fixed;
-    z-index: 20;
-    background: #fff;
-    overflow-y: auto;
-    padding-top: 50px;
-  .brand-picture{
-    overflow: hidden;
-    img{
+    img {
       display: block;
       width: 100%;
     }
   }
-    .brand-list {
+  .brand-list {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+      background: #fff;
+      .photo {
+        border: 1px solid #ddd
+      }
+      .title {
+        margin: .2rem 0;
+        height: .8rem;
+        color: #404040;
+      }
+      .price {
         overflow: hidden;
-        display: flex;
-        flex-wrap: wrap;
-        li {
-            width: 50%;
-            padding: 20px;
-            box-sizing: border-box;
-            background: #fff;
-            .photo {
-                border: 1px solid #ddd
-            }
-            .title {
-                margin: .2rem 0 ;
-                height: .8rem;
-            }
-            .price {
-                overflow: hidden;
-                margin-top: 10px;
-                .sale {
-                    float: right;
-                    background: #000;
-                    color: #fff;
-                    display: inline;
-                }
-                span {
-                    color: #f00;
-                    font-size: 15px;
-                }
-                del {
-                    color: #cccccc;
-                    font-size: 12px;
-                    margin-left: 10px;
-                }
-            }
+        margin-top: 10px;
+        .sale {
+          float: right;
+          background: #000;
+          color: #fff;
+          display: inline;
         }
+        span {
+          color: #f00;
+          font-size: 15px;
+        }
+        del {
+          color: #cccccc;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+
+
+
     }
+
+  }
+
+
 }
