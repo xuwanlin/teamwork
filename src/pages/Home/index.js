@@ -11,7 +11,8 @@ import {post} from "../../api";
 export default class Home extends Component {
     constructor() {
         super();
-        this.state = {isShow: false, adress: '北京',keyValue:''};
+        this.state = {isShow: false, adress: '北京',keyValue:'',keyword:''};
+        this.keyword='';
     }
     handleClick = (e) => {
         if (e.target.tagName === "SPAN") {
@@ -20,6 +21,9 @@ export default class Home extends Component {
             });
         }
     };
+    handleChange = (e)=>{
+        this.setState({keyword:this.keyword.value})
+    }
 
     render() {
         return (
@@ -35,9 +39,9 @@ export default class Home extends Component {
                     </div>
 
                         <div className='search'><input
-                            ref={input=>this.input=input}
-                            type="text" placeholder='12.24圣诞狂欢'/>
-                            <Link to={`/find/`+this.value}>
+                            ref={input=>this.keyword=input}
+                            type="text" placeholder='12.24圣诞狂欢' onChange={this.handleChange}/>
+                            <Link to={`/find/`+this.state.keyword}>
                                 <div className="iconfont icon-fanhui jiantou"> </div>
                             </Link>
                         </div>
