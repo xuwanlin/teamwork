@@ -5,6 +5,9 @@ let bodyParser = require('body-parser');
 let session = require('express-session');
 let app = express();
 let moment = require('moment');
+//头像列表
+let photo = require('./mock/photo');
+
 
 app.use(bodyParser.json()); // 解析json application/json
 app.use(bodyParser.urlencoded({extented: true})); // 解析表单 application/x-www-form-urlencoded
@@ -37,7 +40,9 @@ app.use(function (req, res, next) {
 //指定静态文件目录
 app.use(express.static(path.resolve('./static/')));
 //    static/a.txt => http://localhost:3000/a.txt
-
+Photo=()=>{
+    return photo[Math.round(Math.random()*30)+1].photo;
+}
 //获取图片列表
 //读取文件./mock/imgLink/test1.json 不写count默认全部
 //api/imglink?file=test1&count=2
@@ -76,12 +81,15 @@ app.post('/api/reg', (req, res) => {
             res.json({code: 1, error: '用户名或密码输入格式不正确！'});
             return;
         }
+        user.photo=Photo();
+        user.orderInfo = {};
+        user.date = moment().format('YYYY-MM-DD HH:mm:ss');
+        user.id = Date.now();
         user.cart = [];
         user.order = [];
-        user.orderInfo = {};
 
 
-        users.push(user);
+        users.unshift(user);
         fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
 
             if (!err) {
