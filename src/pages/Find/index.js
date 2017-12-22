@@ -59,7 +59,7 @@ export default class Find extends Component {
     layer = () => {
         let odiv = document.createElement('div');
         odiv.className = 'layerBox';
-        odiv.innerHTML = '<span>+</span>';
+        odiv.innerHTML = '<span></span>';
         document.body.appendChild(odiv);
         setTimeout(() => {
             odiv.classList.add('stop');
