@@ -25,11 +25,8 @@ export default class Find extends Component {
     }
 
     getData = (offset, limit, type) => {
-        let keyword =this.props.match.params.keyword||'';
-
-
+        let keyword = this.props.match.params.keyword || '';
         get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}&keyword=${keyword}`).then(res => {
-            console.log(res);
             if (res.code === 0) {
                 let list = [...this.state.list, ...res.data.list];
                 this.setState({list, offset: this.state.offset + res.data.total, hasMore: res.data.hasMore});
@@ -38,7 +35,7 @@ export default class Find extends Component {
     };
 
     freshData = (offset, limit, type) => {
-        let keyword =this.props.match.params.keyword||'';
+        let keyword = this.props.match.params.keyword || '';
 
         get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}&keyword=${keyword}`).then(res => {
             console.log(res);
@@ -50,18 +47,78 @@ export default class Find extends Component {
     };
 
     handlePost = (id) => {
-        post(`/api/car?id=${id}`).then(res => {
+        post(`/api/car`, {id}).then(res => {
             console.log(res);
             if (res.code === 1) {
                 this.props.history.push('/login');
             }
         });
     };
+    ChangeSort = (offset, limit, type) => {
+        get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}`).then(res => {
+            if (res.code === 0) {
+                let list = res.data.list;
+                this.setState({
+                    list,
+                    offset: this.state.offset + res.data.total,
+                    hasMore: res.data.hasMore,
+                    type
+                });
+            }
+        });
+    };
+    handleSort = (e) => {
+        if (/tag/.test(e.target.className)) {
+            let type = this.state.type;
+            switch (e.target.getAttribute('data-info')) {
+                case 'price':
+                    type === 0 ? this.ChangeSort(0, 6, 1) : this.ChangeSort(0, 6, 0);
+                    break;
+                case 'safe':
+                    type === 2 ? this.ChangeSort(0, 6, 3) : this.ChangeSort(0, 6, 2);
+                    break;
+                case 'mark':
+                    type === 4 ? this.ChangeSort(0, 6, 5) : this.ChangeSort(0, 6, 4);
+                    break;
+                default:
+                    return;
+            }
+        }
+    };
 
     render() {
+        console.log(this.state.type);
         return (
             <div className='find-area' ref={content => this.content = content}>
-                <div className='find-title'><span>筛选</span><span>价格</span><span>折扣</span><span>销量</span></div>
+                <div className='find-title' onClick={this.handleSort}><span>筛选</span>
+                    <span className={(this.state.type === 0 || this.state.type === 1) ? 'tag active' : 'tag'}
+                          data-info="price">价格
+                        {
+                            this.state.type === 1 && <i className='iconfont icon-jiantou'></i>
+                        }
+                        {
+                            this.state.type === 0 && <i className='iconfont icon-up'></i>
+                        }
+                    </span>
+                    <span className={(this.state.type === 2 || this.state.type === 3) ? 'tag active' : 'tag'}
+                          data-info="safe">折扣
+                        {
+                            this.state.type === 3 && <i className='iconfont icon-jiantou'></i>
+                        }
+                        {
+                            this.state.type === 2 && <i className='iconfont icon-up'></i>
+                        }
+                    </span>
+                    <span className={(this.state.type === 4 || this.state.type === 5) ? 'tag active' : 'tag'}
+                          data-info="mark">销量
+                        {
+                            this.state.type === 5 && <i className='iconfont icon-jiantou'></i>
+                        }
+                        {
+                            this.state.type === 4 && <i className='iconfont icon-up'></i>
+                        }
+                    </span>
+                </div>
                 <ul className='productList'>
                     {
                         this.state.list.map(item => (
@@ -73,7 +130,7 @@ export default class Find extends Component {
                                 <div className='price'>
                                     <b>{item.price}</b>
                                     <del>{item.makePrice}</del>
-                                    <span>{item.sales}</span>
+                                    <span>销量:{item.sales}</span>
                                 </div>
                                 <div className='add-car'>
                                     <button onClick={() => this.handlePost(item.id)}>加入购物车</button>
