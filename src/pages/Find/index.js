@@ -51,8 +51,22 @@ export default class Find extends Component {
         post(`/api/car`, {id}).then(res => {
             if (res.code === 1) {
                 this.props.history.push('/login');
+            } else {
+                this.layer();
             }
         });
+    };
+    layer = () => {
+        let odiv = document.createElement('div');
+        odiv.className = 'layerBox';
+        odiv.innerHTML = '<span>+</span>';
+        document.body.appendChild(odiv);
+        setTimeout(() => {
+            odiv.classList.add('stop');
+        }, 50);
+        setTimeout(() => {
+            document.body.removeChild(odiv);
+        }, 500);
     };
     ChangeSort = (offset, limit, type) => {
         get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}`).then(res => {
@@ -133,7 +147,9 @@ export default class Find extends Component {
                                     <span>销量:{item.sales}</span>
                                 </div>
                                 <div className='add-car'>
-                                    <button onClick={() => this.handlePost(item.id)}>加入购物车</button>
+                                    <button ref={btn => this.addCart = btn}
+                                            onClick={() => this.handlePost(item.id)}>加入购物车
+                                    </button>
                                 </div>
                             </li>
                         ))
