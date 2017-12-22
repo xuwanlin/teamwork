@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './index.less';
 import {Link} from 'react-router-dom';
 import {get} from '../../../api/index';
+import {LazyImg} from "../../../utils";
 
 export default class HomeList extends Component {
     constructor() {
@@ -13,7 +14,9 @@ export default class HomeList extends Component {
         get('/api/category').then(res => {
             if (res.code === 0) {
                 let imgs = res.categorys;
-                this.setState({imgs});
+                this.setState({imgs},()=>{
+                    LazyImg(this.image)
+                });
             }
         });
     }
@@ -21,15 +24,15 @@ export default class HomeList extends Component {
 
     render() {
         return (
-            <div className="home-lists">
+            <div className="home-lists" ref={image=>this.image=image}>
                 <div className="home-hotSale">今日特卖 · 每天早10点 晚8点上新</div>
                 {
                     this.state.imgs.map(item => (
                         <div className="home-list" key={item.category}>
-                            <div className="home-images">
+                            <div className="home-images" >
                                 <Link to={`/brand/${item.category}`}>
                                     <img className="home-img"
-                                         src={item.topicCover}/>
+                                         data-src={item.topicCover}/>
                                 </Link>
                             </div>
                             <div className="home-text">

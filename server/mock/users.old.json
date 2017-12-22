@@ -1,0 +1,63 @@
+[
+  {
+    "username": "xuwanlin1",
+    "password": "1",
+    "cart": [
+      {
+        "id": 401,
+        "count": 3,
+        "isSelected": 1
+      }
+    ],
+    "order": [],
+    "orderInfo": {}
+  },
+  {
+    "username": "xuwanlina",
+    "password": "1",
+    "orderInfo": {
+      "name": "xwl",
+      "address":"北京。。。",
+      "mobile":15232552,
+      "email":"39282@qq.com"
+    },
+    "cart": [],
+    "order": [
+      {
+        "id": 111,
+        "data": "2017-12-21 19:21",
+        "orderInfo": {
+          "name": "xwl",
+          "address":"北京。。。",
+          "mobile":15232552,
+          "email":"39282@qq.com"
+        },
+        "product": [
+          {
+            "id": 401,
+            "count": 3
+          },
+          {
+            "id": 401,
+            "count": 3
+          }
+        ]
+      },
+      {
+        "id": 222,
+        "data": "2017-12-21 19:21",
+        "product": [
+          {
+            "id": 401,
+            "count": 3
+          },
+          {
+            "id": 401,
+            "count": 3
+          }
+        ]
+      }
+    ],
+    "orderInfo": {}
+  }
+]

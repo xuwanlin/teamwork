@@ -25,7 +25,10 @@ export default class Find extends Component {
     }
 
     getData = (offset, limit, type) => {
-        get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}`).then(res => {
+        let keyword =this.props.match.params.keyword||'';
+
+
+        get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}&keyword=${keyword}`).then(res => {
             console.log(res);
             if (res.code === 0) {
                 let list = [...this.state.list, ...res.data.list];
@@ -35,7 +38,9 @@ export default class Find extends Component {
     };
 
     freshData = (offset, limit, type) => {
-        get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}`).then(res => {
+        let keyword =this.props.match.params.keyword||'';
+
+        get(`/api/categorysAll?offset=${offset}&limit=${limit}&type=${type}&keyword=${keyword}`).then(res => {
             console.log(res);
             if (res.code === 0) {
                 let list = [...res.data.list, ...this.state.list];
@@ -56,7 +61,7 @@ export default class Find extends Component {
     render() {
         return (
             <div className='find-area' ref={content => this.content = content}>
-                <div className='find-title'>筛选<span>价格</span><span>折扣</span><span>销量</span></div>
+                <div className='find-title'><span>筛选</span><span>价格</span><span>折扣</span><span>销量</span></div>
                 <ul className='productList'>
                     {
                         this.state.list.map(item => (
@@ -68,6 +73,7 @@ export default class Find extends Component {
                                 <div className='price'>
                                     <b>{item.price}</b>
                                     <del>{item.makePrice}</del>
+                                    <span>{item.sales}</span>
                                 </div>
                                 <div className='add-car'>
                                     <button onClick={() => this.handlePost(item.id)}>加入购物车</button>

@@ -18,9 +18,13 @@
         box-sizing: border-box;
         top: 0;
         font-size: 16px;
+        display: flex;
         span {
             display: inline-block;
             padding: 0 15px;
+            margin-left: 15px;
+            flex-direction: column;
+            flex: 1;
         }
     }
     .productList {
@@ -36,18 +40,34 @@
             margin-bottom: 20px;
             background: #fff;
             .title {
-                padding: 5px;
+              padding: 5px;
+              height: .4rem;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+
             }
             .price {
+              position: relative;
                 padding: 0 5px;
                 b {
                     color: #f00;
                     font-size: 15px;
                     margin-right: 5px;
                 }
+                del{
+                    color: gray;
+                }
+                span{
+                  position: absolute;
+                  right: 15px;
+                  margin-top: 3px;
+
+                }
             }
             .add-car {
                 padding: 5px;
+                margin: .15rem 0;
                 button {
                     border: none;
                     background: #de3d96;

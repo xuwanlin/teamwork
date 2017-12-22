@@ -7,21 +7,33 @@ import {Link} from 'react-router-dom';
 export default class Brand extends Component {
     constructor() {
         super();
-        this.state = {list: [], title: ''};
+        this.state = {list: [], title: '',picture:[]};
     }
 
     componentDidMount() {
         get(`/api/categorys/${this.props.match.params.id}`).then(res => {
             if (res.code == 0) {
-                this.setState({list: res.category.list, title: res.category.topicTitle});
+                this.setState({
+                    list: res.category.list,
+                    title: res.category.topicTitle,
+                    picture:res.category.picture
+                });
             }
         });
-    }
 
+    }
     render() {
+
         return (
             <div className='brand-box'>
                 <Mheader title={this.state.title}/>
+                <div className="brand-picture">
+                    {
+                        this.state.picture.map((item,index)=>(
+                            <img src={item} alt="" key={index}/>
+                        ))
+                    }
+                </div>
                 <ul className="brand-list">
                     {
                         this.state.list.map(item => (

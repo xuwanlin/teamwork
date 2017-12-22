@@ -63,3 +63,74 @@ export const downRefresh = (dom, callback) => {
         }
     }
 };
+
+//图片延迟加载
+
+export  function LazyImg(dom){
+
+
+
+    function handleAllImg(dom,numTop) {
+        let imgs=[...dom.querySelectorAll("img")];
+        for (let i = 0; i < imgs.length; i++) {
+            let curImg = imgs[i];
+            lazyImg(curImg,numTop);
+
+        }
+    };
+
+
+let scrollBox = document.getElementById('scrollBox');
+let scrollBoxsHeightcrollTop = 0
+
+    scrollBoxsHeightcrollTop=scrollBox.clientHeight + scrollBox.scrollTop;
+    handleAllImg(dom);
+
+    scrollBox.addEventListener('scroll',()=>{
+        scrollBoxsHeightcrollTop=scrollBox.clientHeight + scrollBox.scrollTop;
+        handleAllImg(dom);
+    })
+
+
+    function lazyImg(oImg) {
+        if (oImg.isLoad) return;
+        oImg.style.display='block';
+        oImg.style.minHeiht='20px';
+
+        let B = oImg.offsetTop;
+        let p = oImg.offsetParent;
+        while (p){
+            B+=p.offsetTop;
+            p = p.offsetParent;
+        }
+        if (B+35<=scrollBoxsHeightcrollTop) {
+            oImg.isLoad = true;
+
+            let tempImg = new Image;
+            tempImg.src = oImg.getAttribute('data-src');
+            tempImg.onload = function () {
+                oImg.src = this.src;
+                //oImg.style.display="block";
+                moveImg(oImg);
+            }
+        }
+    }
+
+
+    //动画部分
+    function moveImg(oImg) {
+        let start = 0,
+            step = 0.05;
+        oImg.style.opacity=start;
+        oImg.moveTimer = setInterval(function () {
+            if (start >= 1) {
+                clearInterval(oImg.moveTimer);
+                return;
+            }
+            start += step;
+            oImg.style.opacity=start;
+        }, 50);
+    }
+
+
+};

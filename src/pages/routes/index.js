@@ -24,6 +24,7 @@ export default class App extends Component {
                     <Switch>
                         <Route exact path='/' component={Home}/>
                         <Route path='/shop' component={Shop}/>
+                        <Route path='/find/:keyword' component={Find}/>
                         <Route path='/find' component={Find}/>
                         <Route path='/detail/:id' component={Detail}/>
                         <Route exact path='/profile' component={PersonCenter}/>

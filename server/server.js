@@ -4,6 +4,10 @@ let fs = require('fs');
 let bodyParser = require('body-parser');
 let session = require('express-session');
 let app = express();
+let moment = require('moment');
+//头像列表
+let photo = require('./mock/photo');
+
 
 app.use(bodyParser.json()); // 解析json application/json
 app.use(bodyParser.urlencoded({extented: true})); // 解析表单 application/x-www-form-urlencoded
@@ -36,7 +40,9 @@ app.use(function (req, res, next) {
 //指定静态文件目录
 app.use(express.static(path.resolve('./static/')));
 //    static/a.txt => http://localhost:3000/a.txt
-
+Photo=()=>{
+    return photo[Math.round(Math.random()*30)+1].photo;
+}
 //获取图片列表
 //读取文件./mock/imgLink/test1.json 不写count默认全部
 //api/imglink?file=test1&count=2
@@ -75,10 +81,15 @@ app.post('/api/reg', (req, res) => {
             res.json({code: 1, error: '用户名或密码输入格式不正确！'});
             return;
         }
-        user.cart=[];
-        user.order=[];
+        user.photo=Photo();
+        user.orderInfo = {};
+        user.date = moment().format('YYYY-MM-DD HH:mm:ss');
+        user.id = Date.now();
+        user.cart = [];
+        user.order = [];
 
-        users.push(user);
+
+        users.unshift(user);
         fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
 
             if (!err) {
@@ -120,12 +131,15 @@ app.get('/api/validate', (req, res) => {
         let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
 
         let oldUser = users.find(item => item.username == req.session.user.username);
-        let cartCount=0;
-        oldUser.cart.forEach(item=>{
-            let count = item.count||0;
-            cartCount+=count
+        let cartCount = 0;
+        oldUser.cart.forEach(item => {
+            let count = item.count || 0;
+            cartCount += count
         })
-        res.send({code: 0, user: {username:req.session.user.username,"cartCount":cartCount,"orderInfo":oldUser.orderInfo}})
+        res.send({
+            code: 0,
+            user: {username: req.session.user.username, "cartCount": cartCount, "orderInfo": oldUser.orderInfo}
+        })
     } else {
         res.send({code: 1, error: '此用户未登录！'})
     }
@@ -210,23 +224,113 @@ app.get('/api/car', (req, res) => {
 
 
 });
-//获取我的订单
+// 提交购物车
+app.post('/api/order',(req,res)=>{
+    if (!req.session.user) {
+        return res.send({code: 1, error: '请登录后获取数据！'});
+        // return res.redirect('/login');
+    }
+    let producArr = req.body;
+    let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
+    let oldUser = users.find(item => item.username == req.session.user.username);
+    let tempOrder = {};
+    tempOrder.id=Date.now();
+    tempOrder.date = moment().format('YYYY-MM-DD HH:mm:ss');
+    tempOrder.orderInfo = oldUser.orderInfo;
+    tempOrder.product = producArr;
+    oldUser.order.unshift(tempOrder);
+
+    //删除提交后的购物车商品
+    producArr.forEach(order=>{
+
+        oldUser.cart = oldUser.cart.filter(item => {
+            return item.id != order.id
+        })
+
+    })
+
+
+    fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
+
+        if (!err) {
+            res.send({code: 0, success: '提交成功！', order: {id: tempOrder.id}});
+
+        }
+
+
+    })
+
+});
+
+//提交购物车get版
+app.get('/api/submitCar',(req,res)=>{
+
+    if (!req.session.user) {
+        return res.send({code: 1, error: '请登录后获取数据！'});
+        // return res.redirect('/login');
+    }
+
+    let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
+    let oldUser = users.find(item => item.username == req.session.user.username);
+    let producArr = oldUser.cart.filter(item=>item.isSelected==1);
+
+    oldUser.cart = oldUser.cart.filter(item=>item.isSelected!=1);
+    producArr.forEach(item=>{
+        delete item.isSelected;
+    })
+    let tempOrder = {};
+    tempOrder.id=Date.now();
+    tempOrder.date = moment().format('YYYY-MM-DD HH:mm:ss');
+    tempOrder.orderInfo = oldUser.orderInfo;
+    tempOrder.product = producArr;
+    oldUser.order.unshift(tempOrder);
+
+
+    fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
+
+        if (!err) {
+            res.send({code: 0, success: '提交成功！', order: {id: tempOrder.id}});
+
+        }
+
+
+    })
+
+})
+//获取我的全部订单
 app.get('/api/order', (req, res) => {
     if (!req.session.user) {
-        return res.redirect('/login');
+        return res.send({code: 1, error: '请登录后获取数据！'});
+        // return res.redirect('/login');
     }
+    let id = parseInt(req.query.id);
+
     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
     let productList = JSON.parse(fs.readFileSync('./mock/productList.json', 'utf8'));
     let oldUser = users.find(item => item.username == req.session.user.username);
     // 读取详细信息追加到购物车里
-    getCarOrderInfoList(oldUser, 'order', productList);
 
+    oldUser.order.forEach(item => {
+        getCarOrderInfoList(item, 'product', productList);
+    })
 
-    if (oldUser.order && oldUser.order.length > 0) {
-        res.send({code: 0, success: '获取成功！', order: {list: oldUser.order}});
+    if (id) {//一个订单
+        let oneOrder = oldUser.order.find(item => item.id == id);
+        if (oldUser.order && oldUser.order.length > 0) {
+            res.send({code: 0, success: '获取成功！', order: oneOrder});
+        } else {
+            res.send({code: 1, error: '暂无全部订单！'});
+        }
+
     } else {
-        res.send({code: 1, error: '暂无全部订单！'});
+        //全部订单
+        if (oldUser.order && oldUser.order.length > 0) {
+            res.send({code: 0, success: '获取成功！', order: {list: oldUser.order}});
+        } else {
+            res.send({code: 1, error: '暂无全部订单！'});
+        }
     }
+
 
 });
 //添加到购物车 id=134214 ,count=5表示更新到5，没有count表示+1
@@ -248,8 +352,8 @@ app.post('/api/car', (req, res) => {
         req.body.id = parseInt(req.body.id);
         let product = oldUser.cart.find(item => item.id == req.body.id);
         if (!product) {
-            oldUser.cart.push({id: req.body.id, count: 0, isSelected: 1})
-            product = oldUser.cart[oldUser.cart.length - 1];
+            oldUser.cart.unshift({id: req.body.id, count: 0, isSelected: 1})
+            product = oldUser.cart[0];
 
         }
 
@@ -270,27 +374,7 @@ app.post('/api/car', (req, res) => {
 
     })
 });
-//删除购物车的一个商品
-// app.del('/api/car', (req, res) => {
-//     if (!req.session.user) {
-//         return res.send({code: 1, error: '请登录后获取数据！'});
-//     }
-//     ;
-//     let users = JSON.parse(fs.readFileSync('./mock/users.json', 'utf8'));
-//     let oldUser = users.find(item => item.username == req.session.user.username);
-//
-//     //数字化
-//     req.body.id = parseInt(req.body.id);
-//
-//     oldUser.cart = oldUser.cart.filter(item => item.id != req.body.id);
-//     fs.writeFile('./mock/users.json', JSON.stringify(users), (err) => {
-//         if (!err) {
-//             res.json({code: 0, success: '删除成功', cart: oldUser.cart});
-//         }
-//
-//     })
-//
-// })
+
 
 //删除购物车商品
 app.del('/api/car', (req, res) => {
@@ -368,9 +452,21 @@ app.get('/api/categorysAll', (req, res) => {
             list.push(newItem)
         })
 
-    })
+    });
 
-    let {type, offset = 0, limit = 5} = req.query;
+    let {type, offset = 0, limit = 5, keyword} = req.query;
+    if (keyword) {
+        list = list.filter(item => {
+            let str = '';
+            for (let val in item) {
+                if (val == 'title' || val == 'date' || val == 'price' || val == 'makePrice' || val == 'discount' || val == 'sales' || val == 'size') {
+                    str += item[val];
+                }
+            }
+            return str.search(keyword) != -1;
+        })
+        list.log
+    }
     offset = isNaN(offset) ? 0 : parseInt(offset);
     limit = isNaN(limit) ? list.length : parseInt(limit);
 
@@ -378,16 +474,16 @@ app.get('/api/categorysAll', (req, res) => {
         (x, y) => x["price"] - y["price"],
         (x, y) => y["price"] - x["price"],
         (x, y) => {
-        //折扣从小到达
-            let Xdis=parseInt(x["discount"])?parseInt(x["discount"]):10;
-            let Ydis=parseInt(y["discount"])?parseInt(y["discount"]):10;
-            return Xdis-Ydis;
+            //折扣从小到达
+            let Xdis = parseInt(x["discount"]) ? parseInt(x["discount"]) : 10;
+            let Ydis = parseInt(y["discount"]) ? parseInt(y["discount"]) : 10;
+            return Xdis - Ydis;
         },
         (x, y) => {
             //折扣从大到小
-            let Xdis=parseInt(x["discount"])?parseInt(x["discount"]):10;
-            let Ydis=parseInt(y["discount"])?parseInt(y["discount"]):10;
-            return Ydis -Xdis;
+            let Xdis = parseInt(x["discount"]) ? parseInt(x["discount"]) : 10;
+            let Ydis = parseInt(y["discount"]) ? parseInt(y["discount"]) : 10;
+            return Ydis - Xdis;
         },//按销量排序
         (x, y) => x["sales"] - y["sales"],
         (x, y) => y["sales"] - x["sales"],
