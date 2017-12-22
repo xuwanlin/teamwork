@@ -138,7 +138,7 @@ app.get('/api/validate', (req, res) => {
         })
         res.send({
             code: 0,
-            user: {username: req.session.user.username, "cartCount": cartCount, "orderInfo": oldUser.orderInfo}
+            user: {username: req.session.user.username,"photo":oldUser.photo, "cartCount": cartCount, "orderInfo": oldUser.orderInfo}
         })
     } else {
         res.send({code: 1, error: '此用户未登录！'})
@@ -489,7 +489,7 @@ app.get('/api/categorysAll', (req, res) => {
         (x, y) => y["sales"] - x["sales"],
     ]
 
-    let sortList = type ? list.sort(typeArr[parseInt(type)]) : list;
+    let sortList = (type ||parseInt(type)<6) ? list.sort(typeArr[parseInt(type)]) : list;
 
     let data = {}//要返回的内容
     let i = offset;//返回的列表的序号

@@ -142,7 +142,7 @@ class Detail extends Component {
                         <i className="iconfont icon-icon1" ></i><span id="orderNumbers" className='order-numbers'>{this.state.cartCount}</span>
                     </Link>
                     <span className="cartContent" onClick={()=>this.bandleCart(id)}>加入购物车</span>
-                    <div id="animatCartBox" className="animatCartBox"><img  className="box" src={typeof slider=="object"?slider[0]:slider}/></div>
+                    <div id="animatCartBox" className="animatCartBox"><div className="box"><img  src={typeof slider=="object"?slider[0]:slider}/></div></div>
                 </div>
 
 
