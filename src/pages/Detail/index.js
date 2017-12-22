@@ -96,15 +96,11 @@ class Detail extends Component {
                         </p>
                         <p>
                             <i className="detail-activityName">满减</i>
-                            <span className="detail-activityContent">满200减50，上不封顶</span>
+                            <span className="detail-activityContent">满400减150，上不封顶</span>
                         </p>
                         <p>
                             <i className="detail-activityName">满减</i>
-                            <span className="detail-activityContent">满200减50，上不封顶</span>
-                        </p>
-                        <p>
-                            <i className="detail-activityName">满减</i>
-                            <span className="detail-activityContent">满200减50，上不封顶</span>
+                            <span className="detail-activityContent">满700减300，上不封顶</span>
                         </p>
                         <p>
                             <i className="detail-activityName">唯品币</i>
