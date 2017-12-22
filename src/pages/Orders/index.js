@@ -76,12 +76,12 @@ export default class Orders extends Component {
                 {
                     this.state.lists.length==0&&<div className='nothing'>暂无订单<p><Link to='/find'>去购物&gt;</Link></p></div>
                 }
-                <div
+               {/* <div
                     className="submit">
                     <p>
                         <span>货到付款</span>
                     </p>
-                </div>
+                </div>*/}
             </div>
         );
     }

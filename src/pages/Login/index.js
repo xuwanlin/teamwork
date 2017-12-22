@@ -42,7 +42,7 @@ export default class Login extends Component {
                         {
                             this.state.error && <div className='tips'>{this.state.error}</div>
                         }
-                        <Link className='toLogin' to='/login'>去登录</Link>
+                        <Link className='toLogin' to='/reg'>去注册</Link>
                     </div>
                 </div>
             </div>
