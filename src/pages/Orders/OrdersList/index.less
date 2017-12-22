@@ -1,0 +1,126 @@
+.order-box{
+  z-index: 6666;
+  position: fixed;
+  width: 100%;
+  background-color: #eee;
+  height: 100%;
+  overflow: auto;
+  .orders{
+    width: 100%;
+    padding: 1rem 0;
+    .orderAd {
+      background: #fff;
+      p{
+        padding: .1rem .2rem;
+        .right{
+          float: right;
+          display: inline-block;
+        }
+      }
+    }
+    .orderNo{
+      font-size: 16px;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .order-list{
+      background-color: #fff;
+      margin-top: .1rem;
+      width: 100%;
+      overflow: hidden;
+      .order-shop{
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        padding: .1rem .2rem;
+      }
+      ul{
+        .orders-list{
+          padding: .2rem 0;
+          width: 100%;
+          border-bottom: 1px solid #ccc;
+          .list-top{
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+            .list-img{
+              background: none;
+              width:1.5rem;
+            }
+            .list-title{
+              margin-top: -1.8rem;
+              float: right;
+              p{
+                margin: .2rem 0;
+                .title{
+                  display: inline-block;
+                  width: 3rem;
+                }
+                .price{
+                  float: right;
+                  display: inline-block;
+                  font-size: .3rem;
+                  width: 1.3rem;
+                  text-align: right;
+                  margin-right: .2rem;
+                }
+                .size{
+                  color: #6666;
+                }
+                .num{
+                  float: right;
+                  display: inline-block;
+                  font-size: .3rem;
+                  width: 1.3rem;
+                  text-align: right;
+                  margin-right: .2rem;
+                }
+              }
+            }
+          }
+          .list-order{
+            background: #fff;
+            margin-bottom: .1rem;
+            p{
+              padding: .1rem .2rem;
+              .right{
+                float: right;
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .allPrice{
+    background: #fff;
+    position: relative;
+    width: 100%;
+    height: 1rem;
+    span{
+      display: inline-block;
+      width: 2rem;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: .1rem 2rem;
+      background: #ccc;
+      text-align: center;
+      color: #000;
+      font-size: .3rem;
+    }
+  }
+  .unpay{
+    width: 100%;
+    background: #fff;
+    p{
+      padding: .1rem .2rem;
+      font-size: .3rem;
+      .right{
+        float: right;
+        display: inline-block;
+        color:red;
+      }
+    }
+  }
+}

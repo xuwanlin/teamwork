@@ -12,6 +12,8 @@ import Login from "../Login";
 import Reg from "../Reg";
 import Address from "../Address";
 import AddressList from "../Address/AddressList";
+import OrdersList from "../Orders/OrdersList/index";
+import Orders from "../Orders/index";
 
 
 export default class App extends Component {
@@ -31,6 +33,8 @@ export default class App extends Component {
                         <Route  path='/reg' component={Reg}/>
                         <Route  path='/address' component={Address}/>
                         <Route  path='/addressList' component={AddressList}/>
+                        <Route  path='/orders' component={Orders}/>
+                        <Route  path='/orderslist/:id' component={OrdersList}/>
                     </Switch>
                     <Tab/>
                 </div>
