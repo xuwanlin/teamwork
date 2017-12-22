@@ -8,13 +8,15 @@ export default class ShopCar extends Component {
         super();
         this.state = {list: [], totalPrice: 0.00};
     }
-      submitTo = () => {
+
+    submitTo = () => {
         get('./api/submitCar').then(res => {
-          if(res.code === 0){
-            console.log(res);
-          }
-        })
-      }
+            if (res.code === 0) {
+                console.log(this.props);
+            }
+        });
+    };
+
     componentDidMount() {
         get('/api/car').then(res => {
             if (res.code === 0) {
@@ -75,13 +77,18 @@ export default class ShopCar extends Component {
     render() {
         return (
             <div className='shopcar-list'>
-                <h3>
-                    <label><input type="checkbox"
-                                  checked={this.state.list.every(item => item.isSelected)}
-                                  onChange={(event) => this.switchAllSelected(event)}
-                    />全选/全不选
-                    </label>
-                </h3>
+                {
+                    this.state.list.length > 0 && (
+                        <h3>
+                            <label><input type="checkbox"
+                                          checked={this.state.list.every(item => item.isSelected)}
+                                          onChange={(event) => this.switchAllSelected(event)}
+                            />全选/全不选
+                            </label>
+                        </h3>
+                    )
+                }
+
                 <ul className='car-list'>
                     {
                         this.state.list.map(item => (
@@ -103,7 +110,8 @@ export default class ShopCar extends Component {
                                         <button onClick={(event) => this.handleChange(event, item, 1)}>+</button>
                                     </div>
                                     <div className='set'>
-                                        <button onClick={() => this.removeGood(item.id)}>X</button>
+                                        <i onClick={() => this.removeGood(item.id)}
+                                           className='iconfont icon-chushaixuanxiang'></i>
                                     </div>
                                 </div>
 
@@ -112,10 +120,15 @@ export default class ShopCar extends Component {
                     }
                 </ul>
                 {
-                    this.state.list.length > 0 ? <div>
-                        总计: <b>{this.state.totalPrice}元</b>
+                    this.state.list.length > 0 ? <div className='submitBtn'>
+                        <span>总计: <b>{this.state.totalPrice}元</b></span>
                         <button onClick={this.submitTo}>去结算</button>
-                    </div> : <div className='tips'>请先<Link to='/login'>登录</Link></div>
+                    </div> :  <div className='tips'>
+                                <div className="tips-style">m.vip.com</div>
+                                <Link to='/login' className="tips-login">请先登录</Link>
+                                <Link to='/reg' className="tips-reg">请注册</Link>
+                                <p>唯品会独家赞助</p>
+                        </div>
                 }
             </div>
         );

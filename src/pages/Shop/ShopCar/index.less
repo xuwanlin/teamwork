@@ -2,6 +2,10 @@
     width: 100%;
     overflow: hidden;
     background: #fff;
+    padding: 50px 0 80px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
     h3 {
         height: 40px;
         line-height: 40px;
@@ -14,6 +18,7 @@
             overflow: hidden;
             padding: 10px 0;
             border-bottom: 1px dashed #ddd;
+            position: relative;
             .input {
                 float: left;
                 width: 6%;
@@ -30,71 +35,82 @@
             .text-area {
                 overflow: hidden;
                 h4 {
-                    font-size: 16px;
+                    font-size: 15px;
                     display: -webkit-box;
                     margin-bottom: 8px;
+                    font-weight: normal;
                 }
-                .num{
+                .num {
                     width: 100%;
                     overflow: hidden;
                     text-align: right;
-                    .price{
+                    padding-top: 15px;
+                    .price {
                         float: left;
                         font-weight: bold;
-                        font-size: 22px;
+                        font-size: 18px;
                         color: red;
                     }
-                    button{
+                    button {
                         display: inline-block;
                         width: 25px;
                         height: 25px;
                     }
-                    input{
-                        width: 50px;
+                    input {
+                        width: 25px;
                         height: 23px;
-                        border:1px solid #ddd;
+                        border: 1px solid #ddd;
                     }
                 }
-                .set{
+                .set {
                     text-align: right;
-                    button{
-                        display: inline-block;
+                    button {
+                        display: none;
                         width: 25px;
                         height: 25px;
+                    }
+                    .iconfont {
+                        position: absolute;
+                        right: 10px;
+                        font-size: 20px;
+                        color: #999;
+                        bottom: 10px;
                     }
                 }
             }
         }
+
     }
-    .tips{
+
+    .tips {
         position: fixed;
         height: 100%;
         width: 100%;
         background: #fff;
         font-size: 16px;
         text-align: center;
-        .tips-style{
+        .tips-style {
             font-size: 25px;
             font-weight: bolder;
             text-align: center;
             margin: 20% 0 10% 0;
         }
-        .tips-login,.tips-reg{
+        .tips-login, .tips-reg {
             display: block;
             width: 80%;
-            margin:0 0 5% 10%;
+            margin: 0 0 5% 10%;
             background: deeppink;
             height: 45px;
             line-height: 45px;
             text-align: center;
             color: #fff;
-           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
-        .tips-reg{
+        .tips-reg {
             background: #a6a6a6;
         }
-        p{
-            height:45px;
+        p {
+            height: 45px;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             color: #d6d6d6;
             position: fixed;
@@ -102,5 +118,34 @@
             width: 100%;
             text-align: center;
         }
+    }
+
+}
+
+.submitBtn {
+    padding: 15px 10px;
+    font-size: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    text-align: center;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    b {
+        color: #f00;
+    }
+    button {
+        font-size: 18px;
+        border: none;
+        background: #e80080;
+        padding: 12px 50px;
+        display: inline-block;
+        border-radius: 5px;
+        color: #fff;
     }
 }

@@ -3,6 +3,7 @@ import './index.less';
 import {get, post} from "../../api";
 import {Link} from 'react-router-dom';
 import {upLoadMore, downRefresh} from '../../utils';
+import Loading from "../../components/Loading";
 
 export default class Find extends Component {
     constructor() {
@@ -48,7 +49,6 @@ export default class Find extends Component {
 
     handlePost = (id) => {
         post(`/api/car`, {id}).then(res => {
-            console.log(res);
             if (res.code === 1) {
                 this.props.history.push('/login');
             }
@@ -87,9 +87,9 @@ export default class Find extends Component {
     };
 
     render() {
-        console.log(this.state.type);
         return (
             <div className='find-area' ref={content => this.content = content}>
+                <Loading/>
                 <div className='find-title' onClick={this.handleSort}><span>筛选</span>
                     <span className={(this.state.type === 0 || this.state.type === 1) ? 'tag active' : 'tag'}
                           data-info="price">价格
@@ -140,7 +140,7 @@ export default class Find extends Component {
                     }
                 </ul>
                 {
-                    !this.state.hasMore ? <div className='downLoad-tips'>别扯了,到底了</div> : null
+                    !this.state.hasMore ? <div className='downLoad-tips'>别扯了,到底了</div> : <Loading/>
                 }
             </div>
         );
