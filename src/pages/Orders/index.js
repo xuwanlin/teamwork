@@ -1,78 +1,88 @@
 import React, {Component} from 'react';
 import './index.less';
 import Mheader from '../../components/Mheader';
-import {get,post,myDelete} from '../../api/index';
-import './index.less'
+import {
+    get,
+    post,
+    myDelete
+} from '../../api/index';
 import {Link} from 'react-router-dom';
+import OrderProduct from "./OrderProduct";
+
 export default class Orders extends Component {
-  constructor() {
-    super();
-    this.state = {
-      lists: [],
-      allPrice: 0.00,
-      allNum:0
+    constructor() {
+        super();
+        this.state = {
+            lists: [],
+            product: [],
+            id: null,
+            price: 0.00
+        };
     }
-  }
 
-  componentDidMount() {
-    get('/api/order').then(res => {
-      if (res.code === 0) {
-        this.setState({lists: res.order.list});
-        this.setState({allPrice: this.computedTotalPrice(this.state.lists)});
-        this.setState({allNum: this.computedAllNum(this.state.lists)});
-      } else {
-        this.setState({lists: ''})
-      }
-    })
-  }
-  computedAllNum = (count) => {
-    let addNum = 0;
-    count.forEach(item => {
-      addNum +=item.count
-    });
-    return addNum;
-  }
-  computedTotalPrice = (list) => {
-    let totalPrice = 0.00;
-    list.forEach(item => {
-      totalPrice += item.price * item.count - 30;
-    });
-    return totalPrice;
-  };
-
-  render() {
-    return (
-    <div
-    className="order-box">
-      <Mheader title='全部订单'/>
-      <div className="orders">
-        <div className="order-top">
-          <p><span>常购清单</span><span className="right">{this.state.allNum}件</span></p>
-        </div>
-        {
-          this.state.lists.map(item => (
-          <Link to={`/orderslist/${item.id}`} key={item.id}>
-          <div className="order-list">
-            <div className="order-listImg">
-              <img src={item.image}
-                   alt=""/>
-            </div>
-            <div className="order-listTip">
-              <p><span>{item.title}</span><span className="right order-price">￥{item.price}</span></p>
-              <p><span>{item.size}</span><span className="right">x{item.count}</span></p>
-            </div>
-            <div className="allPrices">
-              <p><span>共{item.count}件商品</span><span>实付￥{this.state.allPrice}</span></p>
-            </div>
-          </div>
-          </Link>
-          ))
+    makeDataP = () => {
+        for (var data in this.state.lists) {
+            let Data = this.state.lists[data].product;
+            return Data;
         }
-      </div>
-      <div className="submit">
-        <p><span>货到付款</span></p>
-      </div>
-    </div>
-    )
-  }
+    };
+    makePrice = (list) => {
+        let ALL = 0.00;
+        list.forEach(item => {
+            ALL += item.price * item.count;
+        });
+        return ALL;
+    };
+
+    componentDidMount() {
+        get('/api/order').then(res => {
+            if (res.code === 0) {
+                this.setState({lists: res.order.list});
+                this.setState({product: this.makeDataP()});
+                this.setState({price: this.makePrice(this.state.product)});
+            } else {
+                this.setState({lists: []});
+            }
+        });
+    }
+
+    render() {
+        return (
+            <div
+                className="order-box">
+                <Mheader  title='全部订单'/>
+                {
+                    this.state.lists.map(item => (
+                        <div
+                            className="orders" key={item.id}>
+                            <div
+                                className="order-top">
+                                <p>
+                                    <span>订单号：{item.id}</span><span
+                                    className="right">下单时间{item.date}</span>
+                                </p>
+                                <OrderProduct
+                                    product={this.state.product}/>
+                                <div
+                                    className="allPrice">
+                                    <p>
+                                        <span>总价{this.state.price}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+                {
+                    this.state.lists.length==0&&<div className='nothing'>暂无订单<p><Link to='/find'>去购物&gt;</Link></p></div>
+                }
+                <div
+                    className="submit">
+                    <p>
+                        <span>货到付款</span>
+                    </p>
+                </div>
+            </div>
+        );
+    }
 }

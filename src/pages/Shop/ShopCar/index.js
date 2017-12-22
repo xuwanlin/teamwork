@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import './index.less';
 import {get, post, myDelete} from "../../../api";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
-export default class ShopCar extends Component {
+class ShopCar extends Component {
     constructor() {
         super();
-        this.state = {list: [], totalPrice: 0.00};
+        this.state = {list: [], totalPrice: 0.00, user: {}};
     }
 
     submitTo = () => {
-        get('./api/submitCar').then(res => {
+        get('/api/submitCar').then(res => {
             if (res.code === 0) {
-                console.log(this.props);
+                this.props.history.push('/orders');
             }
         });
     };
@@ -21,6 +21,15 @@ export default class ShopCar extends Component {
         get('/api/car').then(res => {
             if (res.code === 0) {
                 this.setState({list: res.cart.list, totalPrice: this.computedTotalPrice(res.cart.list)});
+            }
+        });
+
+        get('api/validate').then(res => {
+            if (res.code === 0) {
+                this.setState({user: res.user});
+
+            } else {
+                this.setState({user: ''});
             }
         });
     }
@@ -74,7 +83,10 @@ export default class ShopCar extends Component {
         return totalPrice;
     };
 
+
     render() {
+
+
         return (
             <div className='shopcar-list'>
                 {
@@ -120,17 +132,26 @@ export default class ShopCar extends Component {
                     }
                 </ul>
                 {
-                    this.state.list.length > 0 ? <div className='submitBtn'>
+                    (this.state.list.length > 0 && this.state.user) && <div className='submitBtn'>
                         <span>总计: <b>{this.state.totalPrice}元</b></span>
                         <button onClick={this.submitTo}>去结算</button>
-                    </div> :  <div className='tips'>
-                                <div className="tips-style">m.vip.com</div>
-                                <Link to='/login' className="tips-login">请先登录</Link>
-                                <Link to='/reg' className="tips-reg">请注册</Link>
-                                <p>唯品会独家赞助</p>
-                        </div>
+                    </div>
+                }
+                {
+                    !this.state.user && <div className='tips'>
+                        <div className="tips-style">m.vip.com</div>
+                        <Link to='/login' className="tips-login">请先登录</Link>
+                        <Link to='/reg' className="tips-reg">请注册</Link>
+                        <p>唯品会独家赞助</p>
+                    </div>
+                }
+                {
+                    (this.state.user && this.state.list.length == 0) &&
+                    <div className='nothing'>购物车暂无商品<p><Link to='/find'>去购物&gt;</Link></p></div>
                 }
             </div>
         );
     }
 }
+
+export default withRouter(ShopCar);
