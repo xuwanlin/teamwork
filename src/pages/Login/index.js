@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './index.less';
 import Mheader from "../../components/Mheader";
 import {post} from '../../api/index';
+import {Link} from "react-router-dom";
 export default class Login extends Component {
     constructor(){
         super();
@@ -32,6 +33,7 @@ export default class Login extends Component {
                 <input ref={input=>this.username=input} type="text" placeholder="手机号"/>
                 <input ref={input=>this.password=input} type="text" placeholder="密码"/>
                 <div onClick={this.login} className="login-button">登&nbsp;录</div>
+                  <Link to='/reg' className="login-button tips-reg">去注册</Link>
               </div>
             </div>
         )
