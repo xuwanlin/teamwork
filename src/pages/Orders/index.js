@@ -35,7 +35,6 @@ export default class Orders extends Component {
   computedTotalPrice = (list) => {
     let totalPrice = 0.00;
     list.forEach(item => {
-      console.log(item);
       totalPrice += item.price * item.count - 30;
     });
     return totalPrice;

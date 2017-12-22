@@ -8,7 +8,13 @@ export default class ShopCar extends Component {
         super();
         this.state = {list: [], totalPrice: 0.00};
     }
-
+      submitTo = () => {
+        get('./api/submitCar').then(res => {
+          if(res.code === 0){
+            console.log(res);
+          }
+        })
+      }
     componentDidMount() {
         get('/api/car').then(res => {
             if (res.code === 0) {
@@ -108,7 +114,7 @@ export default class ShopCar extends Component {
                 {
                     this.state.list.length > 0 ? <div>
                         总计: <b>{this.state.totalPrice}元</b>
-                        <button>去结算</button>
+                        <button onClick={this.submitTo}>去结算</button>
                     </div> : <div className='tips'>请先<Link to='/login'>登录</Link></div>
                 }
             </div>
