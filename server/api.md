@@ -234,7 +234,21 @@
     ]
 }
 ```
-### 提交购物车
+### 提交购物车 get 版
+- /api/submitCar
+- get 提交
+
+返回值
+```
+{
+    "code": 0,
+    "success": "提交成功！",
+    "order": {
+        "id": 1513868096134
+    }
+}
+```
+### 提交购物车 post版
 - /api/order
 - post请求
 提交数据格式json
@@ -335,9 +349,6 @@
     "error": "暂无全部订单！"
 }
 ```
-## 提交订单
-- /api/order
-- post请求 成功
 
 ## 获取专题列表
 - /api/category

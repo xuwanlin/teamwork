@@ -352,8 +352,8 @@ app.post('/api/car', (req, res) => {
         req.body.id = parseInt(req.body.id);
         let product = oldUser.cart.find(item => item.id == req.body.id);
         if (!product) {
-            oldUser.cart.push({id: req.body.id, count: 0, isSelected: 1})
-            product = oldUser.cart[oldUser.cart.length - 1];
+            oldUser.cart.unshift({id: req.body.id, count: 0, isSelected: 1})
+            product = oldUser.cart[0];
 
         }
 
