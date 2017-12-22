@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './index.less';
 import Mheader from "../../components/Mheader";
 import {post} from '../../api/index';
+import {Link} from 'react-router-dom';
 
 export default class Login extends Component {
     constructor() {
@@ -36,11 +37,16 @@ export default class Login extends Component {
                     <input ref={input => this.username = input} type="text" placeholder="手机号"/>
                     <input ref={input => this.password = input} type="text" placeholder="密码"/>
                     <div onClick={this.reg} className="login-button">注&nbsp;册</div>
-                    {
-                        this.state.error && <div className='tips'>{this.state.error}</div>
-                    }
+                    <div className='box'>
+                        {
+                            this.state.error && <div className='tips'>{this.state.error}</div>
+                        }
+                        <Link className='toLogin' to='/login'>去登录</Link>
+                    </div>
                 </div>
             </div>
         );
     }
+
+    login;
 }
