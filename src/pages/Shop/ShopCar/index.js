@@ -29,7 +29,7 @@ class ShopCar extends Component {
                 this.setState({user: res.user});
 
             } else {
-                this.setState({user: ''});
+                this.setState({user: {}});
             }
         });
     }
