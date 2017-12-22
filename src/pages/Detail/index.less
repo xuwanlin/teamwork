@@ -1,23 +1,25 @@
 @keyframes w1 {
   0% {
     transform: translateX(250px) translateY(0px) scale(1.5);
-    opacity: 0
   }
   100% {
-    opacity: 1;
     transform: translateX(150px) translateY(0px) scale(1.5);
-    opacity: 1
+    //opacity: 1
   }
 }
 
 @keyframes w2 {
   0% {
-    opacity: 1;
-    transform: translateX(150px) translateY(0px) scale(1.3)
+    //opacity: 1;
+    transform: translateX(150px) translateY(0px) scale(1.3);
+    opacity: 0
+
   }
   100% {
-    opacity: 0;
-    transform: translateX(50px) translateY(0px) scale(.5)
+    //opacity: 0;
+    transform: translateX(50px) translateY(0px) scale(.5);
+    opacity: 1;
+
   }
 }
 
@@ -328,6 +330,7 @@
   }
 
   .animatCartBox {
+    background: #de3d96;
     width: 100%;
     height: 0px;
     left: 0;
@@ -338,12 +341,12 @@
   }
 
   .animatCartBox .box {
+
     transform: scale(1.5);
-    opacity: .8;
+    opacity:.5;
     width: 50px;
     height: 50px;
-    background: #eee;
-    background: #f00;
+    background: #de3d96;
     border-radius: 50%;
     position: absolute;
     opacity: 0;
@@ -351,6 +354,12 @@
     transform: translateX(250px) translateY(0px);
     left: 0%;
     top: 100px;
+    opacity: .5;
+    img{
+       display: none;
+    }
+
+
 
   }
 
