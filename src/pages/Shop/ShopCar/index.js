@@ -1,24 +1,35 @@
 import React, {Component} from 'react';
 import './index.less';
 import {get, post, myDelete} from "../../../api";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
-export default class ShopCar extends Component {
+class ShopCar extends Component {
     constructor() {
         super();
-        this.state = {list: [], totalPrice: 0.00};
+        this.state = {list: [], totalPrice: 0.00, user: {}};
     }
-      submitTo = () => {
-        get('./api/submitCar').then(res => {
-          if(res.code === 0){
-            console.log(res);
-          }
-        })
-      }
+
+    submitTo = () => {
+        get('/api/submitCar').then(res => {
+            if (res.code === 0) {
+                this.props.history.push('/orders');
+            }
+        });
+    };
+
     componentDidMount() {
         get('/api/car').then(res => {
             if (res.code === 0) {
                 this.setState({list: res.cart.list, totalPrice: this.computedTotalPrice(res.cart.list)});
+            }
+        });
+
+        get('api/validate').then(res => {
+            if (res.code === 0) {
+                this.setState({user: res.user});
+
+            } else {
+                this.setState({user: ''});
             }
         });
     }
@@ -72,16 +83,24 @@ export default class ShopCar extends Component {
         return totalPrice;
     };
 
+
     render() {
+
+
         return (
             <div className='shopcar-list'>
-                <h3>
-                    <label><input type="checkbox"
-                                  checked={this.state.list.every(item => item.isSelected)}
-                                  onChange={(event) => this.switchAllSelected(event)}
-                    />全选/全不选
-                    </label>
-                </h3>
+                {
+                    this.state.list.length > 0 && (
+                        <h3>
+                            <label><input type="checkbox"
+                                          checked={this.state.list.every(item => item.isSelected)}
+                                          onChange={(event) => this.switchAllSelected(event)}
+                            />全选/全不选
+                            </label>
+                        </h3>
+                    )
+                }
+
                 <ul className='car-list'>
                     {
                         this.state.list.map(item => (
@@ -103,7 +122,8 @@ export default class ShopCar extends Component {
                                         <button onClick={(event) => this.handleChange(event, item, 1)}>+</button>
                                     </div>
                                     <div className='set'>
-                                        <button onClick={() => this.removeGood(item.id)}>X</button>
+                                        <i onClick={() => this.removeGood(item.id)}
+                                           className='iconfont icon-chushaixuanxiang'></i>
                                     </div>
                                 </div>
 
@@ -112,12 +132,26 @@ export default class ShopCar extends Component {
                     }
                 </ul>
                 {
-                    this.state.list.length > 0 ? <div>
-                        总计: <b>{this.state.totalPrice}元</b>
+                    (this.state.list.length > 0 && this.state.user) && <div className='submitBtn'>
+                        <span>总计: <b>{this.state.totalPrice}元</b></span>
                         <button onClick={this.submitTo}>去结算</button>
-                    </div> : <div className='tips'>请先<Link to='/login'>登录</Link></div>
+                    </div>
+                }
+                {
+                    !this.state.user && <div className='tips'>
+                        <div className="tips-style">m.vip.com</div>
+                        <Link to='/login' className="tips-login">请先登录</Link>
+                        <Link to='/reg' className="tips-reg">请注册</Link>
+                        <p>唯品会独家赞助</p>
+                    </div>
+                }
+                {
+                    (this.state.user && this.state.list.length == 0) &&
+                    <div className='nothing'>购物车暂无商品<p><Link to='/find'>去购物&gt;</Link></p></div>
                 }
             </div>
         );
     }
 }
+
+export default withRouter(ShopCar);
