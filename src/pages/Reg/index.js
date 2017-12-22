@@ -5,7 +5,7 @@ import {post} from '../../api/index';
 export default class Login extends Component {
     constructor(){
         super();
-        this.state = {username:'',password:''}
+        this.state = {username:'',password:''};
     }
     reg = () => {
         let username = this.username.value;
