@@ -138,7 +138,7 @@ app.get('/api/validate', (req, res) => {
         })
         res.send({
             code: 0,
-            user: {username: req.session.user.username, "cartCount": cartCount, "orderInfo": oldUser.orderInfo}
+            user: {username: req.session.user.username,"photo":oldUser.photo, "cartCount": cartCount, "orderInfo": oldUser.orderInfo}
         })
     } else {
         res.send({code: 1, error: '此用户未登录！'})
