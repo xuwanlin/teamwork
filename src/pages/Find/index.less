@@ -19,12 +19,27 @@
         top: 0;
         font-size: 16px;
         display: flex;
+        align-items: center;
+        justify-content: center;
         span {
-            display: inline-block;
-            padding: 0 15px;
-            margin-left: 15px;
-            flex-direction: column;
             flex: 1;
+            &.active{
+                color: deeppink;
+            }
+            i {
+                font-style: normal;
+                margin-left: 6px;
+                &.icon-up {
+                    background-image: -webkit-linear-gradient(top, rgb(255, 20, 147), rgb(241, 242, 255));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                &.icon-jiantou {
+                    background-image: -webkit-linear-gradient(top, rgb(241, 242, 255), rgb(255, 20, 147));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
         }
     }
     .productList {
@@ -40,28 +55,28 @@
             margin-bottom: 20px;
             background: #fff;
             .title {
-              padding: 5px;
-              height: .4rem;
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis;
+                padding: 5px;
+                height: .4rem;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
 
             }
             .price {
-              position: relative;
+                position: relative;
                 padding: 0 5px;
                 b {
                     color: #f00;
                     font-size: 15px;
                     margin-right: 5px;
                 }
-                del{
+                del {
                     color: gray;
                 }
-                span{
-                  position: absolute;
-                  right: 15px;
-                  margin-top: 3px;
+                span {
+                    position: absolute;
+                    right: 15px;
+                    margin-top: 3px;
 
                 }
             }
@@ -81,7 +96,7 @@
 
         }
     }
-    .downLoad-tips{
+    .downLoad-tips {
         line-height: 50px;
         text-align: center;
     }
